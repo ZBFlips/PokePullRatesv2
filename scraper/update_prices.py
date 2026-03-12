@@ -250,6 +250,29 @@ def match_notable_prices(notable_names, top_card_prices):
     return matched
 
 
+def fetch_sealed_pack_price(set_name, retries=MAX_RETRIES):
+    """
+    Constructs a search query for an external aggregator and extracts the sealed pack price.
+    Uses generic string matching to find the dominant price block in the DOM.
+    """
+    # Format the name for the URL (e.g., 'Ascended Heroes' -> 'ascended-heroes')
+    slug = re.sub(r'[^a-z0-9]+', '-', set_name.lower().strip())
+    
+    # Target URL architecture for secondary market aggregators
+    url = f"https://www.pricecharting.com/game/pokemon-{slug}/{slug}-booster-pack"
+    
+    html = fetch(url, retries)
+    if not html:
+        return None
+
+    # Parse the DOM for the primary price identifier (usually tagged with 'used_price' or 'new_price' IDs)
+    match = re.search(r'id="used_price"[^>]*>\s*\$?([\d,]+\.?\d*)\s*<', html, re.IGNORECASE)
+    if match:
+        return parse_price(match.group(1))
+        
+    return None
+
+
 # ── Main ──────────────────────────────────────────────────────
 def main():
     print(f"\n{'='*55}")
