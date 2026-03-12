@@ -1,0 +1,113 @@
+{
+  "lastUpdated": "March 12, 2026 at 19:02 UTC",
+  "sets": {
+    "me2pt5": {
+      "rarities": {},
+      "packEV": 7.08,
+      "packResalePrice": 63.99,
+      "topCard": {
+        "name": "N/A",
+        "price": 0.0
+      }
+    },
+    "sv9": {
+      "rarities": {},
+      "packEV": 2.89,
+      "packResalePrice": 6.0,
+      "topCard": {
+        "name": "N/A",
+        "price": 0.0
+      }
+    },
+    "sv8pt5": {
+      "rarities": {},
+      "packEV": 4.48,
+      "packResalePrice": 10.5,
+      "topCard": {
+        "name": "N/A",
+        "price": 0.0
+      }
+    },
+    "sv8": {
+      "rarities": {},
+      "packEV": 2.92,
+      "packResalePrice": 7.0,
+      "topCard": {
+        "name": "N/A",
+        "price": 0.0
+      }
+    },
+    "sv7": {
+      "rarities": {},
+      "packEV": 3.21,
+      "packResalePrice": 8.8,
+      "topCard": {
+        "name": "N/A",
+        "price": 0.0
+      }
+    },
+    "sv6pt5": {
+      "rarities": {},
+      "packEV": 4.25,
+      "packResalePrice": 26.02,
+      "topCard": {
+        "name": "N/A",
+        "price": 0.0
+      }
+    },
+    "sv6": {
+      "rarities": {},
+      "packEV": 3.42,
+      "packResalePrice": 7.68,
+      "topCard": {
+        "name": "N/A",
+        "price": 0.0
+      }
+    },
+    "sv5": {
+      "rarities": {},
+      "packEV": 3.49,
+      "packResalePrice": 7.72,
+      "topCard": {
+        "name": "N/A",
+        "price": 0.0
+      }
+    },
+    "sv4pt5": {
+      "rarities": {},
+      "packEV": 5.31,
+      "packResalePrice": 18.0,
+      "topCard": {
+        "name": "N/A",
+        "price": 0.0
+      }
+    },
+    "sv4": {
+      "rarities": {},
+      "packEV": 3.12,
+      "packResalePrice": 7.44,
+      "topCard": {
+        "name": "N/A",
+        "price": 0.0
+      }
+    },
+    "sv3pt5": {
+      "rarities": {},
+      "packEV": 14.25,
+      "packResalePrice": 23.0,
+      "topCard": {
+        "name": "N/A",
+        "price": 0.0
+      }
+    },
+    "sv3": {
+      "rarities": {},
+      "packEV": 3.35,
+      "packResalePrice": 10.35,
+      "topCard": {
+        "name": "N/A",
+        "price": 0.0
+      }
+    }
+  }
+}
