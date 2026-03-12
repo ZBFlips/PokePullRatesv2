@@ -2,7 +2,6 @@
 """
 PullRates.gg — Automated Price Updater
 Scrapes ThePriceDex for card prices and PriceCharting for sealed packs.
-Run via GitHub Actions every Sunday, or manually anytime.
 """
 
 import json
@@ -111,7 +110,6 @@ def parse_pull_rates_page(html):
     for i, token in enumerate(tokens):
         key = RARITY_MAP.get(token.lower())
         if key:
-            # Look ahead for the next price token
             for j in range(i + 1, min(i + 15, len(tokens))):
                 if '$' in tokens[j]:
                     price = parse_price(tokens[j])
@@ -122,7 +120,7 @@ def parse_pull_rates_page(html):
 
 def parse_guide_page(html):
     if not html: return {}
-    # Simple regex for H2 (name) and H5 (price) pairing
+    # Extract names from H2 and prices from H5
     names = re.findall(r'<h2[^>]*>(.*?)</h2>', html, re.I | re.S)
     prices = re.findall(r'<h5[^>]*>(.*?)</h5>', html, re.I | re.S)
     data = {}
@@ -149,24 +147,19 @@ def main():
         sid, slug = s["id"], s["slug"]
         print(f"Scraping {slug}...")
         
-        # 1. Pull Rates (Singles EV)
         p_html = fetch(f"{BASE_URL}/set/{sid}/{slug}/pull-rates")
         rarity_prices, pack_ev = parse_pull_rates_page(p_html)
         
-        # 2. Guide (Top Cards)
         g_html = fetch(f"{BASE_URL}/guides/most-expensive-{s['guide']}-cards")
         top_prices = parse_guide_page(g_html)
         
-        # 3. Sealed Market
         sealed_price = fetch_sealed_pack_price(slug)
         
-        # Fallbacks
         ex = existing.get("sets", {}).get(sid, {})
         if not rarity_prices: rarity_prices = ex.get("rarities", {})
         if not pack_ev: pack_ev = ex.get("packEV", 0)
         if not sealed_price: sealed_price = ex.get("packResalePrice", 0)
 
-        # Assemble
         top_card = ex.get("topCard", {"name": "N/A", "price": 0})
         if top_prices:
             best_name = max(top_prices, key=top_prices.get)
@@ -177,7 +170,7 @@ def main():
             "packEV": pack_ev,
             "packResalePrice": sealed_price,
             "topCard": top_card,
-            "notablePrices": top_prices # Re-using guide data for notables
+            "notablePrices": top_prices
         }
         time.sleep(DELAY)
 
