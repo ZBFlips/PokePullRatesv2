@@ -12,6 +12,7 @@ import random
 import http.cookiejar
 import gzip
 import io
+import urllib.request
 from datetime import datetime, timezone
 from urllib.request import urlopen, Request
 from urllib.error import URLError, HTTPError
