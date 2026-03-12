@@ -257,7 +257,8 @@ function setCardHTML(set, rank, animDelay) {
        style="border-top:3px solid ${accent}44; animation-delay:${animDelay}ms;"
        data-name="${set.name.toLowerCase()}" data-series="${set.series.toLowerCase()}">
       <div class="set-card-top" style="background:linear-gradient(135deg,${gradStart},${gradEnd});">
-        <div class="set-card-badge">${set.id.replace('pt5','').replace('sv','').toUpperCase()}</div>
+        <img src="images/${set.id}.jpg" alt="${set.name} Pack Art" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; mix-blend-mode:luminosity; opacity:0.6; z-index:0;" onerror="this.style.display='none'">
+        <div class="set-card-badge" style="position:relative; z-index:1;">${set.id.replace('pt5','').replace('sv','').toUpperCase()}</div>
         <div class="set-card-series">${set.series}</div>
         ${showRank ? `<div class="set-rank" style="color:${accent};display:block">${rankLabel}</div>` : ''}
       </div>
