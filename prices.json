@@ -3,13 +3,13 @@
   "sets": {
     "me2pt5": {
       "rarities": {
-        "MHR": {
-          "avgPrice": 418.28,
-          "ev": 0.42
-        },
         "SIR": {
           "avgPrice": 190.21,
           "ev": 2.09
+        },
+        "MHR": {
+          "avgPrice": 418.28,
+          "ev": 0.42
         },
         "MAR": {
           "avgPrice": 24.12,
@@ -28,39 +28,75 @@
           "ev": 0.37
         },
         "R": {
-          "avgPrice": 0.49,
-          "ev": 0.08
+          "avgPrice": 0.15,
+          "ev": 0.1
         },
         "U": {
-          "avgPrice": 0.32,
-          "ev": 0.09
+          "avgPrice": 0.12,
+          "ev": 0.37
         },
         "C": {
-          "avgPrice": 0.37,
-          "ev": 0.18
+          "avgPrice": 0.12,
+          "ev": 0.48
         }
       },
-      "notablePrices": {
-        "Mega Gengar ex": 1020.45,
-        "Mega Charizard Y ex": 509.28,
-        "Mega Dragonite ex": 613.38,
-        "Pikachu ex": 508.74,
-        "Team Rocket's Mewtwo ex": 297.93
-      },
+      "packEV": 7.08,
+      "packResalePrice": 0,
       "topCard": {
-        "name": "Mega Gengar Ex.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
+        "name": "Mega Gengar Ex<Style Data-Emotion=\"Css 1Hcv90L\">.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
         "price": 1020.45
+      },
+      "notablePrices": {
+        "mega gengar ex<style data-emotion=\"css 1hcv90l\">.css-1hcv90l{margin:0;font-family:-apple-system,blinkmacsystemfont,\"segoe ui\",roboto,\"helvetica neue\",arial,sans-serif;font-weight:400;font-size:1rem;line-height:1.5;color:": 1020.45,
+        "mega gengar ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 64.49,
+        "mega dragonite ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.71,
+        "mega charizard y ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 509.28,
+        "pikachu ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 330.17,
+        "team rocket&": 10.21,
+        "lillie&": 195.87,
+        "n&": 9.44,
+        "mega feraligatr ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 142.31,
+        "fezandipiti ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 100.36,
+        "mega meganium ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 95.88,
+        "marnie&": 95.32,
+        "iono&": 12.69,
+        "steven&": 77.54,
+        "mega froslass ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 16.94,
+        "psyduck<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 71.53,
+        "mega hawlucha ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.51,
+        "mega scrafty ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 65.93,
+        "mega diancie ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 12.5,
+        "mega emboar ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 53.11,
+        "canari<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 49.85,
+        "iris&": 42.7,
+        "mega eelektross ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 41.42,
+        "erika&": 27.25,
+        "surfer<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 26.83,
+        "dreepy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 20.4,
+        "budew<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 17.67,
+        "cynthia&": 16.78,
+        "drakloak<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 16.54,
+        "boss&": 15.96,
+        "marill<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 15.65,
+        "ultra ball<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 13.55,
+        "banette<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 11.52,
+        "slurpuff<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.54,
+        "snorunt<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.37,
+        "scorbunny<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.32,
+        "mightyena<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.94,
+        "ethan&": 9.25,
+        "togekiss<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.66
       }
     },
     "sv9": {
       "rarities": {
-        "HR": {
-          "avgPrice": 10.11,
-          "ev": 0.07
-        },
         "SIR": {
           "avgPrice": 53.63,
           "ev": 0.62
+        },
+        "HR": {
+          "avgPrice": 10.11,
+          "ev": 0.07
         },
         "UR": {
           "avgPrice": 2.13,
@@ -87,25 +123,39 @@
           "ev": 0.44
         }
       },
-      "notablePrices": {
-        "Lillie's Clefairy ex": 122.22,
-        "Salamence ex": 54.04,
-        "N's Zoroark ex": 50.78
-      },
+      "packEV": 2.89,
+      "packResalePrice": 0,
       "topCard": {
-        "name": "Lillie'S Clefairy Ex.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
-        "price": 122.22
+        "name": "Volcanion Ex<Span Class=\"Muitypography-Root Muitypography-Body1 Css-1Hcv90L\">",
+        "price": 19.46
+      },
+      "notablePrices": {
+        "lillie&": 5.37,
+        "salamence ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.19,
+        "n&": 2.19,
+        "iono&": 4.73,
+        "hop&": 3.2,
+        "volcanion ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 19.46,
+        "articuno<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 17.15,
+        "wailord<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 12.2,
+        "furret<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.1,
+        "spiky energy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.54,
+        "noibat<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.84,
+        "swinub<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.15,
+        "lycanroc<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.41,
+        "brock&": 2.37,
+        "maractus<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.07
       }
     },
     "sv8pt5": {
       "rarities": {
-        "HR": {
-          "avgPrice": 15.05,
-          "ev": 0.08
-        },
         "SIR": {
           "avgPrice": 113.72,
           "ev": 2.52
+        },
+        "HR": {
+          "avgPrice": 15.05,
+          "ev": 0.08
         },
         "UR": {
           "avgPrice": 0.67,
@@ -120,37 +170,87 @@
           "ev": 0.27
         },
         "R": {
-          "avgPrice": 14.1,
-          "ev": 0.22
+          "avgPrice": 0.17,
+          "ev": 0.13
         },
         "U": {
-          "avgPrice": 3.96,
-          "ev": 0.04
+          "avgPrice": 0.1,
+          "ev": 0.29
         },
         "C": {
-          "avgPrice": 3.09,
-          "ev": 0.07
+          "avgPrice": 0.09,
+          "ev": 0.37
         }
       },
-      "notablePrices": {
-        "Umbreon ex": 1121.45,
-        "Sylveon ex": 299.11,
-        "Leafeon ex": 247.49
-      },
+      "packEV": 4.48,
+      "packResalePrice": 0,
       "topCard": {
-        "name": "Umbreon Ex.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
+        "name": "Umbreon Ex<Style Data-Emotion=\"Css 1Hcv90L\">.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
         "price": 1121.45
+      },
+      "notablePrices": {
+        "umbreon ex<style data-emotion=\"css 1hcv90l\">.css-1hcv90l{margin:0;font-family:-apple-system,blinkmacsystemfont,\"segoe ui\",roboto,\"helvetica neue\",arial,sans-serif;font-weight:400;font-size:1rem;line-height:1.5;color:": 1121.45,
+        "umbreon ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 1121.45,
+        "sylveon ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 299.11,
+        "leafeon ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 247.49,
+        "espeon ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 224.06,
+        "glaceon ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 182.58,
+        "vaporeon ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 177.54,
+        "flareon ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 162.4,
+        "roaring moon ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 156.46,
+        "jolteon ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 144.19,
+        "eevee ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 120.77,
+        "dragapult ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 97.9,
+        "ceruledge ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 93.93,
+        "raging bolt ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 62.07,
+        "bloodmoon ursaluna ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 61.08,
+        "umbreon<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 56.49,
+        "pikachu ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 49.15,
+        "gholdengo ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 48.7,
+        "iron valiant ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 41.98,
+        "palafin ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 40.37,
+        "iron crown ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 35.93,
+        "iron hands ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 33.49,
+        "terapagos ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 32.26,
+        "crispin<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 29.34,
+        "pecharunt ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 28.38,
+        "sylveon<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 27.42,
+        "lacey<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 27.37,
+        "janine&": 26.11,
+        "leafeon<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 23.55,
+        "sandy shocks ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 23.26,
+        "teal mask ogerpon ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 21.38,
+        "flareon<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 19.46,
+        "espeon<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 19.46,
+        "jolteon<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 18.92,
+        "kieran<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 18.89,
+        "hearthflame mask ogerpon ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 18.67,
+        "glaceon<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 17.56,
+        "vaporeon<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 16.66,
+        "drayton<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 16.6,
+        "cornerstone mask ogerpon ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 15.47,
+        "amarys<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 15.32,
+        "wellspring mask ogerpon ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 14.39,
+        "suicune<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.48,
+        "eevee<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.29,
+        "whimsicott<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.11,
+        "munkidori<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.86,
+        "riolu<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.77,
+        "flutter mane<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.46,
+        "dudunsparce<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.45,
+        "dusknoir<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.69,
+        "groudon<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.69
       }
     },
     "sv8": {
       "rarities": {
-        "HR": {
-          "avgPrice": 17.22,
-          "ev": 0.09
-        },
         "SIR": {
           "avgPrice": 63.05,
           "ev": 0.73
+        },
+        "HR": {
+          "avgPrice": 17.22,
+          "ev": 0.09
         },
         "UR": {
           "avgPrice": 3.03,
@@ -181,18 +281,62 @@
           "ev": 0.4
         }
       },
-      "notablePrices": {
-        "Pikachu ex": 256.27,
-        "Latias ex": 171.56,
-        "Milotic ex": 94.76
-      },
+      "packEV": 2.92,
+      "packResalePrice": 0,
       "topCard": {
-        "name": "Pikachu Ex.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
+        "name": "Pikachu Ex<Style Data-Emotion=\"Css 1Hcv90L\">.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
         "price": 256.27
+      },
+      "notablePrices": {
+        "pikachu ex<style data-emotion=\"css 1hcv90l\">.css-1hcv90l{margin:0;font-family:-apple-system,blinkmacsystemfont,\"segoe ui\",roboto,\"helvetica neue\",arial,sans-serif;font-weight:400;font-size:1rem;line-height:1.5;color:": 256.27,
+        "pikachu ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.43,
+        "latias ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.19,
+        "milotic ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 1.96,
+        "hydreigon ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.88,
+        "lisia&": 2.86,
+        "durant ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 28.25,
+        "alolan exeggutor ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.17,
+        "latios<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 26.36,
+        "jasmine&": 20.04,
+        "ceruledge<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 16.62,
+        "archaludon ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 11.47,
+        "night stretcher<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.69,
+        "drayton<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.49,
+        "gravity mountain<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.37,
+        "mesprit<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.79,
+        "slakoth<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.12,
+        "clemont&": 7.57,
+        "jet energy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.17,
+        "skarmory<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.1,
+        "phanpy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.18,
+        "alolan dugtrio<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.87,
+        "spheal<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.82,
+        "castform sunny form<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.81,
+        "feebas<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.6,
+        "kecleon<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.15,
+        "appletun<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.01,
+        "cyrano<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.67,
+        "clobbopus<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.65,
+        "exeggcute<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.36,
+        "precious trolley<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.09,
+        "counter gain<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.88,
+        "braviary<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.75,
+        "vivillon<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.39,
+        "shiinotic<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.76,
+        "flapple<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.76,
+        "enriching energy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.53,
+        "cetitan<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.46,
+        "vibrava<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.27,
+        "flygon ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.13,
+        "bruxish<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 1.93
       }
     },
     "sv7": {
       "rarities": {
+        "IR": {
+          "avgPrice": 18.45,
+          "ev": 1.44
+        },
         "HR": {
           "avgPrice": 8.57,
           "ev": 0.06
@@ -204,10 +348,6 @@
         "UR": {
           "avgPrice": 2.76,
           "ev": 0.19
-        },
-        "IR": {
-          "avgPrice": 18.45,
-          "ev": 1.44
         },
         "ACE": {
           "avgPrice": 0.37,
@@ -230,33 +370,56 @@
           "ev": 0.39
         }
       },
-      "notablePrices": {
-        "Squirtle": 99.23,
-        "Bulbasaur": 79.13,
-        "Dachsbun ex": 37.79
-      },
+      "packEV": 3.21,
+      "packResalePrice": 0,
       "topCard": {
-        "name": "Squirtle.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
+        "name": "Squirtle<Style Data-Emotion=\"Css 1Hcv90L\">.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
         "price": 99.23
+      },
+      "notablePrices": {
+        "squirtle<style data-emotion=\"css 1hcv90l\">.css-1hcv90l{margin:0;font-family:-apple-system,blinkmacsystemfont,\"segoe ui\",roboto,\"helvetica neue\",arial,sans-serif;font-weight:400;font-size:1rem;line-height:1.5;color:": 99.23,
+        "squirtle<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 99.23,
+        "bulbasaur<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 79.13,
+        "dachsbun ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.59,
+        "terapagos ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.17,
+        "hydrapple ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 21.13,
+        "lacey<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 16.79,
+        "galvantula ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 15.85,
+        "briar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 12.36,
+        "crispin<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.62,
+        "milcery<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.42,
+        "zeraora<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.99,
+        "area zero underdepths<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.74,
+        "gulpin<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.66,
+        "bravery charm<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.81,
+        "raboot<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.64,
+        "joltik<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.38,
+        "lileep<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.17,
+        "meditite<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.84,
+        "lapras ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.35,
+        "ledian<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.12,
+        "turtonator<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.44,
+        "cinderace ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.02,
+        "crabominable<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.49
       }
     },
     "sv6pt5": {
       "rarities": {
-        "HR": {
-          "avgPrice": 28.33,
-          "ev": 0.22
+        "IR": {
+          "avgPrice": 23.71,
+          "ev": 1.83
         },
         "SIR": {
           "avgPrice": 28.82,
           "ev": 0.33
         },
+        "HR": {
+          "avgPrice": 28.33,
+          "ev": 0.22
+        },
         "UR": {
           "avgPrice": 4.92,
           "ev": 0.34
-        },
-        "IR": {
-          "avgPrice": 23.71,
-          "ev": 1.83
         },
         "ACE": {
           "avgPrice": 0.6,
@@ -279,24 +442,48 @@
           "ev": 0.32
         }
       },
-      "notablePrices": {
-        "Fezandipiti ex": 47.37,
-        "Duskull": 51.52
-      },
+      "packEV": 4.25,
+      "packResalePrice": 0,
       "topCard": {
-        "name": "Duskull.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
+        "name": "Duskull<Style Data-Emotion=\"Css 1Hcv90L\">.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
         "price": 51.52
+      },
+      "notablePrices": {
+        "duskull<style data-emotion=\"css 1hcv90l\">.css-1hcv90l{margin:0;font-family:-apple-system,blinkmacsystemfont,\"segoe ui\",roboto,\"helvetica neue\",arial,sans-serif;font-weight:400;font-size:1rem;line-height:1.5;color:": 51.52,
+        "duskull<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 51.52,
+        "fezandipiti ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 12.99,
+        "basic darkness energy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 44.56,
+        "persian<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 42.25,
+        "munkidori<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 36.7,
+        "cassiopeia<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 36.58,
+        "houndoom<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 35.5,
+        "dusclops<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 32.61,
+        "horsea<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 30.61,
+        "earthen vessel<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 29.54,
+        "dusknoir<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 29.49,
+        "basic metal energy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 28.54,
+        "pecharunt ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 19.2,
+        "cresselia<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 21.6,
+        "okidogi ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 20.31,
+        "powerglass<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 19.81,
+        "munkidori ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 16.58,
+        "bewear<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 16.03,
+        "zorua<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 15.62,
+        "cufant<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.28,
+        "fraxure<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.08,
+        "okidogi<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.79,
+        "fezandipiti<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.84
       }
     },
     "sv6": {
       "rarities": {
-        "HR": {
-          "avgPrice": 7.09,
-          "ev": 0.05
-        },
         "SIR": {
           "avgPrice": 56.78,
           "ev": 0.66
+        },
+        "HR": {
+          "avgPrice": 7.09,
+          "ev": 0.05
         },
         "UR": {
           "avgPrice": 3.44,
@@ -327,33 +514,72 @@
           "ev": 0.4
         }
       },
-      "notablePrices": {
-        "Greninja ex": 279.18,
-        "Perrin": 112.13,
-        "Eevee": 69.72
-      },
+      "packEV": 3.42,
+      "packResalePrice": 0,
       "topCard": {
-        "name": "Greninja Ex.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
+        "name": "Greninja Ex<Style Data-Emotion=\"Css 1Hcv90L\">.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
         "price": 279.18
+      },
+      "notablePrices": {
+        "greninja ex<style data-emotion=\"css 1hcv90l\">.css-1hcv90l{margin:0;font-family:-apple-system,blinkmacsystemfont,\"segoe ui\",roboto,\"helvetica neue\",arial,sans-serif;font-weight:400;font-size:1rem;line-height:1.5;color:": 279.18,
+        "greninja ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.37,
+        "perrin<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.66,
+        "eevee<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 69.72,
+        "carmine<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.76,
+        "bloodmoon ursaluna ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.09,
+        "chansey<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 34.56,
+        "lana&": 4.09,
+        "kieran<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 25.62,
+        "teal mask ogerpon ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.72,
+        "hisuian growlithe<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 20.49,
+        "sinistcha ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 20.34,
+        "tatsugiri<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 19.5,
+        "wellspring mask ogerpon ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.19,
+        "cornerstone mask ogerpon ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.52,
+        "dragapult ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 11.9,
+        "buddy-buddy poffin<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 11.4,
+        "hearthflame mask ogerpon ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.67,
+        "infernape<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.42,
+        "pinsir<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.31,
+        "unfair stamp<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.18,
+        "secret box<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.05,
+        "phione<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.13,
+        "froslass<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.67,
+        "luminous energy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.43,
+        "dipplin<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.98,
+        "applin<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.57,
+        "enamorus<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.94,
+        "sunflora<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.34,
+        "enhanced hammer<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.83,
+        "timburr<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.31,
+        "lairon<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.98,
+        "poltchageist<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.91,
+        "torkoal<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.69,
+        "heliolisk<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.58,
+        "chimecho<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.46,
+        "probopass<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.39,
+        "blissey ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.27,
+        "wattrel<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.17,
+        "cramorant<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.11
       }
     },
     "sv5": {
       "rarities": {
-        "HR": {
-          "avgPrice": 9.46,
-          "ev": 0.07
-        },
         "SIR": {
           "avgPrice": 29.62,
           "ev": 0.35
         },
-        "UR": {
-          "avgPrice": 4.19,
-          "ev": 0.28
-        },
         "IR": {
           "avgPrice": 14.75,
           "ev": 1.14
+        },
+        "HR": {
+          "avgPrice": 9.46,
+          "ev": 0.07
+        },
+        "UR": {
+          "avgPrice": 4.19,
+          "ev": 0.28
         },
         "ACE": {
           "avgPrice": 4.39,
@@ -376,26 +602,63 @@
           "ev": 0.44
         }
       },
-      "notablePrices": {
-        "Raging Bolt ex": 62.21,
-        "Gastly": 60.67,
-        "Iron Crown ex": 36.1,
-        "Morty's Conviction": 39.34
-      },
+      "packEV": 3.49,
+      "packResalePrice": 0,
       "topCard": {
-        "name": "Raging Bolt Ex.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
+        "name": "Raging Bolt Ex<Style Data-Emotion=\"Css 1Hcv90L\">.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
         "price": 62.21
+      },
+      "notablePrices": {
+        "raging bolt ex<style data-emotion=\"css 1hcv90l\">.css-1hcv90l{margin:0;font-family:-apple-system,blinkmacsystemfont,\"segoe ui\",roboto,\"helvetica neue\",arial,sans-serif;font-weight:400;font-size:1rem;line-height:1.5;color:": 62.21,
+        "raging bolt ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.98,
+        "gastly<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 60.67,
+        "morty&": 2.21,
+        "gengar ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.68,
+        "walking wake ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.97,
+        "iron crown ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.47,
+        "sawsbuck<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 34.82,
+        "gouging fire ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.23,
+        "deerling<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 27.87,
+        "iron leaves ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.68,
+        "metagross<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 21.96,
+        "litten<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 21.32,
+        "bianca&": 2.9,
+        "cinccino<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 18.43,
+        "lickitung<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 17.58,
+        "iron boulder ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.41,
+        "neo upper energy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 15.61,
+        "eri<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.47,
+        "arbok<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 15.06,
+        "drampa<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 13.76,
+        "salvatore<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 12.0,
+        "minccino<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 11.64,
+        "hero&": 11.53,
+        "grotle<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.16,
+        "reuniclus<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.28,
+        "snom<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.82,
+        "chatot<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.96,
+        "shiftry<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.51,
+        "excadrill<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.53,
+        "cutiefly<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.55,
+        "bronzor<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.37,
+        "relicanth<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.33,
+        "mudsdale<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.27,
+        "charjabug<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.21,
+        "ciphermaniac&": 4.35,
+        "meltan<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.31,
+        "scizor ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.87,
+        "torterra ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.77
       }
     },
     "sv4pt5": {
       "rarities": {
-        "HR": {
-          "avgPrice": 8.37,
-          "ev": 0.13
-        },
         "SIR": {
           "avgPrice": 132.38,
           "ev": 2.28
+        },
+        "HR": {
+          "avgPrice": 8.37,
+          "ev": 0.13
         },
         "UR": {
           "avgPrice": 0.81,
@@ -430,36 +693,81 @@
           "ev": 0.29
         }
       },
-      "notablePrices": {
-        "Mew ex": 632.58,
-        "Charizard ex": 230.34,
-        "Gardevoir ex": 117.26,
-        "Pikachu": 44.97,
-        "Iono": 27.79,
-        "Snorlax": 26.4
-      },
+      "packEV": 5.31,
+      "packResalePrice": 0,
       "topCard": {
-        "name": "Mew Ex.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
+        "name": "Mew Ex<Style Data-Emotion=\"Css 1Hcv90L\">.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
         "price": 632.58
+      },
+      "notablePrices": {
+        "mew ex<style data-emotion=\"css 1hcv90l\">.css-1hcv90l{margin:0;font-family:-apple-system,blinkmacsystemfont,\"segoe ui\",roboto,\"helvetica neue\",arial,sans-serif;font-weight:400;font-size:1rem;line-height:1.5;color:": 632.58,
+        "mew ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 29.51,
+        "charizard ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 230.34,
+        "gardevoir ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.19,
+        "pikachu<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 44.97,
+        "iono<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 27.79,
+        "snorlax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 26.4,
+        "charmander<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 23.61,
+        "ditto<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 20.74,
+        "penny<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 20.62,
+        "mimikyu<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 20.31,
+        "clive<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 15.02,
+        "maushold<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 13.7,
+        "tandemaus<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 13.57,
+        "lucario<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 13.5,
+        "charmeleon<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 12.26,
+        "raichu<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 12.15,
+        "miraidon ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 11.44,
+        "koraidon ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.91,
+        "arven<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.78,
+        "entei<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.6,
+        "hawlucha<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.28,
+        "riolu<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.97,
+        "chi-yu ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.84,
+        "paldean wooper<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.38,
+        "luxray<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.15,
+        "jigglypuff<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.95,
+        "shinx<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.91,
+        "slowpoke<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.54,
+        "ralts<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.53,
+        "chien-pao ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.04,
+        "ceruledge<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.99,
+        "wo-chien ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.78,
+        "lechonk<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.77,
+        "scizor<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.66,
+        "scyther<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.57,
+        "kirlia<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.55,
+        "oddish<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.18,
+        "pidgey<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.03,
+        "abra<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.92,
+        "tinkaton<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.84,
+        "nemona<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.62,
+        "slowbro<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.53,
+        "pidgeotto<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.43,
+        "sableye<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.41,
+        "tatsugiri<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.3,
+        "vileplume<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.28,
+        "ting-lu ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.21,
+        "starmie<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.15
       }
     },
     "sv4": {
       "rarities": {
-        "HR": {
-          "avgPrice": 5.03,
-          "ev": 0.06
+        "IR": {
+          "avgPrice": 13.65,
+          "ev": 1.05
         },
         "SIR": {
           "avgPrice": 16.41,
           "ev": 0.35
         },
+        "HR": {
+          "avgPrice": 5.03,
+          "ev": 0.06
+        },
         "UR": {
           "avgPrice": 2.73,
           "ev": 0.18
-        },
-        "IR": {
-          "avgPrice": 13.65,
-          "ev": 1.05
         },
         "DR": {
           "avgPrice": 0.84,
@@ -478,25 +786,71 @@
           "ev": 0.42
         }
       },
-      "notablePrices": {
-        "Groudon": 79.57,
-        "Altaria ex": 43.52,
-        "Minun": 38.82
-      },
+      "packEV": 3.12,
+      "packResalePrice": 0,
       "topCard": {
-        "name": "Groudon.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
+        "name": "Groudon<Style Data-Emotion=\"Css 1Hcv90L\">.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
         "price": 79.57
+      },
+      "notablePrices": {
+        "groudon<style data-emotion=\"css 1hcv90l\">.css-1hcv90l{margin:0;font-family:-apple-system,blinkmacsystemfont,\"segoe ui\",roboto,\"helvetica neue\",arial,sans-serif;font-weight:400;font-size:1rem;line-height:1.5;color:": 79.57,
+        "groudon<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 79.57,
+        "altaria ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 43.52,
+        "minun<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 38.82,
+        "roaring moon ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.25,
+        "plusle<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 34.38,
+        "garchomp ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.11,
+        "steelix<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 26.62,
+        "morpeko<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 25.56,
+        "gholdengo ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.95,
+        "iron valiant ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 21.07,
+        "mantyke<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 19.72,
+        "golisopod ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 17.92,
+        "swablu<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 17.72,
+        "yveltal<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 17.37,
+        "magby<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 16.2,
+        "tapu koko ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 14.74,
+        "minior<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 14.49,
+        "joltik<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 13.39,
+        "aipom<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 11.8,
+        "parasol lady<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 11.55,
+        "iron hands ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.73,
+        "garbodor<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.55,
+        "loudred<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.55,
+        "gimmighoul<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.45,
+        "maushold ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.22,
+        "brute bonnet<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.65,
+        "porygon-z<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.45,
+        "snorunt<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.8,
+        "iron jugulis<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.53,
+        "professor sada&": 7.35,
+        "rika<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.35,
+        "mela<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.31,
+        "tulip<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.3,
+        "vanillish<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.11,
+        "toedscruel<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.1,
+        "sandy shocks ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.03,
+        "wimpod<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.62,
+        "blitzle<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.51,
+        "veluza<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.38,
+        "mienshao<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.33,
+        "aegislash<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.13,
+        "espathra<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.89,
+        "cyclizar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.89,
+        "iron moth<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.72,
+        "professor turo&": 5.47,
+        "counter catcher<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.53
       }
     },
     "sv3pt5": {
       "rarities": {
-        "HR": {
-          "avgPrice": 11.28,
-          "ev": 0.22
-        },
         "SIR": {
           "avgPrice": 153.47,
           "ev": 4.77
+        },
+        "HR": {
+          "avgPrice": 11.28,
+          "ev": 0.22
         },
         "UR": {
           "avgPrice": 14.13,
@@ -523,25 +877,64 @@
           "ev": 0.43
         }
       },
-      "notablePrices": {
-        "Charizard ex": 461.55,
-        "Venusaur ex": 154.36,
-        "Blastoise ex": 189.34
-      },
+      "packEV": 13.63,
+      "packResalePrice": 0,
       "topCard": {
-        "name": "Charizard Ex.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
+        "name": "Charizard Ex<Style Data-Emotion=\"Css 1Hcv90L\">.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
         "price": 461.55
+      },
+      "notablePrices": {
+        "charizard ex<style data-emotion=\"css 1hcv90l\">.css-1hcv90l{margin:0;font-family:-apple-system,blinkmacsystemfont,\"segoe ui\",roboto,\"helvetica neue\",arial,sans-serif;font-weight:400;font-size:1rem;line-height:1.5;color:": 461.55,
+        "charizard ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.89,
+        "blastoise ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 23.14,
+        "venusaur ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 15.48,
+        "charmander<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 147.41,
+        "zapdos ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.57,
+        "squirtle<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 126.74,
+        "charmeleon<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 100.44,
+        "bulbasaur<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 99.18,
+        "alakazam ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 12.07,
+        "pikachu<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 84.99,
+        "wartortle<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 76.77,
+        "psyduck<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 71.79,
+        "ivysaur<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 56.82,
+        "dragonair<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.71,
+        "mew ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.37,
+        "poliwhirl<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 36.9,
+        "machoke<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 22.84,
+        "erika&": 8.86,
+        "nidoking<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 20.48,
+        "giovanni&": 4.86,
+        "gengar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 18.87,
+        "caterpie<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 15.05,
+        "tangela<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 14.52,
+        "omanyte<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 13.94,
+        "mr. mime<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 12.97,
+        "ninetales ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 11.19,
+        "arbok ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.0,
+        "wigglytuff ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.12,
+        "kangaskhan ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.82,
+        "golem ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.47,
+        "jynx ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.85,
+        "basic psychic energy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.92,
+        "bill&": 4.52,
+        "daisy&": 4.31,
+        "snorlax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.81,
+        "pidgeotto<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.74,
+        "switch<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.62,
+        "mewtwo<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.48,
+        "metapod<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.04
       }
     },
     "sv3": {
       "rarities": {
-        "HR": {
-          "avgPrice": 13.5,
-          "ev": 0.26
-        },
         "SIR": {
           "avgPrice": 19.77,
           "ev": 0.62
+        },
+        "HR": {
+          "avgPrice": 13.5,
+          "ev": 0.26
         },
         "UR": {
           "avgPrice": 2.98,
@@ -568,18 +961,42 @@
           "ev": 0.43
         }
       },
-      "notablePrices": {
-        "Charizard ex (SIR)": 88.18,
-        "Charizard ex (Gold)": 88.18,
-        "Ninetales": 30.64
-      },
+      "packEV": 3.35,
+      "packResalePrice": 0,
       "topCard": {
-        "name": "Charizard Ex.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
+        "name": "Charizard Ex<Style Data-Emotion=\"Css 1Hcv90L\">.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
         "price": 88.18
+      },
+      "notablePrices": {
+        "charizard ex<style data-emotion=\"css 1hcv90l\">.css-1hcv90l{margin:0;font-family:-apple-system,blinkmacsystemfont,\"segoe ui\",roboto,\"helvetica neue\",arial,sans-serif;font-weight:400;font-size:1rem;line-height:1.5;color:": 88.18,
+        "charizard ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.66,
+        "ninetales<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 30.64,
+        "cleffa<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 21.05,
+        "pidgeot ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.21,
+        "gloom<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 15.4,
+        "pidgey<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 13.15,
+        "scizor<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 11.81,
+        "pidgeotto<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.41,
+        "houndour<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.82,
+        "lechonk<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.65,
+        "larvitar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.14,
+        "eiscue ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.96,
+        "tyranitar ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.62,
+        "basic fire energy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.51,
+        "bellibolt<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.71,
+        "revavroom ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.71,
+        "palafin<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.42,
+        "poppy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.88,
+        "geeta<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.67,
+        "varoom<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.38
       }
     },
     "sv2": {
       "rarities": {
+        "IR": {
+          "avgPrice": 26.39,
+          "ev": 2.03
+        },
         "HR": {
           "avgPrice": 5.51,
           "ev": 0.1
@@ -591,10 +1008,6 @@
         "UR": {
           "avgPrice": 3.3,
           "ev": 0.22
-        },
-        "IR": {
-          "avgPrice": 26.39,
-          "ev": 2.03
         },
         "DR": {
           "avgPrice": 0.93,
@@ -613,33 +1026,80 @@
           "ev": 0.38
         }
       },
-      "notablePrices": {
-        "Magikarp": 303.99,
-        "Tyranitar": 62.94,
-        "Raichu": 79.98
-      },
+      "packEV": 4.3,
+      "packResalePrice": 0,
       "topCard": {
-        "name": "Magikarp.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
+        "name": "Magikarp<Style Data-Emotion=\"Css 1Hcv90L\">.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
         "price": 303.99
+      },
+      "notablePrices": {
+        "magikarp<style data-emotion=\"css 1hcv90l\">.css-1hcv90l{margin:0;font-family:-apple-system,blinkmacsystemfont,\"segoe ui\",roboto,\"helvetica neue\",arial,sans-serif;font-weight:400;font-size:1rem;line-height:1.5;color:": 303.99,
+        "magikarp<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 303.99,
+        "raichu<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 79.98,
+        "tyranitar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 62.94,
+        "maushold<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 56.01,
+        "iono<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 12.23,
+        "fuecoco<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 38.36,
+        "chi-yu ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 36.95,
+        "tinkaton ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.82,
+        "marill<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 34.2,
+        "sprigatito<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 33.66,
+        "skeledirge ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 26.83,
+        "mismagius<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 26.2,
+        "tinkatuff<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 24.51,
+        "baxcalibur<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 24.48,
+        "meowscarada ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 21.89,
+        "chien-pao ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 21.55,
+        "heracross<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 20.16,
+        "tinkatink<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 18.64,
+        "boss&": 11.43,
+        "sudowoodo<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 16.05,
+        "eiscue<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 15.39,
+        "frigibax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 14.67,
+        "grusha<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 13.94,
+        "floragato<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 12.97,
+        "arctibax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 12.02,
+        "paldean tauros<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 11.97,
+        "wo-chien ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 11.94,
+        "quaxly<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 11.88,
+        "saguaro<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 11.61,
+        "quaquaval ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 11.42,
+        "fletchinder<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 11.37,
+        "crocalor<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.78,
+        "ting-lu ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.86,
+        "paldean wooper<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.05,
+        "farigiraf<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.85,
+        "dedenne ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.7,
+        "squawkabilly ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.57,
+        "gothorita<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.47,
+        "pyroar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.44,
+        "dendra<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.38,
+        "rookidee<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.23,
+        "tropius<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.91,
+        "flamigo<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.89,
+        "basic water energy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.74,
+        "bramblin<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.6,
+        "basic grass energy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.55,
+        "quaxwell<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.41
       }
     },
     "sv1": {
       "rarities": {
-        "HR": {
-          "avgPrice": 5.84,
-          "ev": 0.11
-        },
         "SIR": {
           "avgPrice": 16.69,
           "ev": 0.53
         },
-        "UR": {
-          "avgPrice": 3.12,
-          "ev": 0.2
-        },
         "IR": {
           "avgPrice": 13.16,
           "ev": 1.01
+        },
+        "HR": {
+          "avgPrice": 5.84,
+          "ev": 0.11
+        },
+        "UR": {
+          "avgPrice": 3.12,
+          "ev": 0.2
         },
         "DR": {
           "avgPrice": 0.68,
@@ -658,14 +1118,56 @@
           "ev": 0.44
         }
       },
-      "notablePrices": {
-        "Miraidon ex": 19.24,
-        "Koraidon ex": 16.23,
-        "Arcanine ex": 9.84
-      },
+      "packEV": 3.25,
+      "packResalePrice": 0,
       "topCard": {
-        "name": "Gardevoir Ex.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
+        "name": "Gardevoir Ex<Style Data-Emotion=\"Css 1Hcv90L\">.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
         "price": 71.2
+      },
+      "notablePrices": {
+        "gardevoir ex<style data-emotion=\"css 1hcv90l\">.css-1hcv90l{margin:0;font-family:-apple-system,blinkmacsystemfont,\"segoe ui\",roboto,\"helvetica neue\",arial,sans-serif;font-weight:400;font-size:1rem;line-height:1.5;color:": 71.2,
+        "gardevoir ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.79,
+        "drowzee<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 38.59,
+        "kirlia<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 35.52,
+        "ralts<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 34.09,
+        "riolu<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 30.98,
+        "slowpoke<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 28.16,
+        "miriam<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.57,
+        "miraidon ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.84,
+        "greavard<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 16.31,
+        "koraidon ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.24,
+        "fidough<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 15.06,
+        "pachirisu<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 12.55,
+        "armarouge<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 12.37,
+        "wiglett<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.69,
+        "dondozo<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.84,
+        "arcanine ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.84,
+        "great tusk ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.13,
+        "basic fighting energy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.31,
+        "gyarados ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.28,
+        "starly<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.23,
+        "tarountula<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.97,
+        "penny<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.48,
+        "kingambit<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.62,
+        "spidops ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.5,
+        "pawmot<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.43,
+        "arven<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.76,
+        "rare candy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.34,
+        "mabosstiff<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.64,
+        "clauncher<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.54,
+        "nest ball<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.33,
+        "dolliv<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.93,
+        "klawf<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.78,
+        "toedscool<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.72,
+        "sandile<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.7,
+        "iron treads ex<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.6,
+        "skwovet<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.48,
+        "jacq<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.3,
+        "basic lightning energy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.17,
+        "bombirdier<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.8,
+        "scovillain<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.76,
+        "professor&": 3.74,
+        "katy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.39
       }
     },
     "swsh12pt5": {
@@ -674,25 +1176,13 @@
           "avgPrice": 133.3,
           "ev": 1.07
         },
-        "GGU": {
-          "avgPrice": 6.25,
-          "ev": 0.23
-        },
         "GGVS": {
           "avgPrice": 47.8,
           "ev": 1.79
         },
-        "VMAX": {
-          "avgPrice": 4.16,
-          "ev": 0.08
-        },
-        "V": {
-          "avgPrice": 1.65,
-          "ev": 0.2
-        },
-        "RH": {
-          "avgPrice": 0.34,
-          "ev": 0.06
+        "GGU": {
+          "avgPrice": 6.25,
+          "ev": 0.23
         },
         "SR": {
           "avgPrice": 35.03,
@@ -706,9 +1196,21 @@
           "avgPrice": 2.51,
           "ev": 0.08
         },
+        "VMAX": {
+          "avgPrice": 4.16,
+          "ev": 0.08
+        },
+        "V": {
+          "avgPrice": 1.65,
+          "ev": 0.2
+        },
         "RAD": {
           "avgPrice": 4.21,
           "ev": 0.19
+        },
+        "RH": {
+          "avgPrice": 0.34,
+          "ev": 0.06
         },
         "R": {
           "avgPrice": 0.17,
@@ -723,20 +1225,74 @@
           "ev": 0.51
         }
       },
-      "notablePrices": {
-        "Giratina VSTAR": 221.77,
-        "Arceus VSTAR": 125.76,
-        "Mewtwo VSTAR": 189.07,
-        "Pikachu VMAX": 35.03,
-        "Deoxys VMAX": 47.77
-      },
+      "packEV": 7.9,
+      "packResalePrice": 0,
       "topCard": {
-        "name": "Giratina Vstar.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
+        "name": "Giratina Vstar<Style Data-Emotion=\"Css 1Hcv90L\">.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
         "price": 221.77
+      },
+      "notablePrices": {
+        "giratina vstar<style data-emotion=\"css 1hcv90l\">.css-1hcv90l{margin:0;font-family:-apple-system,blinkmacsystemfont,\"segoe ui\",roboto,\"helvetica neue\",arial,sans-serif;font-weight:400;font-size:1rem;line-height:1.5;color:": 221.77,
+        "giratina vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 221.77,
+        "mewtwo vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 189.07,
+        "arceus vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 125.76,
+        "origin forme dialga vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 97.99,
+        "origin forme palkia vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 87.66,
+        "leafeon vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 60.71,
+        "glaceon vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 50.33,
+        "mew<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 49.77,
+        "darkrai vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 48.98,
+        "deoxys vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 47.77,
+        "suicune v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 42.86,
+        "raikou v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 36.57,
+        "entei v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 36.24,
+        "pikachu<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 30.81,
+        "deoxys vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 33.45,
+        "hisuian zoroark vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 32.4,
+        "simisear vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 23.36,
+        "zacian v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 19.83,
+        "cynthia&": 18.28,
+        "zeraora vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 17.88,
+        "zamazenta v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 16.4,
+        "lapras<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 16.12,
+        "regigigas vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 15.55,
+        "zeraora vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 15.12,
+        "elesa&": 14.96,
+        "lumineon v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 14.9,
+        "latias<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 13.3,
+        "hisuian samurott v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 12.16,
+        "radiant charizard<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 11.65,
+        "keldeo<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 11.59,
+        "deoxys<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 11.43,
+        "gardenia&": 11.02,
+        "ditto<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.53,
+        "charizard vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.3,
+        "hisuian samurott vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.07,
+        "hoopa v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.19,
+        "miltank<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.74,
+        "rayquaza vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.46,
+        "magmortar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.5,
+        "riolu<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.02,
+        "altaria<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.87,
+        "irida<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.81,
+        "friends in sinnoh<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.74,
+        "turtwig<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.42,
+        "electivire<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.26,
+        "charizard v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.11,
+        "drapion v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.04,
+        "melony<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.67
       }
     },
     "swsh12": {
       "rarities": {
+        "UR": {
+          "avgPrice": 19.27,
+          "ev": 0.71
+        },
+        "TGVM": {
+          "avgPrice": 37.6,
+          "ev": 0.29
+        },
         "TGS": {
           "avgPrice": 9.99,
           "ev": 0.09
@@ -744,10 +1300,6 @@
         "TGU": {
           "avgPrice": 4.7,
           "ev": 0.05
-        },
-        "TGVM": {
-          "avgPrice": 37.6,
-          "ev": 0.29
         },
         "TGV": {
           "avgPrice": 12.42,
@@ -764,10 +1316,6 @@
         "RBOW": {
           "avgPrice": 9.83,
           "ev": 0.12
-        },
-        "UR": {
-          "avgPrice": 19.27,
-          "ev": 0.71
         },
         "VSTAR": {
           "avgPrice": 1.88,
@@ -802,20 +1350,61 @@
           "ev": 0.47
         }
       },
-      "notablePrices": {
-        "Lugia V": 359.59,
-        "Rayquaza VMAX": 103.72,
-        "Lugia VSTAR": 35.2,
-        "Alolan Vulpix V": 7.5,
-        "Regieleki VMAX": 7.36
-      },
+      "packEV": 3.17,
+      "packResalePrice": 0,
       "topCard": {
-        "name": "Lugia V.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
+        "name": "Lugia V<Style Data-Emotion=\"Css 1Hcv90L\">.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
         "price": 359.59
+      },
+      "notablePrices": {
+        "lugia v<style data-emotion=\"css 1hcv90l\">.css-1hcv90l{margin:0;font-family:-apple-system,blinkmacsystemfont,\"segoe ui\",roboto,\"helvetica neue\",arial,sans-serif;font-weight:400;font-size:1rem;line-height:1.5;color:": 359.59,
+        "lugia v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.88,
+        "rayquaza vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 16.93,
+        "lugia vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.76,
+        "blaziken vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 29.26,
+        "blaziken v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 23.81,
+        "alolan vulpix vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 20.18,
+        "unown v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 20.1,
+        "regidrago v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 18.76,
+        "serena<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 12.94,
+        "serperior v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 15.84,
+        "blissey v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 14.69,
+        "judge<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.32,
+        "duraludon vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.14,
+        "corviknight v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.0,
+        "mawile v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.55,
+        "zeraora v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.33,
+        "friends in galar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.78,
+        "skuntank v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.29,
+        "unown vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.17,
+        "alolan vulpix v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.5,
+        "regieleki vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.36,
+        "corviknight vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.29,
+        "regidrago vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.2,
+        "ho-oh v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.72,
+        "serperior vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.45,
+        "brandon<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.59,
+        "gardevoir<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.55,
+        "energy switch<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.51,
+        "mawile vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.38,
+        "furisode girl<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.65,
+        "candice<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.88,
+        "milotic<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.36,
+        "reshiram v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.15,
+        "lance<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.93,
+        "altaria<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.86,
+        "wallace<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.11,
+        "worker<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.16,
+        "braixen<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.72,
+        "flaaffy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.7
       }
     },
     "swsh11": {
       "rarities": {
+        "UR": {
+          "avgPrice": 37.75,
+          "ev": 1.47
+        },
         "TGS": {
           "avgPrice": 20.1,
           "ev": 0.18
@@ -843,10 +1432,6 @@
         "RBOW": {
           "avgPrice": 6.89,
           "ev": 0.09
-        },
-        "UR": {
-          "avgPrice": 37.75,
-          "ev": 1.47
         },
         "VSTAR": {
           "avgPrice": 1.32,
@@ -881,19 +1466,67 @@
           "ev": 0.54
         }
       },
-      "notablePrices": {
-        "Giratina V": 684.83,
-        "Aerodactyl V": 161.76,
-        "Pikachu VMAX": 80.63,
-        "Giratina VSTAR": 24.62
-      },
+      "packEV": 4.62,
+      "packResalePrice": 0,
       "topCard": {
-        "name": "Giratina V.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
+        "name": "Giratina V<Style Data-Emotion=\"Css 1Hcv90L\">.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
         "price": 684.83
+      },
+      "notablePrices": {
+        "giratina v<style data-emotion=\"css 1hcv90l\">.css-1hcv90l{margin:0;font-family:-apple-system,blinkmacsystemfont,\"segoe ui\",roboto,\"helvetica neue\",arial,sans-serif;font-weight:400;font-size:1rem;line-height:1.5;color:": 684.83,
+        "giratina v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 12.24,
+        "aerodactyl v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 161.76,
+        "pikachu vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 18.35,
+        "pikachu v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 70.88,
+        "gengar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.75,
+        "pikachu<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 31.82,
+        "rotom v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 24.89,
+        "giratina vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 14.37,
+        "charizard<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 22.73,
+        "mew vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 21.84,
+        "galarian perrserker v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 15.03,
+        "snorlax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 14.94,
+        "aerodactyl vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 12.56,
+        "boss&": 10.21,
+        "eternatus vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.77,
+        "nessa<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.49,
+        "kyurem vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.44,
+        "crobat v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.88,
+        "enamorus v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.37,
+        "orbeetle vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.33,
+        "hisuian goodra vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.93,
+        "gallade v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.14,
+        "hisuian zoroark vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.53,
+        "drapion vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.85,
+        "centiskorch vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.59,
+        "magnezone vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.37,
+        "eternatus v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.12,
+        "arezu<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.93,
+        "lady<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.95,
+        "orbeetle v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.43,
+        "miss fortune sisters<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.03,
+        "volo<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.98,
+        "centiskorch v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.95,
+        "fantina<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.55,
+        "hisuian arcanine<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.51,
+        "iscan<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.21,
+        "adventurer&": 3.14,
+        "colress&": 3.07,
+        "thorton<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.93,
+        "kyurem v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.6,
+        "delphox v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.54
       }
     },
     "swsh10": {
       "rarities": {
+        "UR": {
+          "avgPrice": 15.98,
+          "ev": 0.63
+        },
+        "TGV": {
+          "avgPrice": 26.46,
+          "ev": 0.47
+        },
         "TGS": {
           "avgPrice": 3.82,
           "ev": 0.03
@@ -906,10 +1539,6 @@
           "avgPrice": 7.6,
           "ev": 0.03
         },
-        "TGV": {
-          "avgPrice": 26.46,
-          "ev": 0.47
-        },
         "TGH": {
           "avgPrice": 3.22,
           "ev": 0.28
@@ -921,10 +1550,6 @@
         "RBOW": {
           "avgPrice": 6.96,
           "ev": 0.09
-        },
-        "UR": {
-          "avgPrice": 15.98,
-          "ev": 0.63
         },
         "VSTAR": {
           "avgPrice": 1.5,
@@ -959,14 +1584,66 @@
           "ev": 0.53
         }
       },
-      "notablePrices": {},
+      "packEV": 3.1,
+      "packResalePrice": 0,
       "topCard": {
-        "name": "Machamp V.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
+        "name": "Machamp V<Style Data-Emotion=\"Css 1Hcv90L\">.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
         "price": 160.35
+      },
+      "notablePrices": {
+        "machamp v<style data-emotion=\"css 1hcv90l\">.css-1hcv90l{margin:0;font-family:-apple-system,blinkmacsystemfont,\"segoe ui\",roboto,\"helvetica neue\",arial,sans-serif;font-weight:400;font-size:1rem;line-height:1.5;color:": 160.35,
+        "machamp v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.26,
+        "starmie v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 100.35,
+        "origin forme palkia v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 72.43,
+        "garchomp v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.38,
+        "origin forme dialga v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 52.11,
+        "beedrill v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 47.82,
+        "hisuian sneasler v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.52,
+        "jirachi v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 19.1,
+        "hisuian lilligant v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 18.44,
+        "zacian v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 16.05,
+        "galarian moltres v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 14.85,
+        "machamp vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.32,
+        "origin forme dialga vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.51,
+        "origin forme palkia vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.42,
+        "galarian articuno v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 11.54,
+        "hisuian typhlosion vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 11.06,
+        "galarian zapdos v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.78,
+        "shadow rider calyrex vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.19,
+        "irida<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.79,
+        "shadow rider calyrex v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.77,
+        "kingdra<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.03,
+        "kleavor vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.33,
+        "hisuian decidueye vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.21,
+        "zamazenta v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.98,
+        "hisuian samurott vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.27,
+        "gardenia&": 5.22,
+        "ice rider calyrex v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.69,
+        "hisuian lilligant vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.25,
+        "path to the peak<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.18,
+        "heatran vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.95,
+        "gardevoir<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.66,
+        "hisuian typhlosion v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.99,
+        "adaman<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.83,
+        "ice rider calyrex vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.8,
+        "allister<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.79,
+        "roxanne<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.53,
+        "kamado<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.52,
+        "luxray v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.3,
+        "bea<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.22,
+        "jubilife village<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.2
       }
     },
     "swsh9": {
       "rarities": {
+        "UR": {
+          "avgPrice": 19.57,
+          "ev": 0.81
+        },
+        "TGVM": {
+          "avgPrice": 39.58,
+          "ev": 0.41
+        },
         "TGS": {
           "avgPrice": 3.64,
           "ev": 0.03
@@ -974,10 +1651,6 @@
         "TGU": {
           "avgPrice": 3.65,
           "ev": 0.04
-        },
-        "TGVM": {
-          "avgPrice": 39.58,
-          "ev": 0.41
         },
         "TGV": {
           "avgPrice": 30.68,
@@ -994,10 +1667,6 @@
         "RBOW": {
           "avgPrice": 12.79,
           "ev": 0.19
-        },
-        "UR": {
-          "avgPrice": 19.57,
-          "ev": 0.81
         },
         "VSTAR": {
           "avgPrice": 4.39,
@@ -1028,21 +1697,63 @@
           "ev": 0.51
         }
       },
-      "notablePrices": {},
+      "packEV": 4.12,
+      "packResalePrice": 0,
       "topCard": {
-        "name": "Charizard V.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
+        "name": "Charizard V<Style Data-Emotion=\"Css 1Hcv90L\">.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
         "price": 252.3
+      },
+      "notablePrices": {
+        "charizard v<style data-emotion=\"css 1hcv90l\">.css-1hcv90l{margin:0;font-family:-apple-system,blinkmacsystemfont,\"segoe ui\",roboto,\"helvetica neue\",arial,sans-serif;font-weight:400;font-size:1rem;line-height:1.5;color:": 252.3,
+        "charizard v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.85,
+        "umbreon vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 76.86,
+        "charizard vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.32,
+        "sylveon vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 58.13,
+        "mimikyu v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 56.62,
+        "sylveon v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 54.01,
+        "umbreon v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 53.44,
+        "arceus v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.73,
+        "mimikyu vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.15,
+        "ultra ball<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 23.15,
+        "vaporeon<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 17.39,
+        "flareon<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 15.82,
+        "pikachu v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 14.91,
+        "galarian moltres v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 14.13,
+        "eevee<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 13.94,
+        "arceus vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.71,
+        "jolteon<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 12.29,
+        "zekrom<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 12.1,
+        "lumineon v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 12.06,
+        "honchkrow v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 11.48,
+        "galarian articuno v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.99,
+        "galarian zapdos v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.65,
+        "boltund v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.16,
+        "marnie&": 10.01,
+        "rapid strike urshifu vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.64,
+        "cynthia&": 5.97,
+        "single strike urshifu vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.76,
+        "acerola&": 7.17,
+        "shaymin vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.28,
+        "gloria<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.64,
+        "whimsicott vstar<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.55,
+        "dedenne<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.31,
+        "rapid strike urshifu v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.18,
+        "single strike urshifu v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.76,
+        "raichu v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 4.69,
+        "cheren&": 3.38,
+        "roseanne&": 2.58,
+        "houndoom<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.67
       }
     },
     "swsh8": {
       "rarities": {
-        "SR": {
-          "avgPrice": 4.58,
-          "ev": 0.04
-        },
         "RBOW": {
           "avgPrice": 91.31,
           "ev": 0.99
+        },
+        "SR": {
+          "avgPrice": 4.58,
+          "ev": 0.04
         },
         "UR": {
           "avgPrice": 12.39,
@@ -1073,21 +1784,58 @@
           "ev": 0.53
         }
       },
-      "notablePrices": {},
+      "packEV": 3.25,
+      "packResalePrice": 0,
       "topCard": {
-        "name": "Gengar Vmax.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
+        "name": "Gengar Vmax<Style Data-Emotion=\"Css 1Hcv90L\">.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
         "price": 750.82
+      },
+      "notablePrices": {
+        "gengar vmax<style data-emotion=\"css 1hcv90l\">.css-1hcv90l{margin:0;font-family:-apple-system,blinkmacsystemfont,\"segoe ui\",roboto,\"helvetica neue\",arial,sans-serif;font-weight:400;font-size:1rem;line-height:1.5;color:": 750.82,
+        "gengar vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 43.38,
+        "espeon vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 290.84,
+        "mew vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 12.42,
+        "mew v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.47,
+        "celebi v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 63.36,
+        "inteleon vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 1.95,
+        "genesect v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.97,
+        "greedent v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 1.73,
+        "chandelure vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.99,
+        "greedent vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 1.51,
+        "grass energy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.26,
+        "gengar v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.19,
+        "boltund vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 1.74,
+        "fire energy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 6.31,
+        "flaaffy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.62,
+        "sandaconda v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 5.25,
+        "shauna<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.57,
+        "elesa&": 3.86,
+        "schoolboy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 1.47,
+        "dancer<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 1.41,
+        "sidney<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 3.69,
+        "chili &amp; cilan &amp; cress<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 1.68,
+        "schoolgirl<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 1.63,
+        "chandelure v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.77,
+        "cinderace vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.65,
+        "pikachu v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.37,
+        "training court<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.12,
+        "hoopa v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 2.02,
+        "boltund v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 1.96,
+        "greninja v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 1.78,
+        "rillaboom vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 1.75,
+        "power tablet<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 1.6,
+        "tsareena v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 1.54
       }
     },
     "swsh7": {
       "rarities": {
-        "SR": {
-          "avgPrice": 7.11,
-          "ev": 0.06
-        },
         "RBOW": {
           "avgPrice": 166.75,
           "ev": 1.9
+        },
+        "SR": {
+          "avgPrice": 7.11,
+          "ev": 0.06
         },
         "UR": {
           "avgPrice": 51.06,
@@ -1118,16 +1866,47 @@
           "ev": 0.51
         }
       },
-      "notablePrices": {
-        "Umbreon VMAX": 1747.16,
-        "Rayquaza VMAX": 674.76,
-        "Dragonite V": 360.33,
-        "Umbreon V": 300.86,
-        "Glaceon VMAX": 243.89
-      },
+      "packEV": 5.71,
+      "packResalePrice": 0,
       "topCard": {
-        "name": "Umbreon Vmax.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
+        "name": "Umbreon Vmax<Style Data-Emotion=\"Css 1Hcv90L\">.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
         "price": 1747.16
+      },
+      "notablePrices": {
+        "umbreon vmax<style data-emotion=\"css 1hcv90l\">.css-1hcv90l{margin:0;font-family:-apple-system,blinkmacsystemfont,\"segoe ui\",roboto,\"helvetica neue\",arial,sans-serif;font-weight:400;font-size:1rem;line-height:1.5;color:": 1747.16,
+        "umbreon vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 22.91,
+        "rayquaza vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.14,
+        "dragonite v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 25.15,
+        "leafeon vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.42,
+        "sylveon vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 15.48,
+        "umbreon v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 44.49,
+        "rayquaza v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 30.66,
+        "glaceon vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 30.47,
+        "espeon v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 19.34,
+        "sylveon v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 30.32,
+        "leafeon v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 15.57,
+        "glaceon v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 20.91,
+        "noivern v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 53.6,
+        "gyarados vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.5,
+        "golurk v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 25.41,
+        "darkness energy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 23.75,
+        "vaporeon v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 21.3,
+        "duraludon vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 18.62,
+        "medicham v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 17.98,
+        "jolteon v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 17.94,
+        "flareon v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 16.24,
+        "duraludon v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 16.21,
+        "gyarados v<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 15.21,
+        "flareon vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 13.28,
+        "espeon vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 12.44,
+        "aroma lady<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 11.49,
+        "metal energy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 10.87,
+        "cresselia<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 9.7,
+        "vaporeon vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 8.79,
+        "lycanroc vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.92,
+        "lightning energy<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.55,
+        "dracozolt vmax<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.54,
+        "froslass<span class=\"muitypography-root muitypography-body1 css-1hcv90l\">": 7.41
       }
     }
   }
