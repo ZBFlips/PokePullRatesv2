@@ -5,12 +5,12 @@ import time
 import sys
 import random
 from datetime import datetime, timezone
-from html.parser import HTMLParser
 
 # ── Config ────────────────────────────────────────────────────
 BASE_URL    = "https://www.thepricedex.com"
 OUTPUT      = "prices.json"
 
+# Set Definitions with custom PC slugs for higher accuracy
 SETS = [
     { "id": "me2pt5",    "slug": "ascended-heroes",     "guide": "ascended-heroes"     },
     { "id": "sv9",       "slug": "journey-together",     "guide": "journey-together"    },
@@ -23,16 +23,22 @@ SETS = [
     { "id": "sv4pt5",    "slug": "paldean-fates",        "guide": "paldean-fates"       },
     { "id": "sv4",       "slug": "paradox-rift",         "guide": "paradox-rift"        },
     { "id": "sv3pt5",    "slug": "pokemon-151",          "guide": "151"                 },
-    { "id": "sv3",       "slug": "obsidian-flames",      "guide": "obsidian-flames"     }
+    { "id": "sv3",       "slug": "obsidian-flames",      "guide": "obsidian-flames"     },
+    { "id": "sv2",       "slug": "paldea-evolved",       "guide": "paldea-evolved"      },
+    { "id": "sv1",       "slug": "scarlet-violet",       "guide": "scarlet-violet"      },
+    { "id": "swsh12pt5", "slug": "crown-zenith",         "guide": "crown-zenith"        },
+    { "id": "swsh12",    "slug": "silver-tempest",       "guide": "silver-tempest"      },
+    { "id": "swsh11",    "slug": "lost-origin",          "guide": "lost-origin"         },
+    { "id": "swsh10",    "slug": "astral-radiance",      "guide": "astral-radiance"     },
+    { "id": "swsh9",     "slug": "brilliant-stars",      "guide": "brilliant-stars"     },
+    { "id": "swsh8",     "slug": "fusion-strike",        "guide": "fusion-strike"       },
+    { "id": "swsh7",     "slug": "evolving-skies",       "guide": "evolving-skies"      },
 ]
 
 # ── Engine ────────────────────────────────────────────────────
 
 def fetch_content(url):
-    """
-    Tries Playwright for a real browser render. 
-    Falls back to Urllib if running on a machine without Playwright.
-    """
+    """Guaranteed fetch using Playwright for GitHub Actions with human-like scrolling."""
     try:
         from playwright.sync_api import sync_playwright
         with sync_playwright() as p:
@@ -41,15 +47,17 @@ def fetch_content(url):
             page = context.new_page()
             try:
                 page.goto(url, wait_until="networkidle", timeout=60000)
-                # Mimic human scroll to trigger lazy-loaded price elements
+                # Scroll to trigger lazy-loaded price elements
                 page.mouse.wheel(0, 500)
                 time.sleep(2)
                 return page.content()
             finally:
                 browser.close()
     except ImportError:
+        # Local fallback if Playwright isn't installed
         import urllib.request
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        headers = {"User-Agent": "Mozilla/5.0"}
+        req = urllib.request.Request(url, headers=headers)
         try:
             with urllib.request.urlopen(req, timeout=15) as r:
                 return r.read().decode('utf-8', errors='replace')
@@ -69,10 +77,7 @@ def main():
     except: existing = {"sets": {}}
 
     now = datetime.now(timezone.utc)
-    new_data = {
-        "lastUpdated": now.strftime('%B %d, %Y at %H:%M UTC'),
-        "sets": {}
-    }
+    new_data = {"lastUpdated": now.strftime('%B %d, %Y at %H:%M UTC'), "sets": {}}
 
     for s in SETS:
         sid, slug = s["id"], s["slug"]
@@ -92,6 +97,16 @@ def main():
                 m = re.search(r'Ungraded.*?\$([\d,]+\.\d{2})', pc_html, re.I | re.S)
             
             sealed = parse_price(m.group(1)) if m else 0.0
+
+        # SANITY CHECK GUARD: Fix for the $63.99 Bundle Bug
+        # Special sets like Ascended Heroes only sell in bundles of 6.
+        if sealed >= 55.0 and sealed <= 75.0 and sid != 'swsh7':
+            print(f"    ⚠ Detected Bundle price (${sealed}). Adjusting to single pack estimate...")
+            sealed = round(sealed / 6, 2)
+        elif sealed > 25.0 and sid != 'swsh7':
+            # Evolving Skies is the only modern pack allowed to be over $25.
+            print(f"    ⚠ Price out of range (${sealed}). Reverting to previous data.")
+            sealed = existing.get("sets", {}).get(sid, {}).get("packResalePrice", 0.0)
 
         # 2. Scrape EV (ThePriceDex)
         ev_html = fetch_content(f"{BASE_URL}/set/{sid}/{slug}/pull-rates")
