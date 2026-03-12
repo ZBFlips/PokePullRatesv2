@@ -242,7 +242,42 @@ if (!set) {
   document.body.innerHTML = `<div style="text-align:center;padding:80px;font-family:monospace;color:#4b5563;">Set not found. <a href="index.html" style="color:#7c3aed">← Go back</a></div>`;
 } else {
   document.title = `${set.name} Pull Rates — PullRates.gg`;
-  renderPage(set);
+
+  // Load prices.json, merge live prices, then render
+  fetch('prices.json?v=' + Date.now())
+    .then(r => r.ok ? r.json() : null)
+    .catch(() => null)
+    .then(prices => {
+      if (prices && prices.sets && prices.sets[set.id]) {
+        const live = prices.sets[set.id];
+        // packEV
+        if (live.packEV) set.packEV = live.packEV;
+        // topCard
+        if (live.topCard && live.topCard.price) {
+          set.topCard.price = live.topCard.price;
+          if (live.topCard.name) set.topCard.name = live.topCard.name;
+        }
+        // rarity avgPrices & evs
+        if (live.rarities) {
+          set.rarities.forEach(r => {
+            const lr = live.rarities[r.key];
+            if (lr) {
+              if (lr.avgPrice !== undefined) r.avgPrice = lr.avgPrice;
+              if (lr.ev      !== undefined) r.ev       = lr.ev;
+            }
+          });
+        }
+        // notable card prices
+        if (live.notablePrices) {
+          set.notable.forEach(n => {
+            if (live.notablePrices[n.name] !== undefined) n.price = live.notablePrices[n.name];
+          });
+        }
+        // update timestamp
+        if (prices.lastUpdated) set.pricesUpdated = prices.lastUpdated;
+      }
+      renderPage(set);
+    });
 }
 
 function renderPage(set) {

@@ -386,9 +386,61 @@ document.addEventListener('click', e => {
     cardBox.style.display = 'none';
 });
 
-// ── Init ───────────────────────────────────────────────────
-renderGrid(SETS);
-document.getElementById('result-count').textContent = `${SETS.length} sets`;
+// ── Init: load prices.json and merge into SETS ──────────────
+async function initWithPrices() {
+  try {
+    const resp = await fetch('prices.json?v=' + Date.now());
+    if (resp.ok) {
+      const prices = await resp.json();
+      const pd = prices.sets || {};
+
+      // Merge live prices into SETS
+      SETS.forEach(set => {
+        const live = pd[set.id];
+        if (!live) return;
+        // Update packEV if provided
+        if (live.packEV) set.packEV = live.packEV;
+        // Update top card price
+        if (live.topCard && live.topCard.price) {
+          set.topCard.price = live.topCard.price;
+          // Optionally update name too if it changed
+          if (live.topCard.name) set.topCard.name = live.topCard.name;
+        }
+        // Update rarity avgPrices & EVs
+        if (live.rarities) {
+          set.rarities.forEach(r => {
+            if (live.rarities[r.key]) {
+              if (live.rarities[r.key].avgPrice !== undefined) r.avgPrice = live.rarities[r.key].avgPrice;
+              if (live.rarities[r.key].ev !== undefined)       r.ev       = live.rarities[r.key].ev;
+            }
+          });
+        }
+        // Update notable card prices
+        if (live.notablePrices) {
+          set.notable.forEach(n => {
+            if (live.notablePrices[n.name] !== undefined) n.price = live.notablePrices[n.name];
+          });
+        }
+      });
+
+      // Show last-updated badge in hero
+      if (prices.lastUpdated) {
+        const badge = document.createElement('div');
+        badge.style.cssText = 'font-family:Space Mono,monospace;font-size:9px;color:#1f2937;margin-top:-18px;margin-bottom:18px;';
+        badge.innerHTML = `<span style="display:inline-block;width:6px;height:6px;background:#22c55e;border-radius:50%;vertical-align:middle;margin-right:5px;animation:pulse 2s ease infinite"></span>Prices auto-updated ${prices.lastUpdated}`;
+        document.querySelector('.hero p').after(badge);
+      }
+    }
+  } catch (e) {
+    // Silently fall back to hardcoded data — site still works
+    console.warn('prices.json load failed, using bundled data', e);
+  }
+
+  renderGrid(SETS);
+  document.getElementById('result-count').textContent = `${SETS.length} sets`;
+}
+
+initWithPrices();
 </script>
 </body>
 </html>
