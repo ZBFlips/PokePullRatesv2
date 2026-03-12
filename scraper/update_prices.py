@@ -3,6 +3,7 @@
 PullRates.gg — Automated Price Updater
 Scrapes ThePriceDex for current card prices and writes prices.json.
 Run via GitHub Actions every Sunday, or manually anytime.
+Uses only Python stdlib — no pip installs required.
 """
 
 import json
@@ -12,11 +13,12 @@ import sys
 from datetime import datetime, timezone
 from urllib.request import urlopen, Request
 from urllib.error import URLError, HTTPError
+from html.parser import HTMLParser
 
 # ── Config ────────────────────────────────────────────────────
-BASE_URL   = "https://www.thepricedex.com"
-OUTPUT     = "prices.json"          # written relative to repo root
-DELAY      = 2.5                    # seconds between requests (be polite)
+BASE_URL    = "https://www.thepricedex.com"
+OUTPUT      = "prices.json"
+DELAY       = 3.0
 MAX_RETRIES = 3
 HEADERS = {
     "User-Agent": (
@@ -29,341 +31,422 @@ HEADERS = {
 }
 
 # ── Set definitions ───────────────────────────────────────────
-# id: used in data.js   slug: used in ThePriceDex URLs
+# guide: the slug used in /guides/most-expensive-{guide}-cards
 SETS = [
-    # Mega Evolution
-    { "id": "me2pt5",    "slug": "ascended-heroes"      },
-    # Scarlet & Violet
-    { "id": "sv9",       "slug": "journey-together"      },
-    { "id": "sv8pt5",    "slug": "prismatic-evolutions"  },
-    { "id": "sv8",       "slug": "surging-sparks"        },
-    { "id": "sv7",       "slug": "stellar-crown"         },
-    { "id": "sv6pt5",    "slug": "shrouded-fable"        },
-    { "id": "sv6",       "slug": "twilight-masquerade"   },
-    { "id": "sv5",       "slug": "temporal-forces"       },
-    { "id": "sv4pt5",    "slug": "paldean-fates"         },
-    { "id": "sv4",       "slug": "paradox-rift"          },
-    { "id": "sv3pt5",    "slug": "pokemon-151"           },
-    { "id": "sv3",       "slug": "obsidian-flames"       },
-    { "id": "sv2",       "slug": "paldea-evolved"        },
-    { "id": "sv1",       "slug": "scarlet-violet"        },
-    # Sword & Shield
-    { "id": "swsh12pt5", "slug": "crown-zenith"          },
-    { "id": "swsh12",    "slug": "silver-tempest"        },
-    { "id": "swsh11",    "slug": "lost-origin"           },
-    { "id": "swsh7",     "slug": "evolving-skies"        },
+    { "id": "me2pt5",    "slug": "ascended-heroes",     "guide": "ascended-heroes"     },
+    { "id": "sv9",       "slug": "journey-together",     "guide": "journey-together"    },
+    { "id": "sv8pt5",    "slug": "prismatic-evolutions", "guide": "prismatic-evolutions"},
+    { "id": "sv8",       "slug": "surging-sparks",       "guide": "surging-sparks"      },
+    { "id": "sv7",       "slug": "stellar-crown",        "guide": "stellar-crown"       },
+    { "id": "sv6pt5",    "slug": "shrouded-fable",       "guide": "shrouded-fable"      },
+    { "id": "sv6",       "slug": "twilight-masquerade",  "guide": "twilight-masquerade" },
+    { "id": "sv5",       "slug": "temporal-forces",      "guide": "temporal-forces"     },
+    { "id": "sv4pt5",    "slug": "paldean-fates",        "guide": "paldean-fates"       },
+    { "id": "sv4",       "slug": "paradox-rift",         "guide": "paradox-rift"        },
+    { "id": "sv3pt5",    "slug": "pokemon-151",          "guide": "151"                 },
+    { "id": "sv3",       "slug": "obsidian-flames",      "guide": "obsidian-flames"     },
+    { "id": "sv2",       "slug": "paldea-evolved",       "guide": "paldea-evolved"      },
+    { "id": "sv1",       "slug": "scarlet-violet",       "guide": "scarlet-violet"      },
+    { "id": "swsh12pt5", "slug": "crown-zenith",         "guide": "crown-zenith"        },
+    { "id": "swsh12",    "slug": "silver-tempest",       "guide": "silver-tempest"      },
+    { "id": "swsh11",    "slug": "lost-origin",          "guide": "lost-origin"         },
     { "id": "swsh10",    "slug": "astral-radiance",      "guide": "astral-radiance"     },
     { "id": "swsh9",     "slug": "brilliant-stars",      "guide": "brilliant-stars"     },
     { "id": "swsh8",     "slug": "fusion-strike",        "guide": "fusion-strike"       },
+    { "id": "swsh7",     "slug": "evolving-skies",       "guide": "evolving-skies"      },
 ]
 
-# Map ThePriceDex rarity display names → our internal keys
 RARITY_MAP = {
-    # SV era
-    "Mega Hyper Rare":         "MHR",
-    "Hyper Rare":               "HR",
-    "Special Illustration Rare":"SIR",
-    "Mega Attack Rare":         "MAR",
-    "Illustration Rare":        "IR",
-    "ACE SPEC Rare":            "ACE",
-    "Double Rare":              "DR",
-    # Paldean Fates shinies
-    "Shiny Rare":               "SHR",
-    "Shiny Ultra Rare":         "SHU",
-    # SWSH Trainer Gallery
-    "TG Secret Rare":           "TGS",
-    "Rainbow Rare":             "RBOW",
-    "TG Ultra Rare":            "TGU",
-    "TG Rare Holo VMAX":        "TGVM",
-    "TG Rare Holo V":           "TGV",
-    "TG Rare Holo":             "TGH",
-    # SWSH Galarian Gallery (Crown Zenith)
-    "GG Secret Rare":           "GGS",
-    "GG Ultra Rare":            "GGU",
-    "GG Rare Holo VSTAR":       "GGVS",
-    "GG Rare Holo VMAX":        "TGVM",  # reuse key
-    "GG Rare Holo V":           "TGV",   # reuse key
-    "GG Rare Holo":             "TGH",   # reuse key
-    # SWSH regular
-    "Secret Rare":              "SR",
-    "Rare Holo VSTAR":          "VSTAR",
-    "Rare Holo VMAX":           "VMAX",
-    "Rare Holo V":              "V",
-    "Radiant Rare":             "RAD",
-    "Rare Holo":                "RH",
-    # Shared
-    "Ultra Rare":               "UR",
-    "Rare":                     "R",
-    "Uncommon":                 "U",
-    "Common":                   "C",
+    "mega hyper rare":           "MHR",
+    "hyper rare":                "HR",
+    "special illustration rare": "SIR",
+    "mega attack rare":          "MAR",
+    "illustration rare":         "IR",
+    "ace spec rare":             "ACE",
+    "double rare":               "DR",
+    "shiny rare":                "SHR",
+    "shiny ultra rare":          "SHU",
+    "tg secret rare":            "TGS",
+    "rainbow rare":              "RBOW",
+    "tg ultra rare":             "TGU",
+    "tg rare holo vmax":         "TGVM",
+    "tg rare holo v":            "TGV",
+    "tg rare holo":              "TGH",
+    "gg secret rare":            "GGS",
+    "gg ultra rare":             "GGU",
+    "gg rare holo vstar":        "GGVS",
+    "secret rare":               "SR",
+    "rare holo vstar":           "VSTAR",
+    "rare holo vmax":            "VMAX",
+    "rare holo v":               "V",
+    "radiant rare":              "RAD",
+    "rare holo":                 "RH",
+    "ultra rare":                "UR",
+    "rare":                      "R",
+    "uncommon":                  "U",
+    "common":                    "C",
 }
 
-
-# ── HTTP helper ───────────────────────────────────────────────
-def fetch(url, retries=MAX_RETRIES):
-    """Fetch a URL and return the text content, with retries."""
-    for attempt in range(retries):
-        try:
-            req = Request(url, headers=HEADERS)
-            with urlopen(req, timeout=20) as resp:
-                return resp.read().decode("utf-8", errors="replace")
-        except HTTPError as e:
-            if e.code == 429:
-                wait = 10 * (attempt + 1)
-                print(f"    Rate limited, waiting {wait}s…")
-                time.sleep(wait)
-            elif e.code == 404:
-                print(f"    404 Not Found: {url}")
-                return None
-            else:
-                print(f"    HTTP {e.code}: {url} (attempt {attempt+1})")
-                time.sleep(DELAY * 2)
-        except URLError as e:
-            print(f"    URL error: {e.reason} (attempt {attempt+1})")
-            time.sleep(DELAY * 2)
-        except Exception as e:
-            print(f"    Unexpected error: {e} (attempt {attempt+1})")
-            time.sleep(DELAY * 2)
-    return None
+SKIP = {"energy", "total", "rarity", ""}
 
 
-# ── Parsers ───────────────────────────────────────────────────
+# ── HTML Parsers ──────────────────────────────────────────────
+
+class TableParser(HTMLParser):
+    """Extracts all HTML tables as list-of-rows, each row a list of cell strings."""
+
+    def __init__(self):
+        super().__init__()
+        self.tables    = []
+        self._table    = None
+        self._row      = None
+        self._cell     = None
+        self._in_cell  = False
+
+    def handle_starttag(self, tag, attrs):
+        t = tag.lower()
+        if t == "table":
+            self._table = []
+        elif t == "tr" and self._table is not None:
+            self._row = []
+        elif t in ("td", "th") and self._row is not None:
+            self._cell   = []
+            self._in_cell = True
+
+    def handle_endtag(self, tag):
+        t = tag.lower()
+        if t == "table" and self._table is not None:
+            self.tables.append(self._table)
+            self._table = None
+        elif t == "tr" and self._row is not None:
+            if self._table is not None:
+                self._table.append(self._row)
+            self._row = None
+        elif t in ("td", "th") and self._in_cell:
+            text = " ".join("".join(self._cell).split())
+            if self._row is not None:
+                self._row.append(text)
+            self._cell   = None
+            self._in_cell = False
+
+    def handle_data(self, data):
+        if self._in_cell and self._cell is not None:
+            self._cell.append(data)
+
+    def handle_entityref(self, name):
+        if self._in_cell and self._cell is not None:
+            self._cell.append({"amp":"&","lt":"<","gt":">","nbsp":" ",
+                                "quot":'"',"apos":"'"}.get(name, ""))
+
+    def handle_charref(self, name):
+        if self._in_cell and self._cell is not None:
+            try:
+                ch = chr(int(name[1:], 16) if name.startswith("x") else int(name))
+                self._cell.append(ch)
+            except Exception:
+                pass
+
+
+class CardPriceParser(HTMLParser):
+    """
+    Parses guide pages. Card names are in <h2> tags; prices in <h5> tags.
+    Pairs them up sequentially.
+    """
+
+    def __init__(self):
+        super().__init__()
+        self.prices     = {}   # { lower_name: price }
+        self._tag       = None
+        self._buf       = []
+        self._last_name = None
+
+    def handle_starttag(self, tag, attrs):
+        t = tag.lower()
+        if t in ("h1","h2","h3","h4","h5","h6"):
+            self._tag = t
+            self._buf = []
+
+    def handle_endtag(self, tag):
+        t = tag.lower()
+        if t != self._tag:
+            return
+        text = " ".join("".join(self._buf).split()).strip()
+        self._tag = None
+        self._buf = []
+
+        if not text:
+            return
+
+        if t == "h2":
+            # Strip trailing "#123 Holo" card-number suffix
+            name = re.sub(r"#\S.*$", "", text).strip()
+            name = re.sub(r"\s+Holo\s*$", "", name, flags=re.I).strip()
+            if name:
+                self._last_name = name
+
+        elif t in ("h5", "h4") and self._last_name:
+            price = parse_price(text)
+            if price and price >= 0.50:
+                key = re.sub(r"\s+", " ", self._last_name.lower().strip())
+                if key not in self.prices:   # keep the first (highest rank = most exp)
+                    self.prices[key] = price
+            self._last_name = None   # consume the name regardless
+
+    def handle_data(self, data):
+        if self._tag:
+            self._buf.append(data)
+
+    def handle_entityref(self, name):
+        if self._tag:
+            self._buf.append({"amp":"&","lt":"<","gt":">","nbsp":" ",
+                              "quot":'"',"apos":"'"}.get(name, ""))
+
+    def handle_charref(self, name):
+        if self._tag:
+            try:
+                ch = chr(int(name[1:], 16) if name.startswith("x") else int(name))
+                self._buf.append(ch)
+            except Exception:
+                pass
+
+
+# ── Helpers ───────────────────────────────────────────────────
+
 def parse_price(text):
-    """Parse '$123.45' or '$1,234' → float."""
     if not text:
         return None
-    cleaned = re.sub(r"[^\d.]", "", text.replace(",", ""))
+    cleaned = re.sub(r"[^\d.]", "", str(text).replace(",", ""))
     try:
-        return round(float(cleaned), 2)
+        v = float(cleaned)
+        return round(v, 2) if v > 0 else None
     except (ValueError, TypeError):
         return None
 
 
-def parse_pull_rates_page(html):
-    """
-    Extract from the EV breakdown table:
-      { rarity_key: { avgPrice, ev }, ... }
-    and the pack EV from the header stat.
-    """
-    if not html:
-        return {}, None
-
-    results = {}
-    pack_ev = None
-
-    # ── Pack EV ───────────────────────────────────────────────
-    ev_match = re.search(
-        r"Booster Pack EV\s*#{3,6}\s*\$?([\d,]+\.?\d*)",
-        html, re.IGNORECASE
-    )
-    if ev_match:
-        pack_ev = parse_price(ev_match.group(1))
-
-    # ── EV breakdown table ────────────────────────────────────
-    # Table rows look like: | Rarity Name | N | N | $X.XX | $X.XX |
-    # We grab the rarity name and avg value column
-    row_pattern = re.compile(
-        r"\|\s*([^|]+?)\s*\|\s*\d+\s*\|\s*\d+\s*\|\s*\$?([\d,]+\.?\d*)\s*\|\s*\$?([\d,]+\.?\d*)\s*\|"
-    )
-    for m in row_pattern.finditer(html):
-        rarity_name = m.group(1).strip()
-        avg_price_str = m.group(2).strip()
-        ev_str = m.group(3).strip()
-
-        # Skip header rows and total row
-        if rarity_name.lower() in ("rarity", "total", ""):
-            continue
-        # Skip reverse / energy rows
-        if "reverse" in rarity_name.lower() or "energy" in rarity_name.lower():
-            continue
-
-        key = RARITY_MAP.get(rarity_name)
-        if not key:
-            # Try partial match
-            for display, k in RARITY_MAP.items():
-                if display.lower() in rarity_name.lower():
-                    key = k
-                    break
-        if not key:
-            continue
-
-        avg_price = parse_price(avg_price_str)
-        ev        = parse_price(ev_str)
-        if avg_price is not None:
-            results[key] = {
-                "avgPrice": avg_price,
-                "ev":       ev if ev is not None else 0,
-            }
-
-    return results, pack_ev
-
-
-def parse_top_cards_page(html):
-    """
-    Extract individual card prices from the most-expensive guide page.
-    Returns { card_name_lower: price, ... }
-    """
-    if not html:
-        return {}
-
-    prices = {}
-
-    # Pattern: card name heading followed by price heading
-    # e.g.  ## Charizard ex#234 Holo\n##### $216.81
-    card_blocks = re.finditer(
-        r"##\s+([^\n#$]+?)(?:#\d+[^\n]*)?\n+#{3,6}\s*\$?([\d,]+\.?\d*)",
-        html
-    )
-    for m in card_blocks:
-        name  = m.group(1).strip()
-        price = parse_price(m.group(2))
-        if price and price > 0.50:   # ignore bulk cards
-            # Normalise name for fuzzy matching
-            key = re.sub(r"\s+", " ", name.lower().strip())
-            prices[key] = price
-
-    return prices
-
-
-def match_notable_prices(notable_names, top_card_prices):
-    """
-    For each notable card name in our data.js, find the best price match
-    from the scraped top_card_prices dict.
-    Returns { original_name: price }
-    """
-    matched = {}
-    for name in notable_names:
-        norm = re.sub(r"\s+", " ", name.lower().strip())
-        # Exact match first
-        if norm in top_card_prices:
-            matched[name] = top_card_prices[norm]
-            continue
-        # Partial match: our name contained in scraped name
-        best_price = None
-        for scraped_name, price in top_card_prices.items():
-            if norm in scraped_name or scraped_name in norm:
-                best_price = price
-                break
-        if best_price:
-            matched[name] = best_price
-
-    return matched
-
+def fetch(url, retries=MAX_RETRIES):
+    for attempt in range(retries):
+        try:
+            req = Request(url, headers=HEADERS)
+            with urlopen(req, timeout=25) as resp:
+                raw = resp.read()
+                enc = resp.info().get("Content-Encoding", "")
+                if enc == "gzip":
+                    import gzip
+                    raw = gzip.decompress(raw)
+                return raw.decode("utf-8", errors="replace")
+        except HTTPError as e:
+            if e.code == 404:
+                return None
+            if e.code == 429:
+                wait = 15 * (attempt + 1)
+                time.sleep(wait)
+            else:
+                time.sleep(DELAY * 2)
+        except URLError:
+            time.sleep(DELAY * 2)
+        except Exception:
+            time.sleep(DELAY * 2)
+    return None
 
 def fetch_sealed_pack_price(set_name, retries=MAX_RETRIES):
     """
     Constructs a search query for an external aggregator and extracts the sealed pack price.
     Uses generic string matching to find the dominant price block in the DOM.
     """
-    # Format the name for the URL (e.g., 'Ascended Heroes' -> 'ascended-heroes')
     slug = re.sub(r'[^a-z0-9]+', '-', set_name.lower().strip())
-    
-    # Target URL architecture for secondary market aggregators
     url = f"https://www.pricecharting.com/game/pokemon-{slug}/{slug}-booster-pack"
     
     html = fetch(url, retries)
     if not html:
         return None
 
-    # Parse the DOM for the primary price identifier (usually tagged with 'used_price' or 'new_price' IDs)
     match = re.search(r'id="used_price"[^>]*>\s*\$?([\d,]+\.?\d*)\s*<', html, re.IGNORECASE)
     if match:
         return parse_price(match.group(1))
         
     return None
 
+def parse_pull_rates_page(html):
+    """Returns (rarity_prices dict, pack_ev float|None)."""
+    if not html:
+        return {}, None
+
+    # Pack EV — scan raw text for the stat block
+    pack_ev = None
+    ev_m = re.search(
+        r"Booster\\s+Pack\\s+EV[^$\d]{0,60}\$([\d,]+\.?\d*)",
+        html, re.IGNORECASE | re.DOTALL
+    )
+    if ev_m:
+        pack_ev = parse_price(ev_m.group(1))
+
+    # Parse tables
+    tp = TableParser()
+    tp.feed(html)
+
+    rarity_prices = {
+    }
+    for table in tp.tables:
+        if len(table) < 2:
+            continue
+        header = [c.lower().strip() for c in table[0]]
+        has_avg = any("avg" in h and "value" in h for h in header)
+        has_ev  = any("ev" in h and "pack" in h for h in header)
+        if not (has_avg and has_ev):
+            continue
+
+        def col(needle_fn):
+            for i, h in enumerate(header):
+                if needle_fn(h):
+                    return i
+            return None
+
+        rarity_col = col(lambda h: "rarity" in h)
+        price_col  = col(lambda h: "avg" in h and "value" in h)
+        ev_col     = col(lambda h: "ev" in h and "pack" in h)
+
+        if None in (rarity_col, price_col, ev_col):
+            continue
+
+        for row in table[1:]:
+            if len(row) <= max(rarity_col, price_col, ev_col):
+                continue
+            rarity_lo  = row[rarity_col].strip().lower()
+            if rarity_lo in SKIP:
+                continue
+            if any(x in rarity_lo for x in ("reverse", "energy", "total", "---", "priced")):
+                continue
+
+            key = RARITY_MAP.get(rarity_lo)
+            if not key:
+                for display, k in RARITY_MAP.items():
+                    if display in rarity_lo:
+                        key = k
+                        break
+            if not key:
+                continue
+
+            avg_price = parse_price(row[price_col])
+            ev        = parse_price(row[ev_col])
+            if avg_price is not None:
+                rarity_prices[key] = {
+                    "avgPrice": avg_price,
+                    "ev":       ev or 0,
+                }
+    return rarity_prices, pack_ev
+
+
+def parse_guide_page(html):
+    if not html:
+        return {}
+    p = CardPriceParser()
+    p.feed(html)
+    return p.prices
+
+
+def match_notable_prices(notable_names, top_card_prices):
+    matched = {}
+    for name in notable_names:
+        norm = re.sub(r"\s+", " ", name.lower().strip())
+        if norm in top_card_prices:
+            matched[name] = top_card_prices[norm]
+            continue
+        for scraped, price in top_card_prices.items():
+            if norm in scraped or scraped in norm:
+                matched[name] = price
+                break
+    return matched
+
 
 # ── Main ──────────────────────────────────────────────────────
+
 def main():
     print(f"\n{'='*55}")
-    print(f"  PullRates.gg Price Updater — {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
+    print(f"  PullRates.gg — {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
     print(f"{'='*55}\n")
 
-    # Load existing prices.json as fallback
     try:
-        with open(OUTPUT, "r") as f:
+        with open(OUTPUT) as f:
             existing = json.load(f)
         print(f"Loaded existing {OUTPUT} as fallback.\n")
     except (FileNotFoundError, json.JSONDecodeError):
         existing = {"sets": {}}
-        print(f"No existing {OUTPUT} found — starting fresh.\n")
+        print("No existing prices.json — starting fresh.\n")
 
     now = datetime.now(timezone.utc)
     new_data = {
         "lastUpdated": f"{now.strftime('%B')} {now.day}, {now.year}",
         "sets": {}
     }
+    failed = []
 
-    failed_sets = []
-
-    for set_def in SETS:
-        sid   = set_def["id"]
-        slug  = set_def["slug"]
+    for s in SETS:
+        sid, slug, guide_slug = s["id"], s["slug"], s["guide"]
         print(f"  [{sid}] {slug}")
 
-        # 1. Fetch pull rates page
-        pull_url = f"{BASE_URL}/set/{sid}/{slug}/pull-rates"
-        print(f"    → Fetching pull rates…")
-        pull_html = fetch(pull_url)
+        # Pull rates
+        pull_html = fetch(f"{BASE_URL}/set/{sid}/{slug}/pull-rates")
         time.sleep(DELAY)
-
         rarity_prices, pack_ev = parse_pull_rates_page(pull_html)
+
         if not rarity_prices:
-            print(f"    ⚠ Could not parse rarity prices — using fallback")
-            rarity_prices = existing.get("sets", {}).get(sid, {}).get("rarities", {})
-            pack_ev = existing.get("sets", {}).get(sid, {}).get("packEV")
-            failed_sets.append(sid)
+            print(f"    ⚠ Parse failed — using fallback")
+            ex = existing.get("sets", {}).get(sid, {})
+            rarity_prices = ex.get("rarities", {})
+            if not pack_ev:
+                pack_ev = ex.get("packEV")
+            failed.append(sid)
+        else:
+            print(f"    ✓ {len(rarity_prices)} rarities  packEV=${pack_ev}")
 
-        # 2. Fetch top cards guide
-        guide_url = f"{BASE_URL}/guides/most-expensive-{slug}-cards"
-        print(f"    → Fetching top cards…")
-        guide_html = fetch(guide_url)
+        # Guide page
+        guide_html = fetch(f"{BASE_URL}/guides/most-expensive-{guide_slug}-cards")
         time.sleep(DELAY)
+        top_card_prices = parse_guide_page(guide_html)
+        print(f"    ✓ {len(top_card_prices)} notable prices")
 
-        top_card_prices = parse_top_cards_page(guide_html)
-        print(f"    → Found {len(top_card_prices)} notable card prices")
-
-        # 3. Get notable card names from existing prices.json or use empty list
-        existing_set = existing.get("sets", {}).get(sid, {})
-        notable_names = list(existing_set.get("notablePrices", {}).keys())
-
-        # Match notable prices
+        # Notable matching
+        ex = existing.get("sets", {}).get(sid, {})
+        notable_names  = list(ex.get("notablePrices", {}).keys())
         notable_prices = match_notable_prices(notable_names, top_card_prices)
 
-        # Also store top card data (name + price of most expensive)
-        top_card = None
+        top_card = ex.get("topCard")
         if top_card_prices:
             top_name, top_price = max(top_card_prices.items(), key=lambda x: x[1])
-            top_card = { "name": top_name.title(), "price": top_price }
+            top_card = {"name": top_name.title(), "price": top_price}
 
-        # 4. Assemble set entry
+        # NEW: Fetch sealed pack market data
+        print(f"    → Fetching sealed pack market data...")
+        sealed_price = fetch_sealed_pack_price(s["slug"])
+        if sealed_price:
+             print(f"    ✓ Pack Resale Price: ${sealed_price}")
+        else:
+             print(f"    ⚠ Sealed price parse failed — using fallback")
+             sealed_price = ex.get("packResalePrice")
+
         entry = {
             "rarities":      rarity_prices,
-            "notablePrices": notable_prices or existing_set.get("notablePrices", {}),
-            "topCard":       top_card or existing_set.get("topCard"),
+            "notablePrices": notable_prices or ex.get("notablePrices", {}),
+            "topCard":       top_card,
         }
         if pack_ev:
             entry["packEV"] = pack_ev
+        if sealed_price:
+            entry["packResalePrice"] = sealed_price
 
         new_data["sets"][sid] = entry
-
-        if rarity_prices:
-            ev_str = f"  (packEV ${pack_ev})" if pack_ev else ""
-            print(f"    ✓ {len(rarity_prices)} rarities updated{ev_str}")
         print()
 
-    # Write output
     with open(OUTPUT, "w") as f:
         json.dump(new_data, f, indent=2)
 
     print(f"\n{'='*55}")
-    print(f"  ✅ prices.json updated — {len(new_data['sets'])} sets")
-    if failed_sets:
-        print(f"  ⚠  Fallback used for: {', '.join(failed_sets)}")
+    print(f"  ✅ prices.json written — {len(new_data['sets'])} sets")
+    if failed:
+        print(f"  ⚠  Fallback used for: {', '.join(failed)}")
     print(f"{'='*55}\n")
 
-    # Exit with error code if more than half failed (so GitHub Action can flag it)
-    if len(failed_sets) > len(SETS) / 2:
+    if len(failed) > len(SETS) / 2:
         sys.exit(1)
 
 
