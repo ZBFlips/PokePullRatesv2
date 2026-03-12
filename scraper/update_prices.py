@@ -8,10 +8,17 @@ import json
 import re
 import time
 import sys
+import random
+import http.cookiejar
+import gzip
+import io
 from datetime import datetime, timezone
 from urllib.request import urlopen, Request
 from urllib.error import URLError, HTTPError
 from html.parser import HTMLParser
+
+cookie_jar = http.cookiejar.CookieJar()
+opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cookie_jar))
 
 # ── Config ────────────────────────────────────────────────────
 BASE_URL    = "https://www.thepricedex.com"
@@ -99,12 +106,34 @@ def fetch(url, retries=MAX_RETRIES):
 
 # ── Core Scrapers ─────────────────────────────────────────────
 
+def fetch(url, retries=MAX_RETRIES):
+    for attempt in range(retries):
+        try:
+            req = Request(url, headers=HEADERS)
+            with opener.open(req, timeout=25) as resp:
+                data = resp.read()
+                # Handle Gzip if the server sends it (very common for Cloudflare)
+                if resp.info().get('Content-Encoding') == 'gzip':
+                    data = gzip.decompress(data)
+                return data.decode("utf-8", errors="replace")
+        except HTTPError as e:
+            if e.code == 403:
+                print(f"    × Blocked (403) on {url}. Trying longer wait...")
+                time.sleep(15)
+            elif e.code == 429:
+                print(f"    × Rate Limited (429). Sleeping 30s...")
+                time.sleep(30)
+        except Exception as e:
+            time.sleep(DELAY)
+    return None
+
 def fetch_sealed_pack_price(set_slug):
     url = f"https://www.pricecharting.com/game/pokemon-{set_slug}/{set_slug}-booster-pack"
     html = fetch(url)
     if not html: return None
     match = re.search(r'id="used_price"[^>]*>\s*\$?([\d,]+\.?\d*)', html, re.I)
     return parse_price(match.group(1)) if match else None
+    
 
 def parse_pull_rates_page(html):
     if not html: return {}, None
@@ -156,6 +185,8 @@ def main():
     for s in SETS:
         sid, slug = s["id"], s["slug"]
         print(f"Scraping {slug}...")
+
+        time.sleep(random.uniform(3.0, 7.0))
         
         p_html = fetch(f"{BASE_URL}/set/{sid}/{slug}/pull-rates")
         rarity_prices, pack_ev = parse_pull_rates_page(p_html)
