@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PullRates.gg — Pokémon TCG Pack Odds</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <script src="data.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: #06060f; color: #fff; font-family: 'Syne', sans-serif; min-height: 100vh; }
+    a { color: inherit; text-decoration: none; }
+    ::-webkit-scrollbar { width: 5px; background: #111; }
+    ::-webkit-scrollbar-thumb { background: #2a2a3a; border-radius: 3px; }
+
+    /* NAV */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px; height: 58px;
+      background: rgba(6,6,15,.95); border-bottom: 1px solid rgba(255,255,255,.06);
+      position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px);
+    }
+    .nav-logo {
+      font-size: 17px; font-weight: 800; letter-spacing: -.02em;
+      background: linear-gradient(90deg,#a78bfa,#67e8f9);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .nav-sub { font-family:'Space Mono',monospace; font-size:9px; color:#4b5563; letter-spacing:.15em; text-transform:uppercase; }
+
+    /* HERO */
+    .hero {
+      text-align: center; padding: 56px 24px 40px;
+      background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(124,58,237,.12) 0%, transparent 70%);
+    }
+    .hero-eyebrow { font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.35em; color:#6366f1; text-transform:uppercase; font-weight:700; margin-bottom:10px; }
+    .hero h1 {
+      font-size: clamp(26px,5vw,52px); font-weight:800; line-height:1.08; letter-spacing:-.03em; margin-bottom:12px;
+      background: linear-gradient(135deg,#e2e8f0 0%,#a78bfa 40%,#67e8f9 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero p { font-size:14px; color:#6b7280; max-width:520px; margin:0 auto 28px; line-height:1.7; font-family:'Space Mono',monospace; }
+
+    /* SEARCH */
+    .search-wrap { max-width:560px; margin:0 auto 32px; position:relative; }
+    .search-icon { position:absolute; left:16px; top:50%; transform:translateY(-50%); color:#4b5563; pointer-events:none; font-size:16px; }
+    #search {
+      width:100%; padding:14px 44px;
+      background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1);
+      border-radius:12px; color:#fff; font-family:'Syne',sans-serif; font-size:14px;
+      outline:none; transition:border-color .2s,box-shadow .2s;
+    }
+    #search::placeholder { color:#4b5563; }
+    #search:focus { border-color:rgba(124,58,237,.6); box-shadow:0 0 0 3px rgba(124,58,237,.15); }
+    #search-clear { position:absolute; right:14px; top:50%; transform:translateY(-50%); background:none; border:none; color:#4b5563; cursor:pointer; font-size:18px; line-height:1; padding:4px; display:none; }
+    #search-clear:hover { color:#9ca3af; }
+
+    /* CARD RESULTS */
+    #card-results {
+      max-width:560px; margin:-24px auto 32px;
+      background:rgba(10,10,26,.98); border:1px solid rgba(255,255,255,.1);
+      border-radius:10px; overflow:hidden; display:none;
+    }
+    .card-result-item { display:flex; align-items:center; justify-content:space-between; padding:10px 16px; border-bottom:1px solid rgba(255,255,255,.05); cursor:pointer; transition:background .1s; }
+    .card-result-item:last-child { border-bottom:none; }
+    .card-result-item:hover { background:rgba(255,255,255,.04); }
+    .cr-name { font-size:13px; font-weight:600; color:#e2e8f0; }
+    .cr-set  { font-family:'Space Mono',monospace; font-size:9.5px; color:#4b5563; margin-top:2px; }
+    .cr-right { text-align:right; flex-shrink:0; margin-left:12px; }
+    .cr-price { font-size:14px; font-weight:700; }
+    .cr-pull  { font-family:'Space Mono',monospace; font-size:9px; color:#4b5563; margin-top:1px; }
+
+    /* SECTION */
+    .section { max-width:1280px; margin:0 auto; padding:0 24px 64px; }
+
+    /* SORT + FILTER BAR */
+    .controls {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px; margin-bottom: 20px;
+    }
+    .controls-left { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+    .section-label { font-family:'Space Mono',monospace; font-size:9.5px; font-weight:700; letter-spacing:.22em; color:#4b5563; text-transform:uppercase; }
+    .result-count  { font-family:'Space Mono',monospace; font-size:9.5px; color:#1f2937; margin-left:4px; }
+
+    .sort-group { display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+    .sort-label { font-family:'Space Mono',monospace; font-size:9px; color:#374151; text-transform:uppercase; letter-spacing:.15em; }
+    .sort-btn {
+      display: flex; align-items: center; gap: 5px;
+      padding: 6px 12px; border-radius: 7px;
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+      color: #6b7280; font-family:'Space Mono',monospace; font-size:10px;
+      cursor: pointer; transition: all .15s; white-space: nowrap;
+      letter-spacing: .02em;
+    }
+    .sort-btn:hover { background:rgba(255,255,255,.08); color:#9ca3af; border-color:rgba(255,255,255,.15); }
+    .sort-btn.active {
+      background: rgba(124,58,237,.2); border-color: rgba(124,58,237,.5);
+      color: #a78bfa;
+    }
+    .sort-btn .arrow { font-size:10px; opacity:.7; }
+
+    /* SET GRID */
+    #set-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .set-card {
+      background:rgba(255,255,255,.025); border:1px solid rgba(255,255,255,.07);
+      border-radius:14px; overflow:hidden;
+      transition:transform .18s,box-shadow .18s; cursor:pointer; display:block;
+    }
+    .set-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,.5); }
+    .set-card-top {
+      height:86px; position:relative; overflow:hidden;
+      display:flex; align-items:center; justify-content:center;
+    }
+    .set-card-badge { font-family:'Space Mono',monospace; font-size:26px; font-weight:700; letter-spacing:-.04em; opacity:.18; color:#fff; user-select:none; }
+    .set-card-series { position:absolute; top:10px; left:12px; font-family:'Space Mono',monospace; font-size:8.5px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; background:rgba(0,0,0,.45); padding:3px 7px; border-radius:4px; color:rgba(255,255,255,.55); }
+    /* Rank badge */
+    .set-rank { position:absolute; top:10px; right:12px; font-family:'Space Mono',monospace; font-size:9px; font-weight:700; background:rgba(0,0,0,.55); padding:2px 7px; border-radius:4px; display:none; }
+    .set-card-body { padding:14px 16px 16px; }
+    .set-card-name { font-size:16px; font-weight:800; color:#f1f5f9; margin-bottom:3px; line-height:1.2; }
+    .set-card-released { font-family:'Space Mono',monospace; font-size:9px; color:#374151; margin-bottom:11px; }
+    .set-card-stats { display:flex; gap:0; margin-bottom:11px; }
+    .stat { flex:1; border-right:1px solid rgba(255,255,255,.06); padding-right:10px; margin-right:10px; }
+    .stat:last-child { border-right:none; padding-right:0; margin-right:0; }
+    .stat-label { font-family:'Space Mono',monospace; font-size:8.5px; color:#374151; text-transform:uppercase; letter-spacing:.1em; margin-bottom:3px; }
+    .stat-val { font-size:16px; font-weight:800; color:#e2e8f0; line-height:1; }
+    /* Highlighted stat when sort is active */
+    .stat.highlighted .stat-val { color: var(--accent) !important; }
+    .set-card-chase { background:rgba(255,255,255,.04); border-radius:8px; padding:8px 10px; display:flex; justify-content:space-between; align-items:center; margin-bottom:11px; }
+    .chase-name { font-size:11px; font-weight:600; color:#9ca3af; max-width:160px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .chase-price { font-size:15px; font-weight:800; }
+    .set-card-btn { width:100%; padding:9px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:8px; color:#e2e8f0; font-family:'Syne',sans-serif; font-size:13px; font-weight:700; cursor:pointer; transition:background .15s; display:flex; align-items:center; justify-content:center; gap:8px; }
+    .set-card-btn:hover { background:rgba(255,255,255,.1); }
+
+    #empty-state { text-align:center; padding:60px 24px; display:none; }
+    #empty-state p { color:#374151; font-family:'Space Mono',monospace; font-size:12px; }
+
+    footer { text-align:center; padding:28px 24px; border-top:1px solid rgba(255,255,255,.05); font-family:'Space Mono',monospace; font-size:9.5px; color:#1f2937; line-height:2; }
+    footer a { color:#374151; }
+    footer a:hover { color:#6b7280; }
+
+    @media (max-width:600px) {
+      .hero { padding:36px 16px 28px; }
+      .section { padding:0 16px 48px; }
+      #set-grid { grid-template-columns:1fr; }
+      .controls { flex-direction:column; align-items:flex-start; }
+    }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:none} }
+    .set-card { animation: fadeUp .35s ease both; }
+    .hero      { animation: fadeUp .25s ease both; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div>
+    <div class="nav-logo">PullRates.gg</div>
+    <div class="nav-sub">Pokémon TCG Pack Odds</div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow">Data-driven · Community sourced · Free to use</div>
+  <h1>What's Actually<br/>Inside That Pack?</h1>
+  <p>Transparent pull rates and market prices for every rarity in every set. No hype — just the real odds.</p>
+
+  <div class="search-wrap">
+    <span class="search-icon">⌕</span>
+    <input type="text" id="search" placeholder="Search sets or cards… e.g. Charizard, Umbreon, Surging Sparks"/>
+    <button id="search-clear" title="Clear">×</button>
+  </div>
+  <div id="card-results"></div>
+</section>
+
+<section class="section">
+  <div class="controls">
+    <div class="controls-left">
+      <span class="section-label">Browse Sets</span>
+      <span class="result-count" id="result-count"></span>
+    </div>
+
+    <div class="sort-group">
+      <span class="sort-label">Sort by</span>
+      <button class="sort-btn" data-sort="default">
+        <span>Date Released</span><span class="arrow">↓</span>
+      </button>
+      <button class="sort-btn" data-sort="ev">
+        <span>Highest Pack EV</span>
+      </button>
+      <button class="sort-btn" data-sort="resale-desc">
+        <span>Priciest Pack</span><span class="arrow">↑</span>
+      </button>
+      <button class="sort-btn" data-sort="resale-asc">
+        <span>Cheapest Pack</span><span class="arrow">↓</span>
+      </button>
+      <button class="sort-btn" data-sort="chase">
+        <span>Best Chase Card</span>
+      </button>
+    </div>
+  </div>
+
+  <div id="set-grid"></div>
+  <div id="empty-state"><p>No sets or cards found matching your search.</p></div>
+</section>
+
+<footer>
+  PullRates.gg · Data sourced from ThePriceDex, TCGPlayer, and community pack openings<br/>
+  Prices reflect TCGPlayer NM ungraded market averages · Resale prices: TCGPlayer / StockX / eBay single-pack avg<br/>
+  Not affiliated with Nintendo, Game Freak, or Creatures Inc. ·
+  <a href="https://www.thepricedex.com">ThePriceDex</a> &nbsp;·&nbsp;
+  <a href="https://www.tcgplayer.com">TCGPlayer</a>
+</footer>
+
+<script>
+// ── Sort state ─────────────────────────────────────────────
+let currentSort   = 'default';
+let currentSearch = '';
+
+const SORT_CONFIG = {
+  'default':     { fn: (a,b) => new Date(b.released) - new Date(a.released),  highlight: null         },
+  'ev':          { fn: (a,b) => b.packEV - a.packEV,                          highlight: 'ev'         },
+  'resale-desc': { fn: (a,b) => b.packResalePrice - a.packResalePrice,        highlight: 'resale'     },
+  'resale-asc':  { fn: (a,b) => a.packResalePrice - b.packResalePrice,        highlight: 'resale'     },
+  'chase':       { fn: (a,b) => b.topCard.price - a.topCard.price,            highlight: 'chase'      },
+};
+
+function applySort(sets) {
+  return [...sets].sort(SORT_CONFIG[currentSort].fn);
+}
+
+// ── Build set card HTML ────────────────────────────────────
+function setCardHTML(set, rank, animDelay) {
+  const accent     = set.accentColor;
+  const gradStart  = accent + '30';
+  const gradEnd    = accent + '0d';
+  const hl         = SORT_CONFIG[currentSort].highlight;
+  const showRank   = currentSort !== 'default';
+
+  const rankLabel = {
+    'ev':          `#${rank} EV`,
+    'resale-desc': `#${rank} $$$`,
+    'resale-asc':  `#${rank} $`,
+    'chase':       `#${rank} Chase`,
+  }[currentSort] || '';
+
+  // Which stat to highlight
+  const evHL     = hl === 'ev'     ? `highlighted" style="--accent:${accent}` : '';
+  const resaleHL = hl === 'resale' ? `highlighted" style="--accent:${accent}` : '';
+  const chaseHL  = hl === 'chase'  ? `highlighted" style="--accent:${accent}` : '';
+
+  return `
+    <a class="set-card" href="set.html?id=${set.id}"
+       style="border-top:3px solid ${accent}44; animation-delay:${animDelay}ms;"
+       data-name="${set.name.toLowerCase()}" data-series="${set.series.toLowerCase()}">
+      <div class="set-card-top" style="background:linear-gradient(135deg,${gradStart},${gradEnd});">
+        <div class="set-card-badge">${set.id.replace('pt5','').replace('sv','').toUpperCase()}</div>
+        <div class="set-card-series">${set.series}</div>
+        ${showRank ? `<div class="set-rank" style="color:${accent};display:block">${rankLabel}</div>` : ''}
+      </div>
+      <div class="set-card-body">
+        <div class="set-card-name">${set.name}</div>
+        <div class="set-card-released">${formatDate(set.released)} · ${set.cardCount} cards</div>
+        <div class="set-card-stats">
+          <div class="stat ${evHL}">
+            <div class="stat-label">Pack EV</div>
+            <div class="stat-val" style="color:${hl === 'ev' ? accent : '#e2e8f0'}">$${set.packEV.toFixed(2)}</div>
+          </div>
+          <div class="stat ${resaleHL}">
+            <div class="stat-label">Resale / Pack</div>
+            <div class="stat-val" style="color:${hl === 'resale' ? accent : '#e2e8f0'}">$${set.packResalePrice.toFixed(2)}</div>
+          </div>
+          <div class="stat ${chaseHL}">
+            <div class="stat-label">Top Chase</div>
+            <div class="stat-val" style="color:${hl === 'chase' ? accent : '#e2e8f0'}">${priceFmt(set.topCard.price)}</div>
+          </div>
+        </div>
+        <div class="set-card-chase">
+          <div class="chase-name">${set.topCard.name}</div>
+          <div class="chase-price" style="color:${accent}">${priceFmt(set.topCard.price)}</div>
+        </div>
+        <button class="set-card-btn" style="border-color:${accent}30;color:${accent};">View Pull Rates →</button>
+      </div>
+    </a>`;
+}
+
+function formatDate(d) {
+  return new Date(d).toLocaleDateString('en-US', { year:'numeric', month:'short', day:'numeric' });
+}
+
+// ── Render ─────────────────────────────────────────────────
+function renderGrid(filteredSets) {
+  const sorted = applySort(filteredSets);
+  const grid   = document.getElementById('set-grid');
+  const empty  = document.getElementById('empty-state');
+  const count  = document.getElementById('result-count');
+
+  grid.innerHTML = sorted.map((s,i) => setCardHTML(s, i+1, i * 38)).join('');
+  empty.style.display = sorted.length === 0 ? 'block' : 'none';
+  count.textContent   = filteredSets.length === SETS.length
+    ? `${SETS.length} sets`
+    : `${filteredSets.length} of ${SETS.length} sets`;
+}
+
+function getFilteredSets() {
+  if (!currentSearch) return SETS;
+  return SETS.filter(s =>
+    s.name.toLowerCase().includes(currentSearch) ||
+    s.series.toLowerCase().includes(currentSearch) ||
+    s.id.toLowerCase().includes(currentSearch)
+  );
+}
+
+// ── Sort buttons ───────────────────────────────────────────
+document.querySelectorAll('.sort-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const sort = btn.dataset.sort;
+    // Toggle: clicking active sort goes back to default
+    currentSort = (currentSort === sort && sort !== 'default') ? 'default' : sort;
+    document.querySelectorAll('.sort-btn').forEach(b =>
+      b.classList.toggle('active', b.dataset.sort === currentSort));
+    renderGrid(getFilteredSets());
+  });
+});
+
+// Set default active
+document.querySelector('[data-sort="default"]').classList.add('active');
+
+// ── Search ─────────────────────────────────────────────────
+const input    = document.getElementById('search');
+const clearBtn = document.getElementById('search-clear');
+const cardBox  = document.getElementById('card-results');
+
+input.addEventListener('input', () => {
+  currentSearch = input.value.trim().toLowerCase();
+  clearBtn.style.display = currentSearch ? 'block' : 'none';
+
+  if (!currentSearch) {
+    cardBox.style.display = 'none';
+    renderGrid(SETS);
+    return;
+  }
+
+  renderGrid(getFilteredSets());
+
+  const matchCards = CARD_INDEX.filter(c =>
+    c.name.toLowerCase().includes(currentSearch) ||
+    c.setName.toLowerCase().includes(currentSearch) ||
+    (RARITY_LABELS[c.rarity] || '').toLowerCase().includes(currentSearch)
+  ).slice(0, 8);
+
+  if (matchCards.length > 0) {
+    cardBox.style.display = 'block';
+    cardBox.innerHTML = matchCards.map(c => {
+      const col = RARITY_COLORS[c.rarity] || '#fff';
+      return `
+        <div class="card-result-item" onclick="location.href='set.html?id=${c.setId}'">
+          <div>
+            <div class="cr-name">${c.name}</div>
+            <div class="cr-set">${c.setName} · <span style="color:${col}">${RARITY_LABELS[c.rarity] || c.rarity}</span></div>
+          </div>
+          <div class="cr-right">
+            <div class="cr-price" style="color:${col}">${priceFmt(c.price)}</div>
+            <div class="cr-pull">${pullFmt(c.pullPct)}</div>
+          </div>
+        </div>`;
+    }).join('');
+  } else {
+    cardBox.style.display = 'none';
+  }
+});
+
+clearBtn.addEventListener('click', () => {
+  input.value = ''; currentSearch = '';
+  clearBtn.style.display = 'none';
+  cardBox.style.display  = 'none';
+  renderGrid(SETS);
+  input.focus();
+});
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('.search-wrap') && !e.target.closest('#card-results'))
+    cardBox.style.display = 'none';
+});
+
+// ── Init ───────────────────────────────────────────────────
+renderGrid(SETS);
+document.getElementById('result-count').textContent = `${SETS.length} sets`;
+</script>
+</body>
+</html>

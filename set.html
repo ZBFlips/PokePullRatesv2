@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pull Rates — PullRates.gg</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <script src="data.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: #06060f; color: #fff; font-family: 'Syne', sans-serif; min-height: 100vh; }
+    ::-webkit-scrollbar { width: 5px; background: #111; }
+    ::-webkit-scrollbar-thumb { background: #2a2a3a; border-radius: 3px; }
+
+    /* NAV */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px; height: 58px;
+      background: rgba(6,6,15,.95); border-bottom: 1px solid rgba(255,255,255,.06);
+      position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px);
+    }
+    .nav-logo { font-size:17px; font-weight:800; letter-spacing:-.02em; background:linear-gradient(90deg,#a78bfa,#67e8f9); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    .nav-logo a { background:inherit; -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    .nav-back { display:flex; align-items:center; gap:6px; font-family:'Space Mono',monospace; font-size:10px; color:#4b5563; letter-spacing:.1em; text-transform:uppercase; cursor:pointer; transition:color .15s; text-decoration:none; }
+    .nav-back:hover { color:#9ca3af; }
+
+    /* SET HEADER */
+    .set-header { padding:28px 24px 20px; max-width:1280px; margin:0 auto; border-bottom:1px solid rgba(255,255,255,.05); }
+    .set-eyebrow { font-family:'Space Mono',monospace; font-size:9.5px; letter-spacing:.3em; color:#4b5563; text-transform:uppercase; margin-bottom:7px; }
+    .set-title { font-size:clamp(22px,4vw,38px); font-weight:800; letter-spacing:-.025em; margin-bottom:14px; }
+    .set-meta { display:flex; flex-wrap:wrap; gap:22px; }
+    .meta-label { font-family:'Space Mono',monospace; font-size:9px; color:#374151; text-transform:uppercase; letter-spacing:.12em; margin-bottom:3px; }
+    .meta-val { font-size:20px; font-weight:800; color:#e2e8f0; }
+    .update-tag { font-family:'Space Mono',monospace; font-size:9px; color:#1f2937; margin-top:10px; }
+    .update-dot { display:inline-block; width:6px; height:6px; background:#22c55e; border-radius:50%; margin-right:5px; vertical-align:middle; animation:pulse 2s ease infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+    /* LAYOUT */
+    .main { max-width:1280px; margin:0 auto; padding:20px 24px 0; display:flex; gap:18px; align-items:flex-start; }
+    .chart-col { flex:1; min-width:0; }
+    .side-col  { flex-shrink:0; width:208px; }
+
+    /* CHART WRAPPER */
+    .chart-card {
+      background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.06);
+      border-radius:14px; overflow:hidden; position:relative;
+    }
+    #chart-svg { display:block; width:100%; cursor:grab; }
+    #chart-svg.dragging { cursor:grabbing; }
+
+    /* ZOOM CONTROLS */
+    .zoom-controls {
+      position:absolute; bottom:12px; right:12px;
+      display:flex; flex-direction:column; gap:4px;
+    }
+    .zoom-btn {
+      width:28px; height:28px; border-radius:6px;
+      background:rgba(15,15,35,.9); border:1px solid rgba(255,255,255,.12);
+      color:#9ca3af; font-size:14px; line-height:1;
+      cursor:pointer; transition:all .15s;
+      display:flex; align-items:center; justify-content:center;
+    }
+    .zoom-btn:hover { background:rgba(255,255,255,.1); color:#fff; border-color:rgba(255,255,255,.25); }
+    .zoom-btn:active { transform:scale(.93); }
+    .zoom-reset {
+      width:28px; height:28px; border-radius:6px;
+      background:rgba(15,15,35,.9); border:1px solid rgba(255,255,255,.1);
+      color:#4b5563; font-size:8px; line-height:1; letter-spacing:.04em;
+      font-family:'Space Mono',monospace; cursor:pointer; transition:all .15s;
+      display:flex; align-items:center; justify-content:center; padding:0;
+      margin-top:2px;
+    }
+    .zoom-reset:hover { background:rgba(255,255,255,.08); color:#9ca3af; border-color:rgba(255,255,255,.2); }
+    .zoom-level {
+      position:absolute; bottom:12px; left:16px;
+      font-family:'Space Mono',monospace; font-size:9px;
+      color:#1f2937; letter-spacing:.08em;
+      pointer-events:none;
+    }
+    /* Zoom hint */
+    .zoom-hint {
+      position:absolute; top:10px; right:12px;
+      font-family:'Space Mono',monospace; font-size:8.5px;
+      color:#1f2937; letter-spacing:.06em;
+      pointer-events:none; transition:opacity .3s;
+    }
+
+    /* TOOLTIP */
+    #tooltip {
+      position:fixed; pointer-events:none; z-index:500;
+      background:rgba(5,5,18,.97); border-radius:10px;
+      padding:13px 16px; min-width:210px;
+      box-shadow:0 16px 48px rgba(0,0,0,.7);
+      opacity:0; transition:opacity .1s ease;
+    }
+    #tooltip.visible { opacity:1; }
+    .t-name   { font-size:14px; font-weight:800; color:#f1f5f9; margin-bottom:3px; }
+    .t-rarity { font-family:'Space Mono',monospace; font-size:9.5px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; margin-bottom:10px; }
+    .t-row    { display:flex; gap:16px; }
+    .t-label  { font-family:'Space Mono',monospace; font-size:9px; color:#4b5563; text-transform:uppercase; letter-spacing:.1em; margin-bottom:2px; }
+    .t-val    { font-size:20px; font-weight:900; line-height:1; }
+    .t-sub    { font-family:'Space Mono',monospace; font-size:11.5px; font-weight:700; color:#cbd5e1; line-height:1.3; }
+    .t-tiny   { font-family:'Space Mono',monospace; font-size:9px; color:#374151; margin-top:2px; }
+
+    /* SIDE */
+    .side-panel { background:rgba(255,255,255,.025); border:1px solid rgba(255,255,255,.07); border-radius:12px; padding:16px; margin-bottom:14px; }
+    .side-h { font-family:'Space Mono',monospace; font-size:9px; letter-spacing:.22em; color:#4b5563; text-transform:uppercase; margin-bottom:10px; }
+    .legend-item { display:flex; align-items:center; gap:8px; margin-bottom:8px; cursor:pointer; transition:opacity .15s; }
+    .legend-item:hover { opacity:.75; }
+    .legend-item.faded { opacity:.2; }
+    .legend-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; border:1.5px solid rgba(255,255,255,.2); }
+    .legend-text { font-size:11px; font-weight:600; color:#d1d5db; line-height:1.2; }
+    .legend-sub  { font-family:'Space Mono',monospace; font-size:8.5px; color:#4b5563; }
+
+    /* EV STRIP */
+    .ev-strip { max-width:1280px; margin:18px auto 0; padding:0 24px 28px; }
+    .ev-card { background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.06); border-radius:12px; padding:16px 20px; }
+    .ev-title { font-family:'Space Mono',monospace; font-size:9px; letter-spacing:.22em; color:#4b5563; text-transform:uppercase; margin-bottom:14px; }
+    .ev-bars-wrap { display:flex; gap:6px; align-items:flex-end; height:64px; }
+    .ev-bar-col { display:flex; flex-direction:column; align-items:center; gap:4px; flex:1; }
+    .ev-bar { width:100%; border-radius:3px 3px 0 0; min-height:2px; transition:filter .15s; cursor:default; }
+    .ev-bar:hover { filter:brightness(1.35); }
+    .ev-bar-label { font-family:'Space Mono',monospace; font-size:8px; color:#4b5563; text-align:center; }
+    .ev-bar-val   { font-size:9px; font-weight:700; color:#9ca3af; text-align:center; }
+
+    /* CARDS TABLE */
+    .top-cards { max-width:1280px; margin:0 auto; padding:0 24px 48px; }
+    .top-cards-card { background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.06); border-radius:12px; overflow:hidden; }
+    .top-cards-head { display:grid; grid-template-columns:1fr auto auto auto; gap:12px; padding:10px 16px; border-bottom:1px solid rgba(255,255,255,.06); font-family:'Space Mono',monospace; font-size:8.5px; color:#374151; text-transform:uppercase; letter-spacing:.12em; }
+    .top-cards-row  { display:grid; grid-template-columns:1fr auto auto auto; gap:12px; padding:11px 16px; border-bottom:1px solid rgba(255,255,255,.04); align-items:center; transition:background .1s; }
+    .top-cards-row:last-child { border-bottom:none; }
+    .top-cards-row:hover { background:rgba(255,255,255,.03); }
+    .tc-name   { font-size:13px; font-weight:700; color:#e2e8f0; }
+    .tc-rarity { font-family:'Space Mono',monospace; font-size:9.5px; font-weight:700; }
+    .tc-price  { font-size:15px; font-weight:800; text-align:right; min-width:64px; }
+    .tc-odds   { font-family:'Space Mono',monospace; font-size:9.5px; color:#6b7280; text-align:right; min-width:110px; }
+
+    footer { text-align:center; padding:24px; border-top:1px solid rgba(255,255,255,.05); font-family:'Space Mono',monospace; font-size:9px; color:#1f2937; line-height:2; }
+
+    @media (max-width:860px) {
+      .main { flex-direction:column; }
+      .side-col { width:100%; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+      .side-col .side-panel:last-child { grid-column:1/-1; }
+    }
+    @media (max-width:560px) {
+      .set-header,.main { padding-left:16px; padding-right:16px; }
+      .ev-strip,.top-cards { padding-left:16px; padding-right:16px; }
+      .top-cards-head,.top-cards-row { grid-template-columns:1fr auto auto; }
+      .top-cards-head>:last-child,.top-cards-row>:last-child { display:none; }
+      .side-col { grid-template-columns:1fr; }
+    }
+
+    @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+    .chart-card { animation: fadeIn .45s ease; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><a href="index.html">PullRates.gg</a></div>
+  <a class="nav-back" href="index.html">← All Sets</a>
+</nav>
+
+<div id="page-content" style="display:none">
+
+  <div class="set-header">
+    <div class="set-eyebrow" id="hdr-series"></div>
+    <div class="set-title"   id="hdr-title"></div>
+    <div class="set-meta"    id="hdr-meta"></div>
+    <div class="update-tag"><span class="update-dot"></span><span id="hdr-updated"></span></div>
+  </div>
+
+  <div class="main">
+    <div class="chart-col">
+      <div class="chart-card">
+        <svg id="chart-svg"></svg>
+        <!-- zoom controls injected by JS -->
+      </div>
+    </div>
+
+    <div class="side-col">
+      <div class="side-panel">
+        <div class="side-h">Rarity</div>
+        <div id="legend-items"></div>
+      </div>
+      <div class="side-panel">
+        <div class="side-h">How to Read</div>
+        <div style="font-family:'Space Mono',monospace;font-size:9.5px;color:#4b5563;line-height:1.85;">
+          <b style="color:#6b7280">X axis →</b><br/>More likely to pull right<br/><br/>
+          <b style="color:#6b7280">Y axis ↑</b><br/>Higher market value up<br/><br/>
+          <b style="color:#6b7280">Top-left zone</b><br/>Rare &amp; valuable<br/><br/>
+          <b style="color:#6b7280">Zoom</b><br/>Scroll or pinch to zoom<br/>Drag to pan<br/><br/>
+          <span style="color:#1f2937;">Click legend to filter</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ev-strip">
+    <div class="ev-card">
+      <div class="ev-title" id="ev-title"></div>
+      <div class="ev-bars-wrap" id="ev-bars"></div>
+    </div>
+  </div>
+
+  <div class="top-cards">
+    <div class="side-h" style="margin-bottom:12px;">Chase Cards</div>
+    <div class="top-cards-card">
+      <div class="top-cards-head">
+        <span>Card</span><span>Rarity</span>
+        <span style="text-align:right">Market Price</span>
+        <span style="text-align:right">Specific Pull Rate</span>
+      </div>
+      <div id="cards-table"></div>
+    </div>
+  </div>
+
+</div>
+
+<div id="tooltip">
+  <div class="t-name"   id="t-name"></div>
+  <div class="t-rarity" id="t-rarity"></div>
+  <div class="t-row">
+    <div><div class="t-label">Market Value</div><div class="t-val" id="t-price"></div></div>
+    <div><div class="t-label">Specific Pull Rate</div><div class="t-sub" id="t-pull"></div><div class="t-tiny" id="t-pct"></div></div>
+  </div>
+</div>
+
+<footer>
+  PullRates.gg · Pull rates from community pack openings · Prices: TCGPlayer NM ungraded · Not affiliated with Nintendo / Game Freak / Creatures Inc.
+</footer>
+
+<script>
+// ── Load set ────────────────────────────────────────────────
+const params = new URLSearchParams(location.search);
+const setId  = params.get('id');
+const set    = SETS.find(s => s.id === setId);
+
+if (!set) {
+  document.body.innerHTML = `<div style="text-align:center;padding:80px;font-family:monospace;color:#4b5563;">Set not found. <a href="index.html" style="color:#7c3aed">← Go back</a></div>`;
+} else {
+  document.title = `${set.name} Pull Rates — PullRates.gg`;
+  renderPage(set);
+}
+
+function renderPage(set) {
+  document.getElementById('page-content').style.display = '';
+
+  document.getElementById('hdr-series').textContent = set.series;
+  document.getElementById('hdr-title').textContent  = set.name;
+  document.getElementById('hdr-title').style.color  = set.accentColor;
+  document.getElementById('hdr-updated').textContent = `Prices last updated: ${set.pricesUpdated} · Source: TCGPlayer`;
+
+  const metas = [
+    { label:'Pack EV',      val:'$'+set.packEV.toFixed(2)         },
+    { label:'Resale / Pack', val:'$'+set.packResalePrice.toFixed(2) },
+    { label:'Cards',         val:set.cardCount                      },
+    { label:'Top Chase',     val:priceFmt(set.topCard.price)        },
+  ];
+  document.getElementById('hdr-meta').innerHTML = metas.map(m => `
+    <div>
+      <div class="meta-label">${m.label}</div>
+      <div class="meta-val" style="color:${set.accentColor}">${m.val}</div>
+    </div>`).join('');
+
+  // Build chart data
+  const seed = (i, base) => {
+    const j = [-0.07,0.05,-0.04,0.09,-0.08,0.03,-0.05,0.07,-0.03,0.06];
+    return base * Math.pow(10, j[i % j.length] * 0.3);
+  };
+  const chartData = [];
+  set.rarities.forEach((r,i) => chartData.push({
+    id:'agg-'+r.key, name:RARITY_LABELS[r.key]+' (avg)',
+    rarity:r.key, price:r.avgPrice, pullPct:seed(i,r.pullPct),
+    notable:false, count:r.count, ev:r.ev,
+  }));
+  set.notable.forEach(n => chartData.push({
+    id:'notable-'+n.name, name:n.name,
+    rarity:n.rarity, price:n.price, pullPct:n.pullPct, notable:true,
+  }));
+
+  drawChart(chartData, set);
+  buildLegend(chartData, set);
+  buildEV(set);
+  buildTable(set);
+}
+
+// ── Draw Chart ───────────────────────────────────────────────
+function drawChart(data, set) {
+  const svgEl  = document.getElementById('chart-svg');
+  const margin = { top:28, right:28, bottom:62, left:72 };
+  const totalW = Math.max(svgEl.parentElement.clientWidth || 700, 320);
+  const totalH = Math.max(380, Math.min(520, window.innerHeight * 0.50));
+  const W = totalW - margin.left - margin.right;
+  const H = totalH - margin.top  - margin.bottom;
+
+  svgEl.setAttribute('viewBox', `0 0 ${totalW} ${totalH}`);
+  svgEl.setAttribute('width',   totalW);
+  svgEl.setAttribute('height',  totalH);
+  svgEl.innerHTML = '';
+
+  const svg = d3.select(svgEl);
+
+  // ── Base scales ────────────────────────────────────────────
+  const pullExt  = d3.extent(data, d => d.pullPct);
+  const priceExt = d3.extent(data, d => d.price);
+
+  const xBase = d3.scaleLog().domain([pullExt[0]*0.55, pullExt[1]*1.8]).range([0, W]);
+  const yBase = d3.scaleLog().domain([priceExt[0]*0.55, priceExt[1]*2.0]).range([H, 0]);
+
+  // ── Defs ──────────────────────────────────────────────────
+  const defs = svg.append('defs');
+  defs.append('clipPath').attr('id','plotClip')
+    .append('rect').attr('width',W).attr('height',H);
+
+  const bg = defs.append('radialGradient').attr('id','chartBg').attr('cx','50%').attr('cy','40%').attr('r','70%');
+  bg.append('stop').attr('offset','0%').attr('stop-color','#0d0d24');
+  bg.append('stop').attr('offset','100%').attr('stop-color','#06060f');
+
+  svg.append('rect').attr('width',totalW).attr('height',totalH).attr('fill','url(#chartBg)').attr('rx',10);
+
+  const g = svg.append('g').attr('transform',`translate(${margin.left},${margin.top})`);
+
+  // ── Grid (redrawn on zoom) ─────────────────────────────────
+  const gridXG = g.append('g').attr('class','grid-x');
+  const gridYG = g.append('g').attr('class','grid-y');
+
+  // ── Quadrant labels (fixed, fade on zoom) ─────────────────
+  const qlG = g.append('g').attr('class','quad-labels').style('pointer-events','none');
+
+  // ── Axes ──────────────────────────────────────────────────
+  const axStyle = sel => sel
+    .call(s => s.select('.domain').attr('stroke','rgba(255,255,255,.12)'))
+    .call(s => s.selectAll('.tick line').attr('stroke','rgba(255,255,255,.18)'))
+    .call(s => s.selectAll('.tick text').attr('fill','#4b5563').attr('font-family',"'Space Mono',monospace").attr('font-size',9));
+
+  const xFmt = v => v < 0.1 ? d3.format('.2~f')(v)+'%' : d3.format('.2~f')(v)+'%';
+  const yFmt = v => v >= 100 ? '$'+Math.round(v) : v >= 1 ? '$'+v.toFixed(1) : '$'+v.toFixed(2);
+
+  const xAxisDef = d3.axisBottom(xBase).ticks(5,'').tickFormat(xFmt).tickSize(3);
+  const yAxisDef = d3.axisLeft(yBase).ticks(5,'').tickFormat(yFmt).tickSize(3);
+
+  const xAxisG = g.append('g').attr('transform',`translate(0,${H})`).call(xAxisDef).call(axStyle);
+  const yAxisG = g.append('g').call(yAxisDef).call(axStyle);
+
+  // Axis labels
+  g.append('text').attr('x',W/2).attr('y',H+50).attr('text-anchor','middle')
+    .attr('fill','#374151').attr('font-size',10).attr('font-family',"'Space Mono',monospace").attr('letter-spacing','.05em')
+    .text('SPECIFIC CARD PULL RATE (% PER PACK)  →  MORE LIKELY RIGHT');
+  g.append('text').attr('transform','rotate(-90)').attr('x',-H/2).attr('y',-56)
+    .attr('text-anchor','middle').attr('fill','#374151').attr('font-size',10).attr('font-family',"'Space Mono',monospace").attr('letter-spacing','.05em')
+    .text('↑  UNGRADED MARKET PRICE (USD)');
+
+  // ── Crosshairs ─────────────────────────────────────────────
+  const chX = g.append('line').attr('y1',0).attr('y2',H)
+    .attr('stroke','rgba(255,255,255,.14)').attr('stroke-width',1).attr('stroke-dasharray','4 3').style('opacity',0).style('pointer-events','none');
+  const chY = g.append('line').attr('x1',0).attr('x2',W)
+    .attr('stroke','rgba(255,255,255,.14)').attr('stroke-width',1).attr('stroke-dasharray','4 3').style('opacity',0).style('pointer-events','none');
+
+  // ── Dots + Labels layer (clipped) ─────────────────────────
+  const dotG   = g.append('g').attr('clip-path','url(#plotClip)');
+  const labelG = g.append('g').attr('clip-path','url(#plotClip)').style('pointer-events','none');
+
+  const dots = dotG.selectAll('circle.scatter-dot')
+    .data(data).enter().append('circle')
+    .attr('class', d => 'scatter-dot dot-'+d.rarity)
+    .attr('cx', d => xBase(d.pullPct))
+    .attr('cy', d => yBase(d.price))
+    .attr('r',  d => d.notable ? 7 : 5)
+    .attr('fill',         d => RARITY_COLORS[d.rarity] || '#888')
+    .attr('fill-opacity', d => d.notable ? 0.90 : 0.55)
+    .attr('stroke',       d => RARITY_COLORS[d.rarity] || '#888')
+    .attr('stroke-width', d => d.notable ? 2 : 1)
+    .attr('stroke-opacity',d => d.notable ? 0.8 : 0.35)
+    .style('filter',      d => `drop-shadow(0 0 4px ${RARITY_COLORS[d.rarity]}88)`)
+    .style('cursor','pointer');
+
+  // Notable labels
+  data.filter(d => d.notable).forEach(d => {
+    const cx = xBase(d.pullPct), cy = yBase(d.price);
+    const off = cx > W * 0.72 ? [-10,-10] : [10,-10];
+    labelG.append('text')
+      .datum(d)
+      .attr('class','dot-label dot-label-'+d.rarity)
+      .attr('x', cx + off[0]).attr('y', cy + off[1])
+      .attr('text-anchor', off[0] < 0 ? 'end' : 'start')
+      .attr('fill', RARITY_COLORS[d.rarity])
+      .attr('fill-opacity', 0.75)
+      .attr('font-size', 9)
+      .attr('font-family',"'Syne',sans-serif").attr('font-weight',700)
+      .attr('data-off-x', off[0]).attr('data-off-y', off[1])
+      .text(d.name.split(' ').slice(0,3).join(' '));
+  });
+
+  // ── Zoom behaviour ─────────────────────────────────────────
+  let currentTransform = d3.zoomIdentity;
+
+  const zoom = d3.zoom()
+    .scaleExtent([0.8, 40])
+    .translateExtent([[-W*0.3, -H*0.3], [W*1.3, H*1.3]])
+    .filter(event => {
+      // Allow scroll zoom + drag, but not double-click (we use button for reset)
+      if (event.type === 'dblclick') return false;
+      return true;
+    })
+    .on('zoom', function(event) {
+      currentTransform = event.transform;
+
+      const zx = currentTransform.rescaleX(xBase);
+      const zy = currentTransform.rescaleY(yBase);
+
+      // Rescale axes (smooth transition built into d3)
+      xAxisG.call(xAxisDef.scale(zx)).call(axStyle);
+      yAxisG.call(yAxisDef.scale(zy)).call(axStyle);
+
+      // Reposition grid lines
+      const xTicks = zx.ticks(5);
+      const yTicks = zy.ticks(5);
+
+      gridXG.selectAll('line').data(xTicks).join('line')
+        .attr('x1', d => zx(d)).attr('x2', d => zx(d))
+        .attr('y1', 0).attr('y2', H)
+        .attr('stroke','rgba(255,255,255,.05)').attr('stroke-dasharray','3 4');
+
+      gridYG.selectAll('line').data(yTicks).join('line')
+        .attr('x1', 0).attr('x2', W)
+        .attr('y1', d => zy(d)).attr('y2', d => zy(d))
+        .attr('stroke','rgba(255,255,255,.05)').attr('stroke-dasharray','3 4');
+
+      // Move dots
+      dots
+        .attr('cx', d => zx(d.pullPct))
+        .attr('cy', d => zy(d.price));
+
+      // Move labels
+      labelG.selectAll('.dot-label').each(function(d) {
+        const el  = d3.select(this);
+        const offX = +el.attr('data-off-x');
+        const offY = +el.attr('data-off-y');
+        el.attr('x', zx(d.pullPct) + offX).attr('y', zy(d.price) + offY);
+      });
+
+      // Fade quad labels at zoom > 2
+      const zScale = currentTransform.k;
+      qlG.style('opacity', Math.max(0, 1 - (zScale - 1) * 0.6));
+
+      // Update zoom level indicator
+      const pct = Math.round(zScale * 100);
+      const zoomLvl = document.getElementById('zoom-level');
+      if (zoomLvl) zoomLvl.textContent = pct === 100 ? '' : `${pct}%`;
+
+      // Hide hint after first zoom
+      const hint = document.getElementById('zoom-hint');
+      if (hint && zScale !== 1) hint.style.opacity = '0';
+
+      // Cursor
+      svgEl.classList.toggle('dragging', event.sourceEvent?.type === 'mousemove');
+    });
+
+  // Apply zoom to an invisible overlay rect (keeps dots on top for hover)
+  const zoomRect = g.append('rect')
+    .attr('width', W).attr('height', H)
+    .attr('fill', 'transparent')
+    .call(zoom);
+
+  // Store zoom ref on svg element for buttons
+  svgEl._zoom    = zoom;
+  svgEl._zoomSel = d3.select(svgEl);
+  svgEl._margin  = margin;
+
+  // ── Tooltip interaction on dots ───────────────────────────
+  const tooltip = document.getElementById('tooltip');
+
+  dots
+    .on('mousemove', function(event, d) {
+      const col = RARITY_COLORS[d.rarity] || '#fff';
+      const zx  = currentTransform.rescaleX(xBase);
+      const zy  = currentTransform.rescaleY(yBase);
+
+      chX.attr('x1',zx(d.pullPct)).attr('x2',zx(d.pullPct)).style('opacity',1);
+      chY.attr('y1',zy(d.price)).attr('y2',zy(d.price)).style('opacity',1);
+
+      d3.selectAll('.scatter-dot').attr('opacity', o => o.id === d.id ? 1 : 0.18);
+      d3.select(this).attr('r', d.notable ? 10 : 7)
+        .style('filter',`drop-shadow(0 0 10px ${col}) drop-shadow(0 0 5px ${col})`);
+
+      document.getElementById('t-name').textContent    = d.name;
+      document.getElementById('t-rarity').textContent  = RARITY_LABELS[d.rarity] || d.rarity;
+      document.getElementById('t-rarity').style.color  = col;
+      document.getElementById('t-price').textContent   = priceFmt(d.price);
+      document.getElementById('t-price').style.color   = col;
+      document.getElementById('t-pull').textContent    = pullFmt(d.pullPct);
+      document.getElementById('t-pct').textContent     = d.pullPct.toFixed(4) + '%';
+      tooltip.style.borderColor     = col + '55';
+      tooltip.style.borderLeftColor = col;
+      tooltip.style.borderLeftWidth = '3px';
+      tooltip.style.boxShadow       = `0 12px 40px rgba(0,0,0,.8),0 0 24px ${col}22`;
+
+      const tx = Math.min(event.clientX + 18, window.innerWidth - 235);
+      const ty = Math.max(event.clientY - 10, 8);
+      tooltip.style.left = tx + 'px';
+      tooltip.style.top  = ty + 'px';
+      tooltip.classList.add('visible');
+    })
+    .on('mouseleave', function(event, d) {
+      d3.selectAll('.scatter-dot').attr('opacity',1)
+        .attr('r', d => d.notable ? 7 : 5)
+        .style('filter', d => `drop-shadow(0 0 4px ${RARITY_COLORS[d.rarity]}88)`);
+      chX.style('opacity',0); chY.style('opacity',0);
+      tooltip.classList.remove('visible');
+    })
+    .on('mousedown', function(event) {
+      // Prevent zoom drag from firing on dot clicks
+      event.stopPropagation();
+    });
+
+  // Bring dots in front of the zoom rect
+  dotG.raise();
+  labelG.raise();
+
+  // ── Initial grid + quad labels ─────────────────────────────
+  const initXT = xBase.ticks(5), initYT = yBase.ticks(5);
+
+  gridXG.selectAll('line').data(initXT).enter().append('line')
+    .attr('x1',d=>xBase(d)).attr('x2',d=>xBase(d)).attr('y1',0).attr('y2',H)
+    .attr('stroke','rgba(255,255,255,.05)').attr('stroke-dasharray','3 4');
+  gridYG.selectAll('line').data(initYT).enter().append('line')
+    .attr('x1',0).attr('x2',W).attr('y1',d=>yBase(d)).attr('y2',d=>yBase(d))
+    .attr('stroke','rgba(255,255,255,.05)').attr('stroke-dasharray','3 4');
+
+  [
+    { x:xBase(pullExt[0]*0.65),  y:yBase(priceExt[1]*1.5),  t:'RARE & VALUABLE',   a:'start' },
+    { x:xBase(pullExt[1]*1.4),   y:yBase(priceExt[1]*1.5),  t:'EASY PULLS',         a:'end'   },
+    { x:xBase(pullExt[0]*0.65),  y:yBase(priceExt[0]*0.65), t:'RARE & CHEAP',       a:'start' },
+    { x:xBase(pullExt[1]*1.4),   y:yBase(priceExt[0]*0.65), t:'BULK',               a:'end'   },
+  ].forEach(q => {
+    qlG.append('text').attr('x',q.x).attr('y',q.y).attr('text-anchor',q.a)
+      .attr('fill','rgba(255,255,255,.07)').attr('font-size',10)
+      .attr('font-family',"'Space Mono',monospace").attr('letter-spacing','.05em').text(q.t);
+  });
+
+  // ── Zoom controls UI (injected into chart-card) ────────────
+  const card = svgEl.parentElement;
+
+  // Hint
+  const hint = document.createElement('div');
+  hint.id = 'zoom-hint'; hint.className = 'zoom-hint';
+  hint.textContent = 'scroll to zoom · drag to pan';
+  card.appendChild(hint);
+
+  // Level badge
+  const lvl = document.createElement('div');
+  lvl.id = 'zoom-level'; lvl.className = 'zoom-level';
+  card.appendChild(lvl);
+
+  // Buttons
+  const ctrl = document.createElement('div');
+  ctrl.className = 'zoom-controls';
+  ctrl.innerHTML = `
+    <button class="zoom-btn" id="zin"  title="Zoom in">+</button>
+    <button class="zoom-btn" id="zout" title="Zoom out">−</button>
+    <button class="zoom-reset" id="zreset" title="Reset zoom">RESET</button>`;
+  card.appendChild(ctrl);
+
+  function doZoom(factor) {
+    d3.select(svgEl).transition().duration(280).ease(d3.easeCubicOut)
+      .call(zoom.scaleBy, factor);
+  }
+
+  document.getElementById('zin').addEventListener('click',    () => doZoom(1.6));
+  document.getElementById('zout').addEventListener('click',   () => doZoom(1/1.6));
+  document.getElementById('zreset').addEventListener('click', () => {
+    d3.select(svgEl).transition().duration(350).ease(d3.easeCubicOut)
+      .call(zoom.transform, d3.zoomIdentity);
+    document.getElementById('zoom-level').textContent = '';
+    hint.style.opacity = '1';
+  });
+
+  // ── Responsive redraw ──────────────────────────────────────
+  let rt;
+  window.addEventListener('resize', () => {
+    clearTimeout(rt);
+    rt = setTimeout(() => {
+      // Remove old controls before redraw
+      card.querySelectorAll('.zoom-controls,.zoom-level,.zoom-hint').forEach(el => el.remove());
+      drawChart(data, set);
+    }, 150);
+  });
+}
+
+// ── Legend ───────────────────────────────────────────────────
+function buildLegend(chartData, set) {
+  const usedRarities  = [...new Set(chartData.map(d => d.rarity))];
+  const activeRarities = new Set(usedRarities);
+  const el = document.getElementById('legend-items');
+
+  el.innerHTML = usedRarities.map(rk => {
+    const col   = RARITY_COLORS[rk] || '#888';
+    const evRow = set.rarities.find(r => r.key === rk);
+    return `
+      <div class="legend-item" data-rarity="${rk}">
+        <div class="legend-dot" style="background:${col};border-color:${col}55;"></div>
+        <div>
+          <div class="legend-text">${RARITY_LABELS[rk] || rk}</div>
+          <div class="legend-sub">${evRow ? 'EV $'+evRow.ev.toFixed(2)+'/pack' : ''}</div>
+        </div>
+      </div>`;
+  }).join('');
+
+  el.querySelectorAll('.legend-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const rk = item.dataset.rarity;
+      if (activeRarities.has(rk) && activeRarities.size > 1) activeRarities.delete(rk);
+      else activeRarities.add(rk);
+      el.querySelectorAll('.legend-item').forEach(l =>
+        l.classList.toggle('faded', !activeRarities.has(l.dataset.rarity)));
+      d3.selectAll('.scatter-dot').attr('display', d => activeRarities.has(d.rarity) ? null : 'none');
+      d3.selectAll('.dot-label').attr('display',   d => activeRarities.has(d.rarity) ? null : 'none');
+    });
+  });
+}
+
+// ── EV Bars ──────────────────────────────────────────────────
+function buildEV(set) {
+  const maxEV = Math.max(...set.rarities.map(r => r.ev));
+  document.getElementById('ev-title').textContent =
+    `Expected Value Contribution per Pack  ·  Total Pack EV = $${set.packEV.toFixed(2)}`;
+  document.getElementById('ev-bars').innerHTML = set.rarities.map(r => {
+    const h   = Math.max(2, (r.ev / maxEV) * 64);
+    const col = RARITY_COLORS[r.key] || '#888';
+    return `
+      <div class="ev-bar-col" title="${RARITY_LABELS[r.key]}: $${r.ev.toFixed(2)}/pack">
+        <div class="ev-bar-val" style="color:${col}">$${r.ev.toFixed(2)}</div>
+        <div class="ev-bar" style="height:${h}px;background:${col};opacity:.75;"></div>
+        <div class="ev-bar-label">${r.key}</div>
+      </div>`;
+  }).join('');
+}
+
+// ── Table ────────────────────────────────────────────────────
+function buildTable(set) {
+  const rows = [
+    ...set.notable,
+    ...set.rarities.map(r => ({
+      name: RARITY_LABELS[r.key]+' (avg)', rarity:r.key,
+      price:r.avgPrice, pullPct:r.pullPct,
+    }))
+  ].sort((a,b) => b.price - a.price).slice(0,20);
+
+  document.getElementById('cards-table').innerHTML = rows.map(c => {
+    const col = RARITY_COLORS[c.rarity] || '#888';
+    return `
+      <div class="top-cards-row">
+        <div class="tc-name">${c.name}</div>
+        <div class="tc-rarity" style="color:${col}">${c.rarity}</div>
+        <div class="tc-price" style="color:${col}">${priceFmt(c.price)}</div>
+        <div class="tc-odds">${pullFmt(c.pullPct)}</div>
+      </div>`;
+  }).join('');
+}
+</script>
+</body>
+</html>
