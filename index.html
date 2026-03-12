@@ -402,6 +402,10 @@ async function initWithPrices() {
         // Update packEV if provided
         if (live.packEV !== undefined) {
           set.packEV = live.packEV;
+
+          // NEW: Force the live sealed price takeover
+        if (live.packResalePrice !== undefined && live.packResalePrice > 0) {
+          set.packResalePrice = live.packResalePrice;
         }
         // Live data takeover for sealed pack prices
         if (live.packResalePrice !== undefined && live.packResalePrice > 0) {
