@@ -2,113 +2,116 @@
   "lastUpdated": "March 12, 2026",
   "sets": {
     "me2pt5": {
+      "packEV": 7.21,
       "rarities": {
         "MHR": {
-          "avgPrice": 418.28,
+          "avgPrice": 417,
           "ev": 0.42
         },
         "SIR": {
-          "avgPrice": 190.21,
-          "ev": 2.09
+          "avgPrice": 189,
+          "ev": 2.08
         },
         "MAR": {
-          "avgPrice": 24.12,
-          "ev": 0.73
+          "avgPrice": 22,
+          "ev": 0.68
         },
         "UR": {
-          "avgPrice": 5.13,
+          "avgPrice": 5.17,
           "ev": 0.3
         },
         "IR": {
-          "avgPrice": 12.05,
-          "ev": 1.51
+          "avgPrice": 11.86,
+          "ev": 1.48
         },
         "DR": {
-          "avgPrice": 1.84,
-          "ev": 0.37
+          "avgPrice": 1.91,
+          "ev": 0.38
         },
         "R": {
-          "avgPrice": 0.49,
-          "ev": 0.08
+          "avgPrice": 0.17,
+          "ev": 0.12
         },
         "U": {
-          "avgPrice": 0.32,
-          "ev": 0.09
+          "avgPrice": 0.14,
+          "ev": 0.43
         },
         "C": {
-          "avgPrice": 0.37,
-          "ev": 0.18
+          "avgPrice": 0.14,
+          "ev": 0.54
         }
       },
       "notablePrices": {
-        "Mega Gengar ex": 1020.45,
-        "Mega Charizard Y ex": 509.28,
-        "Mega Dragonite ex": 613.38,
-        "Pikachu ex": 508.74,
-        "Team Rocket's Mewtwo ex": 297.93
+        "Mega Gengar ex": 993,
+        "Mega Charizard Y ex": 666,
+        "Mega Dragonite ex": 611,
+        "Pikachu ex": 505,
+        "Team Rocket's Mewtwo ex": 250
       },
       "topCard": {
-        "name": "Mega Gengar Ex.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
-        "price": 1020.45
+        "name": "Mega Gengar ex",
+        "price": 993
       }
     },
     "sv9": {
+      "packEV": 3.07,
       "rarities": {
         "HR": {
-          "avgPrice": 10.11,
-          "ev": 0.07
-        },
-        "SIR": {
-          "avgPrice": 53.63,
-          "ev": 0.62
-        },
-        "UR": {
-          "avgPrice": 2.13,
-          "ev": 0.14
-        },
-        "IR": {
-          "avgPrice": 6.73,
-          "ev": 0.57
-        },
-        "DR": {
-          "avgPrice": 0.76,
-          "ev": 0.15
-        },
-        "R": {
-          "avgPrice": 0.15,
-          "ev": 0.11
-        },
-        "U": {
-          "avgPrice": 0.1,
-          "ev": 0.3
-        },
-        "C": {
-          "avgPrice": 0.11,
-          "ev": 0.44
-        }
-      },
-      "notablePrices": {
-        "Lillie's Clefairy ex": 122.22,
-        "Salamence ex": 54.04,
-        "N's Zoroark ex": 50.78
-      },
-      "topCard": {
-        "name": "Lillie'S Clefairy Ex.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
-        "price": 122.22
-      }
-    },
-    "sv8pt5": {
-      "rarities": {
-        "HR": {
-          "avgPrice": 15.05,
+          "avgPrice": 10.33,
           "ev": 0.08
         },
         "SIR": {
-          "avgPrice": 113.72,
+          "avgPrice": 54.16,
+          "ev": 0.63
+        },
+        "UR": {
+          "avgPrice": 2.22,
+          "ev": 0.15
+        },
+        "IR": {
+          "avgPrice": 6.61,
+          "ev": 0.56
+        },
+        "DR": {
+          "avgPrice": 0.84,
+          "ev": 0.17
+        },
+        "R": {
+          "avgPrice": 0.16,
+          "ev": 0.12
+        },
+        "U": {
+          "avgPrice": 0.12,
+          "ev": 0.35
+        },
+        "C": {
+          "avgPrice": 0.13,
+          "ev": 0.53
+        }
+      },
+      "notablePrices": {
+        "Lillie's Clefairy ex": 122,
+        "Salamence ex": 54,
+        "N's Zoroark ex": 51
+      },
+      "topCard": {
+        "name": "Lillie's Clefairy ex",
+        "price": 122
+      }
+    },
+    "sv8pt5": {
+      "packEV": 4.56,
+      "rarities": {
+        "HR": {
+          "avgPrice": 14.87,
+          "ev": 0.08
+        },
+        "SIR": {
+          "avgPrice": 113.52,
           "ev": 2.52
         },
         "UR": {
-          "avgPrice": 0.67,
+          "avgPrice": 0.72,
           "ev": 0.05
         },
         "ACE": {
@@ -116,305 +119,107 @@
           "ev": 0.02
         },
         "DR": {
-          "avgPrice": 1.65,
-          "ev": 0.27
+          "avgPrice": 1.72,
+          "ev": 0.28
         },
         "R": {
-          "avgPrice": 14.1,
-          "ev": 0.22
+          "avgPrice": 0.19,
+          "ev": 0.14
         },
         "U": {
-          "avgPrice": 3.96,
-          "ev": 0.04
+          "avgPrice": 0.11,
+          "ev": 0.32
         },
         "C": {
-          "avgPrice": 3.09,
-          "ev": 0.07
+          "avgPrice": 0.09,
+          "ev": 0.38
         }
       },
       "notablePrices": {
-        "Umbreon ex": 1121.45,
-        "Sylveon ex": 299.11,
-        "Leafeon ex": 247.49
+        "Umbreon ex": 1121,
+        "Sylveon ex": 301,
+        "Leafeon ex": 245
       },
       "topCard": {
-        "name": "Umbreon Ex.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
-        "price": 1121.45
+        "name": "Umbreon ex",
+        "price": 1121
       }
     },
     "sv8": {
+      "packEV": 3.08,
       "rarities": {
         "HR": {
-          "avgPrice": 17.22,
+          "avgPrice": 17.52,
           "ev": 0.09
         },
         "SIR": {
-          "avgPrice": 63.05,
-          "ev": 0.73
+          "avgPrice": 62.82,
+          "ev": 0.72
         },
         "UR": {
-          "avgPrice": 3.03,
-          "ev": 0.2
+          "avgPrice": 3.15,
+          "ev": 0.21
         },
         "IR": {
-          "avgPrice": 5.99,
-          "ev": 0.46
+          "avgPrice": 6.32,
+          "ev": 0.48
         },
         "ACE": {
+          "avgPrice": 1.27,
+          "ev": 0.06
+        },
+        "DR": {
           "avgPrice": 1.17,
-          "ev": 0.06
-        },
-        "DR": {
-          "avgPrice": 1.02,
-          "ev": 0.17
-        },
-        "R": {
-          "avgPrice": 0.13,
-          "ev": 0.1
-        },
-        "U": {
-          "avgPrice": 0.11,
-          "ev": 0.32
-        },
-        "C": {
-          "avgPrice": 0.1,
-          "ev": 0.4
-        }
-      },
-      "notablePrices": {
-        "Pikachu ex": 256.27,
-        "Latias ex": 171.56,
-        "Milotic ex": 94.76
-      },
-      "topCard": {
-        "name": "Pikachu Ex.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
-        "price": 256.27
-      }
-    },
-    "sv7": {
-      "rarities": {
-        "HR": {
-          "avgPrice": 8.57,
-          "ev": 0.06
-        },
-        "SIR": {
-          "avgPrice": 22.65,
-          "ev": 0.25
-        },
-        "UR": {
-          "avgPrice": 2.76,
-          "ev": 0.19
-        },
-        "IR": {
-          "avgPrice": 18.45,
-          "ev": 1.44
-        },
-        "ACE": {
-          "avgPrice": 0.37,
-          "ev": 0.02
-        },
-        "DR": {
-          "avgPrice": 0.84,
-          "ev": 0.14
-        },
-        "R": {
-          "avgPrice": 0.13,
-          "ev": 0.1
-        },
-        "U": {
-          "avgPrice": 0.09,
-          "ev": 0.27
-        },
-        "C": {
-          "avgPrice": 0.1,
-          "ev": 0.39
-        }
-      },
-      "notablePrices": {
-        "Squirtle": 99.23,
-        "Bulbasaur": 79.13,
-        "Dachsbun ex": 37.79
-      },
-      "topCard": {
-        "name": "Squirtle.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
-        "price": 99.23
-      }
-    },
-    "sv6pt5": {
-      "rarities": {
-        "HR": {
-          "avgPrice": 28.33,
-          "ev": 0.22
-        },
-        "SIR": {
-          "avgPrice": 28.82,
-          "ev": 0.33
-        },
-        "UR": {
-          "avgPrice": 4.92,
-          "ev": 0.34
-        },
-        "IR": {
-          "avgPrice": 23.71,
-          "ev": 1.83
-        },
-        "ACE": {
-          "avgPrice": 0.6,
-          "ev": 0.03
-        },
-        "DR": {
-          "avgPrice": 1.87,
-          "ev": 0.31
-        },
-        "R": {
-          "avgPrice": 0.12,
-          "ev": 0.09
-        },
-        "U": {
-          "avgPrice": 0.12,
-          "ev": 0.36
-        },
-        "C": {
-          "avgPrice": 0.08,
-          "ev": 0.32
-        }
-      },
-      "notablePrices": {
-        "Fezandipiti ex": 47.37,
-        "Duskull": 51.52
-      },
-      "topCard": {
-        "name": "Duskull.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
-        "price": 51.52
-      }
-    },
-    "sv6": {
-      "rarities": {
-        "HR": {
-          "avgPrice": 7.09,
-          "ev": 0.05
-        },
-        "SIR": {
-          "avgPrice": 56.78,
-          "ev": 0.66
-        },
-        "UR": {
-          "avgPrice": 3.44,
-          "ev": 0.23
-        },
-        "IR": {
-          "avgPrice": 11.34,
-          "ev": 0.88
-        },
-        "ACE": {
-          "avgPrice": 3.74,
-          "ev": 0.19
-        },
-        "DR": {
-          "avgPrice": 1.05,
-          "ev": 0.18
-        },
-        "R": {
-          "avgPrice": 0.16,
-          "ev": 0.12
-        },
-        "U": {
-          "avgPrice": 0.11,
-          "ev": 0.33
-        },
-        "C": {
-          "avgPrice": 0.1,
-          "ev": 0.4
-        }
-      },
-      "notablePrices": {
-        "Greninja ex": 279.18,
-        "Perrin": 112.13,
-        "Eevee": 69.72
-      },
-      "topCard": {
-        "name": "Greninja Ex.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
-        "price": 279.18
-      }
-    },
-    "sv5": {
-      "rarities": {
-        "HR": {
-          "avgPrice": 9.46,
-          "ev": 0.07
-        },
-        "SIR": {
-          "avgPrice": 29.62,
-          "ev": 0.35
-        },
-        "UR": {
-          "avgPrice": 4.19,
-          "ev": 0.28
-        },
-        "IR": {
-          "avgPrice": 14.75,
-          "ev": 1.14
-        },
-        "ACE": {
-          "avgPrice": 4.39,
-          "ev": 0.22
-        },
-        "DR": {
-          "avgPrice": 0.98,
-          "ev": 0.17
+          "ev": 0.2
         },
         "R": {
           "avgPrice": 0.14,
           "ev": 0.11
         },
         "U": {
-          "avgPrice": 0.11,
-          "ev": 0.34
+          "avgPrice": 0.12,
+          "ev": 0.36
         },
         "C": {
           "avgPrice": 0.11,
-          "ev": 0.44
+          "ev": 0.43
         }
       },
       "notablePrices": {
-        "Raging Bolt ex": 62.21,
-        "Gastly": 60.67,
-        "Iron Crown ex": 36.1,
-        "Morty's Conviction": 39.34
+        "Pikachu ex": 256,
+        "Latias ex": 170,
+        "Milotic ex": 95
       },
       "topCard": {
-        "name": "Raging Bolt Ex.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
-        "price": 62.21
+        "name": "Pikachu ex",
+        "price": 256
       }
     },
-    "sv4pt5": {
+    "sv7": {
+      "packEV": 3.19,
       "rarities": {
         "HR": {
-          "avgPrice": 8.37,
-          "ev": 0.13
+          "avgPrice": 8.73,
+          "ev": 0.06
         },
         "SIR": {
-          "avgPrice": 132.38,
-          "ev": 2.28
+          "avgPrice": 22.6,
+          "ev": 0.25
         },
         "UR": {
-          "avgPrice": 0.81,
-          "ev": 0.05
+          "avgPrice": 2.8,
+          "ev": 0.19
         },
         "IR": {
-          "avgPrice": 1.5,
-          "ev": 0.11
+          "avgPrice": 17.73,
+          "ev": 1.38
         },
-        "SHU": {
-          "avgPrice": 4.53,
-          "ev": 0.35
-        },
-        "SHR": {
-          "avgPrice": 5.02,
-          "ev": 1.28
+        "ACE": {
+          "avgPrice": 0.38,
+          "ev": 0.02
         },
         "DR": {
-          "avgPrice": 0.96,
+          "avgPrice": 0.88,
           "ev": 0.15
         },
         "R": {
@@ -422,537 +227,745 @@
           "ev": 0.1
         },
         "U": {
-          "avgPrice": 0.09,
-          "ev": 0.28
-        },
-        "C": {
-          "avgPrice": 0.07,
+          "avgPrice": 0.1,
           "ev": 0.29
-        }
-      },
-      "notablePrices": {
-        "Mew ex": 632.58,
-        "Charizard ex": 230.34,
-        "Gardevoir ex": 117.26,
-        "Pikachu": 44.97,
-        "Iono": 27.79,
-        "Snorlax": 26.4
-      },
-      "topCard": {
-        "name": "Mew Ex.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
-        "price": 632.58
-      }
-    },
-    "sv4": {
-      "rarities": {
-        "HR": {
-          "avgPrice": 5.03,
-          "ev": 0.06
-        },
-        "SIR": {
-          "avgPrice": 16.41,
-          "ev": 0.35
-        },
-        "UR": {
-          "avgPrice": 2.73,
-          "ev": 0.18
-        },
-        "IR": {
-          "avgPrice": 13.65,
-          "ev": 1.05
-        },
-        "DR": {
-          "avgPrice": 0.84,
-          "ev": 0.13
-        },
-        "R": {
-          "avgPrice": 0.17,
-          "ev": 0.13
-        },
-        "U": {
-          "avgPrice": 0.13,
-          "ev": 0.4
         },
         "C": {
           "avgPrice": 0.1,
-          "ev": 0.42
+          "ev": 0.4
         }
       },
       "notablePrices": {
-        "Groudon": 79.57,
-        "Altaria ex": 43.52,
-        "Minun": 38.82
+        "Squirtle": 90,
+        "Bulbasaur": 78,
+        "Dachsbun ex": 37
       },
       "topCard": {
-        "name": "Groudon.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
-        "price": 79.57
+        "name": "Squirtle",
+        "price": 90
       }
     },
-    "sv3pt5": {
+    "sv6pt5": {
+      "packEV": 4.09,
       "rarities": {
         "HR": {
-          "avgPrice": 11.28,
+          "avgPrice": 28.01,
           "ev": 0.22
         },
         "SIR": {
-          "avgPrice": 153.47,
-          "ev": 4.77
-        },
-        "UR": {
-          "avgPrice": 14.13,
-          "ev": 0.91
-        },
-        "IR": {
-          "avgPrice": 59.38,
-          "ev": 5.05
-        },
-        "DR": {
-          "avgPrice": 2.39,
+          "avgPrice": 28.07,
           "ev": 0.32
         },
-        "R": {
-          "avgPrice": 0.39,
-          "ev": 0.31
-        },
-        "U": {
-          "avgPrice": 0.11,
-          "ev": 0.34
-        },
-        "C": {
-          "avgPrice": 0.11,
-          "ev": 0.43
-        }
-      },
-      "notablePrices": {
-        "Charizard ex": 461.55,
-        "Venusaur ex": 154.36,
-        "Blastoise ex": 189.34
-      },
-      "topCard": {
-        "name": "Charizard Ex.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
-        "price": 461.55
-      }
-    },
-    "sv3": {
-      "rarities": {
-        "HR": {
-          "avgPrice": 13.5,
-          "ev": 0.26
-        },
-        "SIR": {
-          "avgPrice": 19.77,
-          "ev": 0.62
-        },
         "UR": {
-          "avgPrice": 2.98,
-          "ev": 0.2
+          "avgPrice": 4.77,
+          "ev": 0.33
         },
         "IR": {
-          "avgPrice": 10.72,
-          "ev": 0.81
+          "avgPrice": 21.81,
+          "ev": 1.68
+        },
+        "ACE": {
+          "avgPrice": 0.59,
+          "ev": 0.03
         },
         "DR": {
-          "avgPrice": 1.26,
-          "ev": 0.17
-        },
-        "R": {
-          "avgPrice": 0.12,
-          "ev": 0.1
-        },
-        "U": {
-          "avgPrice": 0.12,
-          "ev": 0.35
-        },
-        "C": {
-          "avgPrice": 0.11,
-          "ev": 0.43
-        }
-      },
-      "notablePrices": {
-        "Charizard ex (SIR)": 88.18,
-        "Charizard ex (Gold)": 88.18,
-        "Ninetales": 30.64
-      },
-      "topCard": {
-        "name": "Charizard Ex.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
-        "price": 88.18
-      }
-    },
-    "sv2": {
-      "rarities": {
-        "HR": {
-          "avgPrice": 5.51,
-          "ev": 0.1
-        },
-        "SIR": {
-          "avgPrice": 19.47,
-          "ev": 0.62
-        },
-        "UR": {
-          "avgPrice": 3.3,
-          "ev": 0.22
-        },
-        "IR": {
-          "avgPrice": 26.39,
-          "ev": 2.03
-        },
-        "DR": {
-          "avgPrice": 0.93,
-          "ev": 0.13
-        },
-        "R": {
-          "avgPrice": 0.17,
-          "ev": 0.14
-        },
-        "U": {
-          "avgPrice": 0.12,
-          "ev": 0.36
-        },
-        "C": {
-          "avgPrice": 0.1,
-          "ev": 0.38
-        }
-      },
-      "notablePrices": {
-        "Magikarp": 303.99,
-        "Tyranitar": 62.94,
-        "Raichu": 79.98
-      },
-      "topCard": {
-        "name": "Magikarp.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
-        "price": 303.99
-      }
-    },
-    "sv1": {
-      "rarities": {
-        "HR": {
-          "avgPrice": 5.84,
-          "ev": 0.11
-        },
-        "SIR": {
-          "avgPrice": 16.69,
-          "ev": 0.53
-        },
-        "UR": {
-          "avgPrice": 3.12,
-          "ev": 0.2
-        },
-        "IR": {
-          "avgPrice": 13.16,
-          "ev": 1.01
-        },
-        "DR": {
-          "avgPrice": 0.68,
-          "ev": 0.09
+          "avgPrice": 1.95,
+          "ev": 0.32
         },
         "R": {
           "avgPrice": 0.14,
           "ev": 0.11
         },
         "U": {
-          "avgPrice": 0.11,
-          "ev": 0.32
+          "avgPrice": 0.12,
+          "ev": 0.36
         },
         "C": {
-          "avgPrice": 0.11,
-          "ev": 0.44
+          "avgPrice": 0.09,
+          "ev": 0.36
         }
       },
       "notablePrices": {
-        "Miraidon ex": 19.24,
-        "Koraidon ex": 16.23,
-        "Arcanine ex": 9.84
+        "Fezandipiti ex": 46,
+        "Duskull": 45,
+        "Basic Dark Energy": 44
       },
       "topCard": {
-        "name": "Gardevoir Ex.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
-        "price": 71.2
+        "name": "Fezandipiti ex",
+        "price": 46
+      }
+    },
+    "sv6": {
+      "packEV": 3.01,
+      "rarities": {
+        "HR": {
+          "avgPrice": 7.16,
+          "ev": 0.05
+        },
+        "SIR": {
+          "avgPrice": 53.86,
+          "ev": 0.63
+        },
+        "UR": {
+          "avgPrice": 3.04,
+          "ev": 0.2
+        },
+        "IR": {
+          "avgPrice": 10.19,
+          "ev": 0.79
+        },
+        "ACE": {
+          "avgPrice": 2.64,
+          "ev": 0.13
+        },
+        "DR": {
+          "avgPrice": 0.89,
+          "ev": 0.15
+        },
+        "R": {
+          "avgPrice": 0.15,
+          "ev": 0.11
+        },
+        "U": {
+          "avgPrice": 0.09,
+          "ev": 0.26
+        },
+        "C": {
+          "avgPrice": 0.09,
+          "ev": 0.34
+        }
+      },
+      "notablePrices": {
+        "Greninja ex": 280,
+        "Perrin": 96,
+        "Eevee": 59
+      },
+      "topCard": {
+        "name": "Greninja ex",
+        "price": 280
+      }
+    },
+    "sv5": {
+      "packEV": 2.86,
+      "rarities": {
+        "HR": {
+          "avgPrice": 9.18,
+          "ev": 0.07
+        },
+        "SIR": {
+          "avgPrice": 30.07,
+          "ev": 0.35
+        },
+        "UR": {
+          "avgPrice": 4.01,
+          "ev": 0.27
+        },
+        "IR": {
+          "avgPrice": 12.97,
+          "ev": 1.0
+        },
+        "ACE": {
+          "avgPrice": 3.97,
+          "ev": 0.2
+        },
+        "DR": {
+          "avgPrice": 0.95,
+          "ev": 0.16
+        },
+        "R": {
+          "avgPrice": 0.11,
+          "ev": 0.08
+        },
+        "U": {
+          "avgPrice": 0.07,
+          "ev": 0.21
+        },
+        "C": {
+          "avgPrice": 0.06,
+          "ev": 0.25
+        }
+      },
+      "notablePrices": {
+        "Raging Bolt ex": 63,
+        "Gastly": 53,
+        "Iron Crown ex": 45,
+        "Morty's Conviction": 41,
+        "Milotic ex": 28
+      },
+      "topCard": {
+        "name": "Raging Bolt ex",
+        "price": 63
+      }
+    },
+    "sv4pt5": {
+      "packEV": 4.85,
+      "rarities": {
+        "SIR": {
+          "avgPrice": 121,
+          "ev": 2.09
+        },
+        "SHR": {
+          "avgPrice": 2.5,
+          "ev": 0.64
+        },
+        "SHU": {
+          "avgPrice": 8.0,
+          "ev": 0.57
+        },
+        "HR": {
+          "avgPrice": 13.0,
+          "ev": 0.21
+        },
+        "IR": {
+          "avgPrice": 5.0,
+          "ev": 0.36
+        },
+        "UR": {
+          "avgPrice": 2.5,
+          "ev": 0.17
+        },
+        "DR": {
+          "avgPrice": 0.9,
+          "ev": 0.11
+        },
+        "R": {
+          "avgPrice": 0.13,
+          "ev": 0.1
+        },
+        "U": {
+          "avgPrice": 0.1,
+          "ev": 0.3
+        },
+        "C": {
+          "avgPrice": 0.09,
+          "ev": 0.36
+        }
+      },
+      "notablePrices": {
+        "Mew ex": 537,
+        "Charizard ex": 217,
+        "Gardevoir ex": 117,
+        "Pikachu": 38,
+        "Iono": 28,
+        "Snorlax": 24
+      },
+      "topCard": {
+        "name": "Mew ex",
+        "price": 537
+      }
+    },
+    "sv4": {
+      "packEV": 2.9,
+      "rarities": {
+        "HR": {
+          "avgPrice": 4.99,
+          "ev": 0.06
+        },
+        "SIR": {
+          "avgPrice": 15.91,
+          "ev": 0.34
+        },
+        "UR": {
+          "avgPrice": 2.7,
+          "ev": 0.18
+        },
+        "IR": {
+          "avgPrice": 12.58,
+          "ev": 0.97
+        },
+        "DR": {
+          "avgPrice": 0.92,
+          "ev": 0.14
+        },
+        "R": {
+          "avgPrice": 0.15,
+          "ev": 0.12
+        },
+        "U": {
+          "avgPrice": 0.12,
+          "ev": 0.37
+        },
+        "C": {
+          "avgPrice": 0.09,
+          "ev": 0.36
+        }
+      },
+      "notablePrices": {
+        "Groudon": 73,
+        "Altaria ex": 40,
+        "Minun": 33
+      },
+      "topCard": {
+        "name": "Groudon",
+        "price": 73
+      }
+    },
+    "sv3pt5": {
+      "packEV": 4.5,
+      "rarities": {
+        "HR": {
+          "avgPrice": 13.0,
+          "ev": 0.24
+        },
+        "SIR": {
+          "avgPrice": 72.0,
+          "ev": 2.13
+        },
+        "UR": {
+          "avgPrice": 3.5,
+          "ev": 0.22
+        },
+        "IR": {
+          "avgPrice": 9.5,
+          "ev": 0.72
+        },
+        "DR": {
+          "avgPrice": 1.2,
+          "ev": 0.18
+        },
+        "R": {
+          "avgPrice": 0.12,
+          "ev": 0.09
+        },
+        "U": {
+          "avgPrice": 0.1,
+          "ev": 0.3
+        },
+        "C": {
+          "avgPrice": 0.09,
+          "ev": 0.37
+        }
+      },
+      "notablePrices": {
+        "Charizard ex": 239,
+        "Venusaur ex": 78,
+        "Blastoise ex": 73
+      },
+      "topCard": {
+        "name": "Charizard ex",
+        "price": 239
+      }
+    },
+    "sv3": {
+      "packEV": 2.98,
+      "rarities": {
+        "HR": {
+          "avgPrice": 13.92,
+          "ev": 0.27
+        },
+        "SIR": {
+          "avgPrice": 16.68,
+          "ev": 0.52
+        },
+        "UR": {
+          "avgPrice": 2.98,
+          "ev": 0.2
+        },
+        "IR": {
+          "avgPrice": 8.98,
+          "ev": 0.68
+        },
+        "DR": {
+          "avgPrice": 1.25,
+          "ev": 0.17
+        },
+        "R": {
+          "avgPrice": 0.09,
+          "ev": 0.07
+        },
+        "U": {
+          "avgPrice": 0.1,
+          "ev": 0.3
+        },
+        "C": {
+          "avgPrice": 0.09,
+          "ev": 0.37
+        }
+      },
+      "notablePrices": {
+        "Charizard ex (SIR)": 73,
+        "Charizard ex (Gold)": 35,
+        "Ninetales": 24
+      },
+      "topCard": {
+        "name": "Charizard ex",
+        "price": 73
+      }
+    },
+    "sv2": {
+      "packEV": 3.89,
+      "rarities": {
+        "HR": {
+          "avgPrice": 5.57,
+          "ev": 0.1
+        },
+        "SIR": {
+          "avgPrice": 17.91,
+          "ev": 0.57
+        },
+        "UR": {
+          "avgPrice": 2.97,
+          "ev": 0.2
+        },
+        "IR": {
+          "avgPrice": 22.91,
+          "ev": 1.76
+        },
+        "DR": {
+          "avgPrice": 0.86,
+          "ev": 0.12
+        },
+        "R": {
+          "avgPrice": 0.14,
+          "ev": 0.11
+        },
+        "U": {
+          "avgPrice": 0.13,
+          "ev": 0.38
+        },
+        "C": {
+          "avgPrice": 0.08,
+          "ev": 0.31
+        }
+      },
+      "notablePrices": {
+        "Magikarp": 273,
+        "Tyranitar": 59,
+        "Raichu": 58,
+        "Espeon": 42,
+        "Gardevoir ex": 28
+      },
+      "topCard": {
+        "name": "Magikarp",
+        "price": 273
+      }
+    },
+    "sv1": {
+      "packEV": 2.65,
+      "rarities": {
+        "HR": {
+          "avgPrice": 6.5,
+          "ev": 0.06
+        },
+        "SIR": {
+          "avgPrice": 24.0,
+          "ev": 0.28
+        },
+        "UR": {
+          "avgPrice": 3.2,
+          "ev": 0.21
+        },
+        "IR": {
+          "avgPrice": 7.8,
+          "ev": 0.57
+        },
+        "DR": {
+          "avgPrice": 0.95,
+          "ev": 0.21
+        },
+        "R": {
+          "avgPrice": 0.14,
+          "ev": 0.12
+        },
+        "U": {
+          "avgPrice": 0.11,
+          "ev": 0.34
+        },
+        "C": {
+          "avgPrice": 0.08,
+          "ev": 0.31
+        }
+      },
+      "notablePrices": {
+        "Miraidon ex": 85,
+        "Koraidon ex": 65,
+        "Arcanine ex": 42,
+        "Meowscarada ex": 22,
+        "Garganacl": 18
+      },
+      "topCard": {
+        "name": "Miraidon ex",
+        "price": 85
       }
     },
     "swsh12pt5": {
+      "packEV": 6.7,
       "rarities": {
         "GGS": {
-          "avgPrice": 133.3,
-          "ev": 1.07
+          "avgPrice": 118.45,
+          "ev": 0.95
         },
         "GGU": {
-          "avgPrice": 6.25,
-          "ev": 0.23
+          "avgPrice": 5.65,
+          "ev": 0.21
         },
         "GGVS": {
-          "avgPrice": 47.8,
-          "ev": 1.79
+          "avgPrice": 43.3,
+          "ev": 1.62
         },
         "TGVM": {
-          "avgPrice": 23.55,
+          "avgPrice": 22.68,
           "ev": 0.26
         },
         "TGV": {
-          "avgPrice": 21.47,
-          "ev": 0.72
+          "avgPrice": 19.89,
+          "ev": 0.67
         },
         "TGH": {
-          "avgPrice": 7.47,
-          "ev": 1.67
+          "avgPrice": 5.79,
+          "ev": 1.3
         },
         "SR": {
-          "avgPrice": 35.03,
-          "ev": 0.26
+          "avgPrice": 31.49,
+          "ev": 0.24
         },
         "UR": {
-          "avgPrice": 4.25,
+          "avgPrice": 4.05,
           "ev": 0.12
         },
         "VSTAR": {
-          "avgPrice": 2.51,
-          "ev": 0.08
-        },
-        "VMAX": {
-          "avgPrice": 4.16,
-          "ev": 0.08
+          "avgPrice": 2.26,
+          "ev": 0.07
         },
         "V": {
-          "avgPrice": 1.65,
-          "ev": 0.2
+          "avgPrice": 1.29,
+          "ev": 0.16
         },
         "RAD": {
-          "avgPrice": 4.21,
-          "ev": 0.19
+          "avgPrice": 2.95,
+          "ev": 0.13
         },
         "RH": {
           "avgPrice": 0.34,
           "ev": 0.06
         },
         "R": {
-          "avgPrice": 0.17,
-          "ev": 0.1
+          "avgPrice": 0.13,
+          "ev": 0.08
         },
         "U": {
-          "avgPrice": 0.1,
-          "ev": 0.31
+          "avgPrice": 0.07,
+          "ev": 0.2
         },
         "C": {
-          "avgPrice": 0.1,
-          "ev": 0.51
+          "avgPrice": 0.08,
+          "ev": 0.38
         }
       },
       "notablePrices": {
-        "Giratina VSTAR": 221.77,
-        "Arceus VSTAR": 125.76,
-        "Mewtwo VSTAR": 189.07,
-        "Pikachu VMAX": 35.03,
-        "Deoxys VMAX": 47.77
+        "Giratina VSTAR": 201,
+        "Arceus VSTAR": 117,
+        "Mewtwo VSTAR": 173,
+        "Pikachu VMAX": 58,
+        "Deoxys VMAX": 48
       },
       "topCard": {
-        "name": "Giratina Vstar.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
-        "price": 221.77
+        "name": "Giratina VSTAR",
+        "price": 201
       }
     },
     "swsh12": {
+      "packEV": 2.97,
       "rarities": {
         "TGS": {
-          "avgPrice": 9.99,
-          "ev": 0.09
+          "avgPrice": 10.89,
+          "ev": 0.1
         },
         "TGU": {
-          "avgPrice": 4.7,
+          "avgPrice": 4.63,
           "ev": 0.05
         },
         "TGVM": {
-          "avgPrice": 37.6,
-          "ev": 0.29
+          "avgPrice": 35.81,
+          "ev": 0.28
         },
         "TGV": {
-          "avgPrice": 12.42,
-          "ev": 0.17
+          "avgPrice": 11.91,
+          "ev": 0.16
         },
         "TGH": {
-          "avgPrice": 3.46,
-          "ev": 0.29
+          "avgPrice": 3.08,
+          "ev": 0.26
         },
         "SR": {
-          "avgPrice": 6.43,
+          "avgPrice": 6.03,
           "ev": 0.06
         },
         "RBOW": {
-          "avgPrice": 9.83,
+          "avgPrice": 9.26,
           "ev": 0.12
         },
         "UR": {
-          "avgPrice": 19.27,
-          "ev": 0.71
+          "avgPrice": 18.79,
+          "ev": 0.7
         },
         "VSTAR": {
-          "avgPrice": 1.88,
-          "ev": 0.06
-        },
-        "VMAX": {
-          "avgPrice": 1.53,
-          "ev": 0.01
+          "avgPrice": 1.57,
+          "ev": 0.05
         },
         "V": {
-          "avgPrice": 1.43,
-          "ev": 0.17
+          "avgPrice": 1.25,
+          "ev": 0.14
         },
         "RAD": {
-          "avgPrice": 0.9,
-          "ev": 0.05
+          "avgPrice": 0.84,
+          "ev": 0.04
         },
         "RH": {
           "avgPrice": 0.29,
           "ev": 0.05
         },
         "R": {
-          "avgPrice": 0.15,
+          "avgPrice": 0.14,
           "ev": 0.09
         },
         "U": {
-          "avgPrice": 0.1,
-          "ev": 0.3
+          "avgPrice": 0.09,
+          "ev": 0.27
         },
         "C": {
-          "avgPrice": 0.09,
-          "ev": 0.47
+          "avgPrice": 0.08,
+          "ev": 0.42
         }
       },
       "notablePrices": {
-        "Lugia V": 359.59,
-        "Rayquaza VMAX": 103.72,
-        "Lugia VSTAR": 35.2,
-        "Alolan Vulpix V": 7.5,
-        "Regieleki VMAX": 7.36
+        "Lugia V": 354,
+        "Rayquaza VMAX": 99,
+        "Lugia VSTAR": 34,
+        "Alolan Vulpix V": 22,
+        "Regieleki VMAX": 19
       },
       "topCard": {
-        "name": "Lugia V.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
-        "price": 359.59
+        "name": "Lugia V",
+        "price": 354
       }
     },
     "swsh11": {
+      "packEV": 3.86,
       "rarities": {
         "TGS": {
-          "avgPrice": 20.1,
-          "ev": 0.18
+          "avgPrice": 16.87,
+          "ev": 0.15
         },
         "TGU": {
-          "avgPrice": 4.71,
-          "ev": 0.05
+          "avgPrice": 4.05,
+          "ev": 0.04
         },
         "TGVM": {
-          "avgPrice": 26.08,
-          "ev": 0.18
+          "avgPrice": 24.19,
+          "ev": 0.17
         },
         "TGV": {
-          "avgPrice": 15.54,
-          "ev": 0.19
+          "avgPrice": 13.51,
+          "ev": 0.16
         },
         "TGH": {
-          "avgPrice": 11.54,
-          "ev": 0.99
+          "avgPrice": 8.78,
+          "ev": 0.75
         },
         "SR": {
-          "avgPrice": 4.78,
-          "ev": 0.04
+          "avgPrice": 4.45,
+          "ev": 0.03
         },
         "RBOW": {
-          "avgPrice": 6.89,
-          "ev": 0.09
+          "avgPrice": 6.45,
+          "ev": 0.08
         },
         "UR": {
-          "avgPrice": 37.75,
-          "ev": 1.47
+          "avgPrice": 32.92,
+          "ev": 1.28
         },
         "VSTAR": {
-          "avgPrice": 1.32,
-          "ev": 0.05
-        },
-        "VMAX": {
-          "avgPrice": 1.97,
-          "ev": 0.01
-        },
-        "V": {
-          "avgPrice": 0.79,
-          "ev": 0.09
-        },
-        "RAD": {
-          "avgPrice": 0.75,
+          "avgPrice": 1.18,
           "ev": 0.04
         },
+        "V": {
+          "avgPrice": 0.7,
+          "ev": 0.08
+        },
+        "RAD": {
+          "avgPrice": 0.64,
+          "ev": 0.03
+        },
         "RH": {
-          "avgPrice": 0.41,
+          "avgPrice": 0.37,
           "ev": 0.07
         },
         "R": {
-          "avgPrice": 0.16,
-          "ev": 0.1
-        },
-        "U": {
-          "avgPrice": 0.1,
-          "ev": 0.3
-        },
-        "C": {
-          "avgPrice": 0.11,
-          "ev": 0.54
-        }
-      },
-      "notablePrices": {
-        "Giratina V": 684.83,
-        "Aerodactyl V": 161.76,
-        "Pikachu VMAX": 80.63,
-        "Giratina VSTAR": 24.62
-      },
-      "topCard": {
-        "name": "Giratina V.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
-        "price": 684.83
-      }
-    },
-    "swsh7": {
-      "rarities": {
-        "SR": {
-          "avgPrice": 7.11,
-          "ev": 0.06
-        },
-        "RBOW": {
-          "avgPrice": 166.75,
-          "ev": 1.9
-        },
-        "UR": {
-          "avgPrice": 51.06,
-          "ev": 1.98
-        },
-        "VMAX": {
-          "avgPrice": 7.85,
-          "ev": 0.44
-        },
-        "V": {
-          "avgPrice": 1.64,
-          "ev": 0.17
-        },
-        "RH": {
-          "avgPrice": 0.3,
-          "ev": 0.05
-        },
-        "R": {
-          "avgPrice": 0.16,
-          "ev": 0.1
+          "avgPrice": 0.14,
+          "ev": 0.08
         },
         "U": {
           "avgPrice": 0.09,
-          "ev": 0.28
+          "ev": 0.27
         },
         "C": {
-          "avgPrice": 0.1,
-          "ev": 0.51
+          "avgPrice": 0.07,
+          "ev": 0.35
         }
       },
       "notablePrices": {
-        "Umbreon VMAX": 1747.16,
-        "Rayquaza VMAX": 674.76,
-        "Dragonite V": 360.33,
-        "Umbreon V": 300.86,
-        "Glaceon VMAX": 243.89
+        "Giratina V": 577,
+        "Aerodactyl V": 148,
+        "Pikachu VMAX": 73,
+        "Giratina VSTAR": 32,
+        "Comfey": 24
       },
       "topCard": {
-        "name": "Umbreon Vmax.Css-1Hcv90L{Margin:0;Font-Family:-Apple-System,Blinkmacsystemfont,\"Segoe Ui\",Roboto,\"Helvetica Neue\",Arial,Sans-Serif;Font-Weight:400;Font-Size:1Rem;Line-Height:1.5;Color:",
-        "price": 1747.16
+        "name": "Giratina V",
+        "price": 577
+      }
+    },
+    "swsh7": {
+      "packEV": 5.5,
+      "rarities": {
+        "SR": {
+          "avgPrice": 6.96,
+          "ev": 0.06
+        },
+        "RBOW": {
+          "avgPrice": 163.82,
+          "ev": 1.87
+        },
+        "UR": {
+          "avgPrice": 50.54,
+          "ev": 1.96
+        },
+        "VMAX": {
+          "avgPrice": 7.33,
+          "ev": 0.41
+        },
+        "V": {
+          "avgPrice": 1.51,
+          "ev": 0.16
+        },
+        "RH": {
+          "avgPrice": 0.29,
+          "ev": 0.05
+        },
+        "R": {
+          "avgPrice": 0.14,
+          "ev": 0.09
+        },
+        "U": {
+          "avgPrice": 0.08,
+          "ev": 0.25
+        },
+        "C": {
+          "avgPrice": 0.09,
+          "ev": 0.46
+        }
+      },
+      "notablePrices": {
+        "Umbreon VMAX": 1678,
+        "Rayquaza VMAX": 657,
+        "Dragonite V": 382,
+        "Umbreon V": 234,
+        "Glaceon VMAX": 170
+      },
+      "topCard": {
+        "name": "Umbreon VMAX",
+        "price": 1678
       }
     }
   }

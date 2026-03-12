@@ -332,6 +332,63 @@ const SETS = [
       { name:'Ninetales',           rarity:'IR',  price:24, pullPct:0.6329 },
     ],
   },
+  
+  {
+    id: 'swsh10', name: 'Astral Radiance', series: 'Sword & Shield',
+    released: 'May 27, 2022', cardCount: 246, packEV: 0, packResalePrice: 4.15,
+    pricesUpdated: 'Pending...', accentColor: '#60a5fa',
+    topCard: { name: 'Machamp V (Alternate Full Art)', price: 0 },
+    rarities: [
+      { key: 'SR', pullPct: 1.2, avgPrice: 0, ev: 0, count: 15 },
+      { key: 'RBOW', pullPct: 1.5, avgPrice: 0, ev: 0, count: 18 },
+      { key: 'UR', pullPct: 4.0, avgPrice: 0, ev: 0, count: 24 },
+      { key: 'VMAX', pullPct: 5.5, avgPrice: 0, ev: 0, count: 12 },
+      { key: 'V', pullPct: 12.0, avgPrice: 0, ev: 0, count: 21 },
+      { key: 'RH', pullPct: 18.0, avgPrice: 0, ev: 0, count: 20 },
+      { key: 'R', pullPct: 58.0, avgPrice: 0, ev: 0, count: 20 }
+    ],
+    notable: [
+      { name: 'Machamp V (Alternate Full Art)', rarity: 'UR', price: 0, pullPct: 0.15 }
+    ]
+  },
+  
+  {
+    id: 'swsh9', name: 'Brilliant Stars', series: 'Sword & Shield',
+    released: 'February 25, 2022', cardCount: 216, packEV: 0, packResalePrice: 4.50,
+    pricesUpdated: 'Pending...', accentColor: '#facc15',
+    topCard: { name: 'Charizard V (Alternate Full Art)', price: 0 },
+    rarities: [
+      { key: 'SR', pullPct: 1.1, avgPrice: 0, ev: 0, count: 14 },
+      { key: 'RBOW', pullPct: 1.4, avgPrice: 0, ev: 0, count: 16 },
+      { key: 'UR', pullPct: 3.8, avgPrice: 0, ev: 0, count: 22 },
+      { key: 'VMAX', pullPct: 5.0, avgPrice: 0, ev: 0, count: 14 },
+      { key: 'V', pullPct: 11.5, avgPrice: 0, ev: 0, count: 20 },
+      { key: 'RH', pullPct: 18.0, avgPrice: 0, ev: 0, count: 20 },
+      { key: 'R', pullPct: 58.0, avgPrice: 0, ev: 0, count: 20 }
+    ],
+    notable: [
+      { name: 'Charizard V (Alternate Full Art)', rarity: 'UR', price: 0, pullPct: 0.12 }
+    ]
+  },
+  
+  {
+    id: 'swsh8', name: 'Fusion Strike', series: 'Sword & Shield',
+    released: 'November 12, 2021', cardCount: 284, packEV: 0, packResalePrice: 4.25,
+    pricesUpdated: 'Pending...', accentColor: '#d946ef',
+    topCard: { name: 'Gengar VMAX (Alternate Art Secret)', price: 0 },
+    rarities: [
+      { key: 'SR', pullPct: 1.0, avgPrice: 0, ev: 0, count: 18 },
+      { key: 'RBOW', pullPct: 1.2, avgPrice: 0, ev: 0, count: 20 },
+      { key: 'UR', pullPct: 3.5, avgPrice: 0, ev: 0, count: 28 },
+      { key: 'VMAX', pullPct: 4.5, avgPrice: 0, ev: 0, count: 16 },
+      { key: 'V', pullPct: 10.0, avgPrice: 0, ev: 0, count: 24 },
+      { key: 'RH', pullPct: 18.0, avgPrice: 0, ev: 0, count: 20 },
+      { key: 'R', pullPct: 58.0, avgPrice: 0, ev: 0, count: 20 }
+    ],
+    notable: [
+      { name: 'Gengar VMAX (Alternate Art Secret)', rarity: 'UR', price: 0, pullPct: 0.10 }
+    ]
+  }
 
 
   // ── BATCH 2 ─────────────────────────────────────────────────
