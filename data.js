@@ -388,7 +388,7 @@ const SETS = [
     notable: [
       { name: 'Gengar VMAX (Alternate Art Secret)', rarity: 'UR', price: 0, pullPct: 0.10 }
     ]
-  }
+  },
 
 
   // ── BATCH 2 ─────────────────────────────────────────────────
