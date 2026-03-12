@@ -10,7 +10,6 @@ from datetime import datetime, timezone
 BASE_URL    = "https://www.thepricedex.com"
 OUTPUT      = "prices.json"
 
-# Set Definitions with custom PC slugs for higher accuracy
 SETS = [
     { "id": "me2pt5",    "slug": "ascended-heroes",     "guide": "ascended-heroes"     },
     { "id": "sv9",       "slug": "journey-together",     "guide": "journey-together"    },
@@ -38,7 +37,7 @@ SETS = [
 # ── Engine ────────────────────────────────────────────────────
 
 def fetch_content(url):
-    """Guaranteed fetch using Playwright for GitHub Actions with human-like scrolling."""
+    """Guaranteed fetch using Playwright for GitHub Actions."""
     try:
         from playwright.sync_api import sync_playwright
         with sync_playwright() as p:
@@ -47,14 +46,12 @@ def fetch_content(url):
             page = context.new_page()
             try:
                 page.goto(url, wait_until="networkidle", timeout=60000)
-                # Scroll to trigger lazy-loaded price elements
                 page.mouse.wheel(0, 500)
                 time.sleep(2)
                 return page.content()
             finally:
                 browser.close()
     except ImportError:
-        # Local fallback if Playwright isn't installed
         import urllib.request
         headers = {"User-Agent": "Mozilla/5.0"}
         req = urllib.request.Request(url, headers=headers)
@@ -83,39 +80,33 @@ def main():
         sid, slug = s["id"], s["slug"]
         print(f"[{sid}] Processing {slug}...")
 
-        # 1. Scrape Retail Resale (PriceCharting)
+        # 1. Scrape Retail Resale
         pc_url = f"https://www.pricecharting.com/game/pokemon-{slug}/{slug}-booster-pack"
         pc_html = fetch_content(pc_url)
         sealed = 0.0
-        
         if pc_html:
-            # Multi-Stage Search: Check 'New' (Retail) -> 'Used' (Market) -> Global find
             m = re.search(r'id="new_price"[^>]*>\s*\$([\d,]+\.\d{2})', pc_html, re.I)
-            if not m:
-                m = re.search(r'id="used_price"[^>]*>\s*\$([\d,]+\.\d{2})', pc_html, re.I)
-            if not m:
-                m = re.search(r'Ungraded.*?\$([\d,]+\.\d{2})', pc_html, re.I | re.S)
-            
+            if not m: m = re.search(r'id="used_price"[^>]*>\s*\$([\d,]+\.\d{2})', pc_html, re.I)
             sealed = parse_price(m.group(1)) if m else 0.0
 
-        # SANITY CHECK GUARD: Fix for the $63.99 Bundle Bug
-        # Special sets like Ascended Heroes only sell in bundles of 6.
-        if sealed >= 55.0 and sealed <= 75.0 and sid != 'swsh7':
-            print(f"    ⚠ Detected Bundle price (${sealed}). Adjusting to single pack estimate...")
+        # STRICT BUNDLE GUARD: Specifically for the $63.99 Ascended Heroes error
+        # If the price is exactly what we saw (63.99) or in that range, divide by 6.
+        if sealed > 40.0 and sealed < 85.0 and sid != 'swsh7':
+            print(f"    ⚠ Detected probable 6-pack bundle price (${sealed}). Dividing by 6...")
             sealed = round(sealed / 6, 2)
         elif sealed > 25.0 and sid != 'swsh7':
-            # Evolving Skies is the only modern pack allowed to be over $25.
-            print(f"    ⚠ Price out of range (${sealed}). Reverting to previous data.")
+            # Cap modern packs at $25 unless it's Evolving Skies
+            print(f"    ⚠ Price anomaly (${sealed}). Reverting to fallback.")
             sealed = existing.get("sets", {}).get(sid, {}).get("packResalePrice", 0.0)
 
-        # 2. Scrape EV (ThePriceDex)
+        # 2. Scrape EV
         ev_html = fetch_content(f"{BASE_URL}/set/{sid}/{slug}/pull-rates")
         pack_ev = 0.0
         if ev_html:
             ev_m = re.search(r'Booster Pack EV.*?\$([\d,]+\.?\d*)', ev_html, re.I | re.S)
             if ev_m: pack_ev = parse_price(ev_m.group(1))
 
-        # 3. Consolidate and Save
+        # 3. Consolidate
         ex = existing.get("sets", {}).get(sid, {})
         new_data["sets"][sid] = {
             "rarities": ex.get("rarities", {}),
@@ -124,13 +115,11 @@ def main():
             "topCard": ex.get("topCard", {"name": "N/A", "price": 0.0})
         }
         print(f"    ✓ EV: ${pack_ev} | Retail: ${sealed}")
-        
-        # Anti-ban jitter
         time.sleep(random.uniform(2, 4))
 
     with open(OUTPUT, "w") as f:
         json.dump(new_data, f, indent=2)
-    print(f"\n✅ Done. Output written to {OUTPUT}")
+    print(f"\n✅ Scraping Complete. Output written to {OUTPUT}")
 
 if __name__ == "__main__":
     main()
