@@ -1,0 +1,56 @@
+name: Weekly Price Update
+
+on:
+  # Run every Sunday at 00:00 UTC
+  schedule:
+    - cron: "0 0 * * 0"
+
+  # Allow manual trigger from the GitHub Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-prices:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Check out repo with the built-in GITHUB_TOKEN (grants push access)
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # 2. Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # 3. Run the scraper
+      - name: Run price scraper
+        run: python scraper/update_prices.py
+
+      # 4. Check if prices.json actually changed
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet prices.json && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      # 5. Commit and push using the token — no manual permission setup needed
+      - name: Commit updated prices
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add prices.json
+          git commit -m "chore: auto-update card prices [$(date -u '+%Y-%m-%d')]"
+          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:${{ github.ref_name }}
+
+      # 6. Log if nothing changed
+      - name: No changes detected
+        if: steps.changes.outputs.changed == 'false'
+        run: echo "prices.json is already up to date — no commit needed."
