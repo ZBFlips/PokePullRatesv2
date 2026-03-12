@@ -399,23 +399,23 @@ async function initWithPrices() {
       SETS.forEach(set => {
         const live = pd[set.id];
         if (!live) return;
+
         // Update packEV if provided
         if (live.packEV !== undefined) {
           set.packEV = live.packEV;
+        } // Closed packEV if
 
-          // NEW: Force the live sealed price takeover
-        if (live.packResalePrice !== undefined && live.packResalePrice > 0) {
-          set.packResalePrice = live.packResalePrice;
-        }
         // Live data takeover for sealed pack prices
         if (live.packResalePrice !== undefined && live.packResalePrice > 0) {
           set.packResalePrice = live.packResalePrice;
         }
+
         // Update top card price
         if (live.topCard && live.topCard.price) {
           set.topCard.price = live.topCard.price;
           if (live.topCard.name) set.topCard.name = live.topCard.name.split('.Css-')[0].trim();
         }
+
         // Update rarity avgPrices & EVs
         if (live.rarities) {
           set.rarities.forEach(r => {
@@ -425,13 +425,14 @@ async function initWithPrices() {
             }
           });
         }
+
         // Update notable card prices
         if (live.notablePrices) {
           set.notable.forEach(n => {
             if (live.notablePrices[n.name] !== undefined) n.price = live.notablePrices[n.name];
           });
         }
-      });
+      }); // This closing }); was missing its partners above
 
       // Show last-updated badge in hero
       if (prices.lastUpdated) {
