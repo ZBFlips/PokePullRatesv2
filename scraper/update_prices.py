@@ -435,6 +435,12 @@ def main():
             entry["packResalePrice"] = sealed_price
 
         new_data["sets"][sid] = entry
+        if pack_ev:
+            entry["packEV"] = pack_ev
+        if sealed_price:
+            entry["packResalePrice"] = sealed_price
+
+        new_data["sets"][sid] = entry
         print()
 
     with open(OUTPUT, "w") as f:
