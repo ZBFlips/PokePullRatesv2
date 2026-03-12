@@ -173,9 +173,13 @@ def parse_guide_page(html):
 # ── Main ──────────────────────────────────────────────────────
 
 def main():
+    # Check if the file exists; if not, start with an empty set
     try:
-        with open(OUTPUT) as f: existing = json.load(f)
-    except: existing = {"sets": {}}
+        with open(OUTPUT) as f:
+            existing = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        existing = {"sets": {}}
+        print("First run: Creating new prices.json file...")
 
     now = datetime.now(timezone.utc)
     new_data = {
