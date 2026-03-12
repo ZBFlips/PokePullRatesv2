@@ -403,8 +403,7 @@ async function initWithPrices() {
         // Update top card price
         if (live.topCard && live.topCard.price) {
           set.topCard.price = live.topCard.price;
-          // Optionally update name too if it changed
-          if (live.topCard.name) set.topCard.name = live.topCard.name;
+          if (live.topCard.name) set.topCard.name = live.topCard.name.split('.Css-')[0].trim();
         }
         // Update rarity avgPrices & EVs
         if (live.rarities) {
