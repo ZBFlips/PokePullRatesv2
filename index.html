@@ -400,7 +400,13 @@ async function initWithPrices() {
         const live = pd[set.id];
         if (!live) return;
         // Update packEV if provided
-        if (live.packEV) set.packEV = live.packEV;
+        if (live.packEV !== undefined) {
+          set.packEV = live.packEV;
+        }
+        // Live data takeover for sealed pack prices
+        if (live.packResalePrice !== undefined && live.packResalePrice > 0) {
+          set.packResalePrice = live.packResalePrice;
+        }
         // Update top card price
         if (live.topCard && live.topCard.price) {
           set.topCard.price = live.topCard.price;
