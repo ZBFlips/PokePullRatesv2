@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "April 12, 2026 at 01:56 UTC",
+  "lastUpdated": "April 19, 2026 at 02:00 UTC",
   "sets": {
     "me2pt5": {
       "rarities": {},
-      "packEV": 8.21,
+      "packEV": 8.43,
       "packResalePrice": 63.99,
       "topCard": {
         "name": "N/A",
@@ -12,7 +12,7 @@
     },
     "sv9": {
       "rarities": {},
-      "packEV": 3.15,
+      "packEV": 3.04,
       "packResalePrice": 6.0,
       "topCard": {
         "name": "N/A",
@@ -21,7 +21,7 @@
     },
     "sv8pt5": {
       "rarities": {},
-      "packEV": 5.12,
+      "packEV": 5.23,
       "packResalePrice": 10.5,
       "topCard": {
         "name": "N/A",
@@ -30,7 +30,7 @@
     },
     "sv8": {
       "rarities": {},
-      "packEV": 2.99,
+      "packEV": 3.05,
       "packResalePrice": 7.0,
       "topCard": {
         "name": "N/A",
@@ -39,7 +39,7 @@
     },
     "sv7": {
       "rarities": {},
-      "packEV": 5.64,
+      "packEV": 5.43,
       "packResalePrice": 8.8,
       "topCard": {
         "name": "N/A",
@@ -48,7 +48,7 @@
     },
     "sv6pt5": {
       "rarities": {},
-      "packEV": 4.69,
+      "packEV": 4.78,
       "packResalePrice": 26.02,
       "topCard": {
         "name": "N/A",
@@ -57,7 +57,7 @@
     },
     "sv6": {
       "rarities": {},
-      "packEV": 3.86,
+      "packEV": 3.95,
       "packResalePrice": 7.68,
       "topCard": {
         "name": "N/A",
@@ -66,7 +66,7 @@
     },
     "sv5": {
       "rarities": {},
-      "packEV": 4.32,
+      "packEV": 4.42,
       "packResalePrice": 7.72,
       "topCard": {
         "name": "N/A",
@@ -75,7 +75,7 @@
     },
     "sv4pt5": {
       "rarities": {},
-      "packEV": 6.29,
+      "packEV": 6.55,
       "packResalePrice": 18.0,
       "topCard": {
         "name": "N/A",
@@ -84,7 +84,7 @@
     },
     "sv4": {
       "rarities": {},
-      "packEV": 3.21,
+      "packEV": 3.24,
       "packResalePrice": 7.44,
       "topCard": {
         "name": "N/A",
@@ -93,7 +93,7 @@
     },
     "sv3pt5": {
       "rarities": {},
-      "packEV": 13.19,
+      "packEV": 13.08,
       "packResalePrice": 23.0,
       "topCard": {
         "name": "N/A",
@@ -102,7 +102,7 @@
     },
     "sv3": {
       "rarities": {},
-      "packEV": 4.03,
+      "packEV": 3.88,
       "packResalePrice": 10.35,
       "topCard": {
         "name": "N/A",
@@ -111,7 +111,7 @@
     },
     "sv2": {
       "rarities": {},
-      "packEV": 4.76,
+      "packEV": 4.9,
       "packResalePrice": 0.0,
       "topCard": {
         "name": "N/A",
@@ -120,7 +120,7 @@
     },
     "sv1": {
       "rarities": {},
-      "packEV": 3.54,
+      "packEV": 3.65,
       "packResalePrice": 0.0,
       "topCard": {
         "name": "N/A",
@@ -129,7 +129,7 @@
     },
     "swsh12pt5": {
       "rarities": {},
-      "packEV": 9.79,
+      "packEV": 9.99,
       "packResalePrice": 0.0,
       "topCard": {
         "name": "N/A",
@@ -138,7 +138,7 @@
     },
     "swsh12": {
       "rarities": {},
-      "packEV": 3.5,
+      "packEV": 3.6,
       "packResalePrice": 0.0,
       "topCard": {
         "name": "N/A",
@@ -147,7 +147,7 @@
     },
     "swsh11": {
       "rarities": {},
-      "packEV": 5.15,
+      "packEV": 5.22,
       "packResalePrice": 0.0,
       "topCard": {
         "name": "N/A",
@@ -156,7 +156,7 @@
     },
     "swsh10": {
       "rarities": {},
-      "packEV": 3.24,
+      "packEV": 3.33,
       "packResalePrice": 0.0,
       "topCard": {
         "name": "N/A",
@@ -165,7 +165,7 @@
     },
     "swsh9": {
       "rarities": {},
-      "packEV": 4.36,
+      "packEV": 4.5,
       "packResalePrice": 0.0,
       "topCard": {
         "name": "N/A",
@@ -174,7 +174,7 @@
     },
     "swsh8": {
       "rarities": {},
-      "packEV": 3.53,
+      "packEV": 3.58,
       "packResalePrice": 0.0,
       "topCard": {
         "name": "N/A",
@@ -183,7 +183,7 @@
     },
     "swsh7": {
       "rarities": {},
-      "packEV": 6.07,
+      "packEV": 6.2,
       "packResalePrice": 0.0,
       "topCard": {
         "name": "N/A",
